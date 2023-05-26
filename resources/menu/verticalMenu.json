@@ -1,0 +1,40 @@
+{
+  "menu": [
+    {
+      "url": "/home",
+      "name": "WebHome",
+      "icon": "menu-icon tf-icons ti ti-smart-home",
+      "slug": "pages-home"
+    },
+    {
+      "url": "/role_Permission",
+      "name": "Roles",
+      "icon": "menu-icon tf-icons ti ti-smart-home",
+      "slug": "Role"
+    },
+    {
+      "url": "/auth/login-basic",
+      "name": "Login",
+      "icon": "menu-icon tf-icons ti ti-login",
+      "slug": "auth-login-basic",
+      "target": "_blank"
+    },
+    {
+      "url": "/auth/register-basic",
+      "name": "Register",
+      "icon": "menu-icon tf-icons ti ti-user",
+      "slug": "auth-register-basic",
+      "target": "_blank"
+    },{
+      "url": "/herosection",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": "Hero Section",
+      "slug": "herosection"
+    },{
+      "url": "/herosection",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": "Hero Section",
+      "slug": "herosection"
+    }
+  ]
+}
