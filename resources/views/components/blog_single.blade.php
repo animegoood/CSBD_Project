@@ -1,12 +1,13 @@
-@props(['blog_image' => 'blog_image',
-        'main_content' => 'main_content',
-        'content_imp_highlight' => 'content_imp_highlight',
-        'rest_main_content' => 'rest_main_content',
-        'blog_post_date' => 'date',
-        'categories' => 'categories',
-        'author_image' => 'author_image',
-        'author_name' => 'author_name',
-        'author_description' => 'author_description',
+@props(['blog_images' => 'blog_image',
+        'main_contents' => 'main_content',
+        'content_imp_highlights' => 'content_imp_highlight',
+        'rest_main_contents' => 'rest_main_content',
+        'blog_post_dates' => 'date',
+        'categorieses' => 'categories',
+        'author_images' => 'author_image',
+        'author_names' => 'author_name',
+        'author_descriptions' => 'author_description',
+        'blog_title'=>'blog_title'
            ])
 
 
@@ -19,21 +20,21 @@
 <div class="col-lg-8  wow customFadeInUp slow">
     <div class="blog-single">
         <div class="thumbnail">
-            <img src="{{ $blog_image }}" alt="Blog-Image">
+            <img src="{{ $blog_images }}" alt="Blog-Image">
         </div>
-        <h4 class="title">{{ $slot }}</h4>
-        <p>{{ $main_content }}
+        <h4 class="title">{{ $blog_title }}</h4>
+        <p>{{ $main_contents }}
         </p>
         <br>
-        <p class="quote">{{ $content_imp_highlight }}
+        <p class="quote">{{ $content_imp_highlights }}
         </p>
         <br>
-        <p>{{ $rest_main_content }}
+        <p>{{ $rest_main_contents }}
         </p>
         <div class="meta">
             <p class="mb-0 ">
-                <span><i class="far fa-clock"></i>{{ $blog_post_date }}</span>
-                <span><i class="fas fa-tag"></i>{{ $categories }}</span>
+                <span><i class="far fa-clock"></i>{{ $blog_post_dates }}</span>
+                <span><i class="fas fa-tag"></i>{{ $categorieses }}</span>
             </p>
             <div class="social-links ml-auto">
                 <ul class="list-inline">
@@ -45,10 +46,10 @@
             </div>
         </div>
         <div class="footer-author">
-            <img src="{{ $author_image }}" alt="">
+            <img src="{{ $author_images }}" alt="">
             <div class="author">
-                <h5>{{ $author_name }}</h5>
-                <p>{{ $author_description }}</p>
+                <h5>{{ $author_names }}</h5>
+                <p>{{ $author_descriptions }}</p>
             </div>
         </div>
     </div>

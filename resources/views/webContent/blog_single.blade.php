@@ -16,9 +16,8 @@
 
                 <!--blog Single-->
 
-                <x-blog_single blog_image="" main_content="" content_imp_highlight="" rest_main_content="" blog_post_date=""
-                    categories="" author_image="" author_name="" author_description="">Daily Habits to increase your
-                    productivity levels.</x-blog_single>
+                <x-blog_single blog_images="" blog_title="" main_contents="" content_imp_highlights="" rest_main_contents="" blog_post_dates=""
+                    categorieses="" author_images="" author_names="" author_descriptions=""/>
 
                 <!--Sidebar-->
 
