@@ -14,7 +14,7 @@ return new class extends Migration
   public function up()
   {
     Schema::create('herosection', function (Blueprint $table) {
-      
+      $table->id();
       $table->char('name_Symbol', 1);
       $table->char('Yourname',25);
       $table->char('profession_1',25);

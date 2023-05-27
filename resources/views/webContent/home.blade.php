@@ -46,7 +46,7 @@
 
             </div>
         </div>
-        <div class="hero" style="background-image: url('{{ asset('background_image/' . $herosection_details->background_img) }}');">
+        <div class="hero" style="background-image: url('{{$bgimg_path}}');">
           <!-- Other content -->
         </div>
 

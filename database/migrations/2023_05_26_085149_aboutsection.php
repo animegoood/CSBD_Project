@@ -15,7 +15,7 @@ return new class extends Migration
     {
       Schema::create('aboutsection', function (Blueprint $table) {
 
-
+        $table->id();
 
         $table->string('aboutinfo');
         $table->char('Yourname',25);
@@ -24,8 +24,8 @@ return new class extends Migration
         $table->string('location');
         $table->string('freelancer');
         $table->string('experience');
-        $table->string('social_3');
-        $table->string('social_3');
+        $table->string('social_1');
+        $table->string('social_2');
         $table->string('social_3');
         $table->timestamps();
 

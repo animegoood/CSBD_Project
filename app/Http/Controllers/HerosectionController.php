@@ -87,10 +87,14 @@ class HerosectionController extends Controller
    */
   public function show(herosection $herosection)
   {
-     $herosection_details = herosection::first();
+    $herosection_details = herosection::first();
 
-    return view('WebContent.home', compact('herosection_details'));
+    if (file_exists( public_path('background_image/' . $herosection_details->background_img))){
+    $bgimg_path =  asset('background_image/' . $herosection_details->Background_img);
+    };
+    return view('WebContent.home', compact('herosection_details','bgimg_path'));
   }
+
 
 
   /**
