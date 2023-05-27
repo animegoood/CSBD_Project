@@ -49,6 +49,14 @@ class HerosectionController extends Controller
     // move the background image
     $request->Background_img->move(public_path('background_image'), $file_name);
 
+        //authorbackground image
+
+    //authorbackground image file name
+    $author_file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Author_background_image->extension();
+    // move the authorbackground image
+    $request->Author_background_image->move(public_path('Author_background_image'), $author_file_name);
+
+
     //download cv
 
     //download cv file name
@@ -73,6 +81,7 @@ class HerosectionController extends Controller
       "social_5" => $request->social_5,
       // "downloadCV" => $file_name2,
       "Background_img" => $file_name,
+      "Author_background_image" => $author_file_name,
     ];
     herosection::create($data);
 
@@ -92,7 +101,14 @@ class HerosectionController extends Controller
     if (file_exists( public_path('background_image/' . $herosection_details->background_img))){
     $bgimg_path =  asset('background_image/' . $herosection_details->Background_img);
     };
-    return view('WebContent.home', compact('herosection_details','bgimg_path'));
+
+
+    if (file_exists( public_path('Author_background_image/' . $herosection_details->Author_background_image))){
+      $authbgimg_path =  asset('Author_background_image/' . $herosection_details->Author_background_image);
+      };
+
+
+    return view('WebContent.home', compact('herosection_details','bgimg_path','authbgimg_path'));
   }
 
 

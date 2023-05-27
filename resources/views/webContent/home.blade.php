@@ -21,7 +21,7 @@
     <section class="home home-4 d-flex align-items-center">
         <div class="container">
             <div class="row ">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <div class="home-banner text-left wow customFadeInUp delay-0-2s slow">
                         <h6> Hi , There! </h6>
                         <h1 class="cd-headline clip text-left">I Am
@@ -43,10 +43,15 @@
                         <a href="{{ route('about') }}" class="btn-custom ">More about me</a>
                     </div>
                 </div>
+                <div class="col-lg-4" style="background-image: url('{{$authbgimg_path}}');     background-size: contain;
+                background-repeat: no-repeat;    background-position: center;">
+
+
+                </div>
 
             </div>
         </div>
-        <div class="hero" style="background-image: url('{{$bgimg_path}}');">
+        <div class="hero" style="background-image: url('{{$bgimg_path}}'); z-index:-1">
           <!-- Other content -->
         </div>
 

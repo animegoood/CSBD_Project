@@ -16,14 +16,15 @@ return new class extends Migration
     Schema::create('herosection', function (Blueprint $table) {
       $table->id();
       $table->char('name_Symbol', 1);
-      $table->char('Yourname',25);
-      $table->char('profession_1',25);
-      $table->char('profession_2', 25);
+      $table->char('Yourname',20);
+      $table->char('profession_1',20);
+      $table->char('profession_2', 20);
       $table->string('social_1');
       $table->string('social_2');
       $table->string('social_3');
       // $table->string('downloadCV');
       $table->string('Background_img');
+      $table->string('Author_background_image');
       $table->timestamps();
     });
   }

@@ -92,12 +92,23 @@
                             Background Image
                         </label>
                         <div class=" mt-3">
-                            <input class="form-control" type="file" id="file-upload1" accept=".png"
+                            <input class="form-control" type="file" id="file-upload1" accept=".png,.jpg"
                                 name="Background_img">
 
                         </div>
 
                     </div>
+                    <div class="col-6">
+                      <label class="form-label" for="file-upload1">
+                           Author Background Image
+                      </label>
+                      <div class=" mt-3">
+                          <input class="form-control" type="file" id="file-upload1" accept=".png ,.jpg"
+                              name="Author_background_image">
+
+                      </div>
+
+                  </div>
 
                     {{-- <div class="col-md-6">
                         <label class="form-label" for="file-upload2">

@@ -20,7 +20,8 @@ class herosection extends Model
       'social_2',
       'social_3',
       // 'downloadCV',
-      'Background_img'
+      'Background_img',
+      'Author_background_image'
   ];
 
   protected $table = 'herosection';
