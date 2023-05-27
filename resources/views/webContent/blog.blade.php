@@ -20,12 +20,12 @@
                         <div class="thumbnail">
                             <img src="assets/img/blog/1.jpg" alt="">
                         </div>
-                        <h5><a href="{{route('blog_single')}}"> How To become a web designer.</a></h5>
+                        <h5><a href="{{route('blog_single',$blog_single_details->id)}}"> How To become a web designer.</a></h5>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Officia nam hic eum aliquam temporibus...
                         </p>
-                        <a href="{{route('blog_single')}}" class="btn-custom">Read More</a>
+                        <a href="{{route('blog_single',$blog_single_details->id)}}" class="btn-custom">Read More</a>
                     </div>
                 </div>
 

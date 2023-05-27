@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('content_imp_highlights');
             $table->string('rest_main_contents');
             $table->date('blog_post_dates');
-            $table->array('categorieses');
+            $table->string('categorieses');
             $table->string('author_images');
             $table->string('author_names');
             $table->string('author_descriptions');
-         
+
             $table->timestamps();
         });
     }

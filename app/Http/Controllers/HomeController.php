@@ -8,28 +8,28 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {public function index(){
 
-    $pageConfigs = ['myLayout' => 'blank'];
+    // $pageConfigs = ['myLayout' => 'blank'];
 
-    return view('webContent.home',['pageConfigs' => $pageConfigs] );
+    // return view('webContent.home',['pageConfigs' => $pageConfigs] );
   }
 
 
   public function about(){
 
-    return view('webContent.about');
+    // return view('webContent.about');
   }
 
 
   public function blog_single(){
 
-    return view('webContent.blog_single');
+    // return view('webContent.blog_single');
   }
 
 
-  public function blog(){
+  // public function blog(){
 
-    return view('webContent.blog');
-  }
+  //   return view('webContent.blog');
+  // }
 
 
   public function contact(){

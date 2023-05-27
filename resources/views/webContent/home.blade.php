@@ -43,7 +43,7 @@
                         <a href="{{ route('about') }}" class="btn-custom ">More about me</a>
                     </div>
                 </div>
-                <div class="col-lg-4" style="background-image: url('{{$authbgimg_path}}');     background-size: contain;
+                <div class="col-lg-4" style="background-image: url('{{$authorimg_path}}');     background-size: contain;
                 background-repeat: no-repeat;    background-position: center;">
 
 

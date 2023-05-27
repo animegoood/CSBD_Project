@@ -18,6 +18,9 @@ class HerosectionController extends Controller
   public function index()
   {
 
+    $pageConfigs = ['myLayout' => 'blank'];
+
+    return view('webContent.home',['pageConfigs' => $pageConfigs] );
   }
 
   /**
@@ -66,26 +69,39 @@ class HerosectionController extends Controller
 
 
 
-
+    //collect data from   adminpage
 
     $data = [
       "name_Symbol" => $request->name_Symbol,
+
       "Yourname" => $request->Yourname,
+
       "profession_1" => $request->profession_1,
+
       "profession_2" => $request->profession_2,
+
       "social_1" => $request->social_1,
+
       "social_2" => $request->social_2,
 
+
+
       "social_3" => $request->social_3,
+
       "social_4" => $request->social_4,
+
       "social_5" => $request->social_5,
+
       // "downloadCV" => $file_name2,
+
       "Background_img" => $file_name,
+
       "Author_background_image" => $author_file_name,
+
     ];
     herosection::create($data);
 
-    return redirect()->back()->with('session', 'Herosection data save successfully!');
+    return redirect()->back()->with('session', 'Hero section data save successfully!');
   }
 
   /**
@@ -104,11 +120,11 @@ class HerosectionController extends Controller
 
 
     if (file_exists( public_path('Author_background_image/' . $herosection_details->Author_background_image))){
-      $authbgimg_path =  asset('Author_background_image/' . $herosection_details->Author_background_image);
+      $authorimg_path =  asset('Author_background_image/' . $herosection_details->Author_background_image);
       };
 
 
-    return view('WebContent.home', compact('herosection_details','bgimg_path','authbgimg_path'));
+    return view('WebContent.home', compact('herosection_details','bgimg_path','authorimg_path'));
   }
 
 

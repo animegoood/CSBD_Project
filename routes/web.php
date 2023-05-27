@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
+use App\Http\Controllers\BlogSingleController;
 use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\pages\HomePage;
 use Illuminate\Support\Facades\Auth;
@@ -22,17 +24,17 @@ use Illuminate\Support\Facades\Auth;
 
 
 // web Page Route
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HerosectionController::class, 'index'])->name('home');
 
 Route::get('/home', [HerosectionController::class, 'show'])->name('home');
 
 
 
-Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::get('/blog_single', [HomeController::class, 'blog_single'])->name('blog_single');
+Route::get('/blog_single/{id}', [BlogSingleController::class, 'index'])->name('blog_single');
 
-Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/blog', [BlogSingleController::class, 'blog'])->name('blog');
 
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
@@ -47,9 +49,14 @@ Route::get('/works', [HomeController::class, 'works'])->name('works');
 
 Route::get('/', [HomePage::class,'index'])->name('pages-home');
 
-Route::get('/herosection',[HerosectionController::class, 'create'])->name('herosection');
+Route::get('/herosection_admin',[HerosectionController::class, 'create'])->name('herosection_admin');
 
 Route::post('/herosection-store',[HerosectionController::class, 'store'])->name('herosection-store');
+
+Route::get('/blog_single_admin',[BlogSingleController::class, 'create'])->name('blog_single_admin');
+
+
+Route::post('/blog_single-store',[BlogSingleController::class, 'store'])->name('blog_single-store');
 
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');
 Route::get('/auth/register-basic', [RegisterBasic::class,'index'])->name('auth-register-basic');

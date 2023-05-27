@@ -11,7 +11,7 @@
     <div class="card " style="height: 100%">
         <h3 class="text-center " style="color: #07a3bf; "> Hero section </h3>
         <div class="card-body">
-            <form action="{{ route('herosection-store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('blog_single-store') }}" method="POST" enctype="multipart/form-data">
               @csrf
 
               @if (session()->has('session'))
@@ -29,10 +29,10 @@
                 <div class="row mb-5">
 
                     <div class="col-md-6">
-                        <label class="form-label" for="name_Symbol">Name Symbol</label>
+                        <label class="form-label" for="main_content">Main Content</label>
 
 
-                        <input class="form-control" name="name_Symbol" type="text" id="name_Symbol" maxlength="1">
+                        <input class="form-control" name="main_content" type="text" id="main_content" maxlength="1">
 
 
                     </div>
@@ -85,15 +85,43 @@
 
                         <input class="form-control"  name ="social_3" type="url" id="social_3">
 
+                    <div class="col-md-6">
+                      <label class="form-label" for="social_2">Social media 2</label>
+
+
+                      <input class="form-control" name ="social_2" type="url" id="social_2">
+
+
+                  </div>
+                  <div class="col-md-6">
+                      <label class="form-label" for="social_3">Social media 3</label>
+
+
+                      <input class="form-control"  name ="social_3" type="url" id="social_3">
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="social_2">Social media 2</label>
+
+
+                      <input class="form-control" name ="social_2" type="url" id="social_2">
+
+
+                  </div>
+                  <div class="col-md-6">
+                      <label class="form-label" for="social_3">Social media 3</label>
+
+
+                      <input class="form-control"  name ="social_3" type="url" id="social_3">
+
                     </div>
 
                     <div class="col-6">
                         <label class="form-label" for="file-upload1">
-                            Background Image
+                            Blog Image
                         </label>
                         <div class=" mt-3">
-                            <input class="form-control" type="file" id="file-upload1" accept=".png,.jpg"
-                                name="Background_img">
+                            <input class="form-control" type="file" id="file-upload1"
+                                name="blog_image">
 
                         </div>
 
@@ -103,8 +131,8 @@
                            Author Background Image
                       </label>
                       <div class=" mt-3">
-                          <input class="form-control" type="file" id="file-upload1" accept=".png ,.jpg"
-                              name="Author_background_image">
+                          <input class="form-control" type="file" id="file-upload1"
+                              name="author_image">
 
                       </div>
 
