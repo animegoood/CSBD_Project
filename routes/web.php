@@ -32,9 +32,11 @@ Route::get('/home', [HerosectionController::class, 'show'])->name('home');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::get('/blog_single/{id}', [BlogSingleController::class, 'index'])->name('blog_single');
 
 Route::get('/blog', [BlogSingleController::class, 'blog'])->name('blog');
+
+Route::get('/blog_single/{id}', [BlogSingleController::class, 'show'])->name('blog_single');
+
 
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
@@ -56,7 +58,7 @@ Route::post('/herosection-store',[HerosectionController::class, 'store'])->name(
 Route::get('/blog_single_admin',[BlogSingleController::class, 'create'])->name('blog_single_admin');
 
 
-Route::post('/blog_single-store',[BlogSingleController::class, 'store'])->name('blog_single-store');
+Route::post('/blog_single_store',[BlogSingleController::class, 'store'])->name('blog_single_store');
 
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');
 Route::get('/auth/register-basic', [RegisterBasic::class,'index'])->name('auth-register-basic');

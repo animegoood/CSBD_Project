@@ -11,7 +11,7 @@
     <div class="card " style="height: 100%">
         <h3 class="text-center " style="color: #07a3bf; "> Hero section </h3>
         <div class="card-body">
-            <form action="{{ route('blog_single-store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('blog_single_store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 @if (session()->has('session'))
@@ -25,6 +25,47 @@
                 @endif
 
                 <div class="row mb-5">
+
+                  <div class="col-md-6">
+                    <label class="form-label" for="blog_title">Blog Title</label>
+
+
+                    <input class="form-control" name="blog_title" type="text" id="blog_title" maxlength="20"
+                        rows="3">
+
+
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="author_name">Author Name</label>
+
+
+                  <input class="form-control" name="author_name" type="text" id="author_name" maxlength="20"
+                      rows="3">
+
+
+              </div>
+
+              <div class="col-md-6">
+                  <label class="form-label" for="author_description">Author Description</label>
+
+
+                  <textarea class="form-control" name="author_description" type="text" id="author_description" maxlength="100"
+                      rows="3"></textarea>
+
+
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="categories">Categories</label>
+                <select id="categories" name="categories" class="form-select">
+                    <option selected> Select categories</option>
+                    <option value="Life_style">LifeStyle</option>
+                    <option value="Tech_News">Tech News</option>
+                    <option value="Tech_and_startup">Tech & Startup</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Business">Business</option>
+                </select>
+
+            </div>
 
                     <div class="col-md-6">
                         <label class="form-label" for="main_content">Main Content</label>
@@ -66,36 +107,8 @@
                     </div>
 
 
-                    <div class="col-md-6">
-                        <label class="form-label" for="categories">Categories</label>
-                        <select id="categories" name="categories" class="form-select">
-                            <option selected> Select categories</option>
-                            <option value="Life_style">LifeStyle</option>
-                            <option value="Tech_News">Tech News</option>
-                            <option value="Tech_and_startup">Tech & Startup</option>
-                            <option value="Entertainment">Entertainment</option>
-                            <option value="Business">Business</option>
-                        </select>
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="author_name">Author Name</label>
 
 
-                        <input class="form-control" name="author_name" type="text" id="author_name" maxlength="20"
-                            rows="3">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="author_description">Author Description</label>
-
-
-                        <textarea class="form-control" name="author_description" type="text" id="author_description" maxlength="200"
-                            rows="3"></textarea>
-
-
-                    </div>
 
                     <div class="col-6">
                         <label class="form-label" for="file-upload1">

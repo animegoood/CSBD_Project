@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('blog_singles', function (Blueprint $table) {
             $table->id();
 
+            $table->string('blog_title');
+
             $table->string('blog_image');
             $table->string('main_content',255);
             $table->string('content_imp_highlight',255);
@@ -24,7 +26,7 @@ return new class extends Migration
             $table->string('categories');
             $table->string('author_image');
             $table->string('author_name',20);
-            $table->string('author_description',200);
+            $table->string('author_description',100);
 
             $table->timestamps();
         });

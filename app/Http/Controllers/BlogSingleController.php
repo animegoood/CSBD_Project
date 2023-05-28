@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\blog_single;
+use Illuminate\Database\Eloquent\Model;
 use App\Http\Requests\Storeblog_singleRequest;
 use App\Http\Requests\Updateblog_singleRequest;
 use Illuminate\Support\Str;
@@ -17,26 +18,16 @@ class BlogSingleController extends Controller
 
 
   // blog page view
-  public function blog()
+  public function blog(blog_single $blog_single)
   {
 
-    $blog_single_details = blog_single::all();
-
-    //check blog image have or not
-
-    if (file_exists(public_path('Blog_image/' . $blog_single_details->blog_image))) {
-      $blogImgUrl = asset('Blog_image/' . $blog_single_details->blog_image);
-    }
+    $blog_details = blog_single::get()->all();
 
 
-    //check author blog image have or not
-
-    if (file_exists(public_path('Blog_author_image/' . $blog_single_details->author_image))) {
-      $authorBlogImgUrl = asset('Blog_image/' . $blog_single_details->author_image);
-    }
 
 
-    return view('webContent.blog' ,   compact('blog_single_details', 'blogImgUrl', 'authorBlogImgUrl'));
+
+    return view('webContent.blog',   compact('blog_details'));
   }
 
 
@@ -47,10 +38,10 @@ class BlogSingleController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function index()
-  {
-    return view('webContent.blog_single');
-  }
+  // public function index()
+  // {
+  //   return view('webContent.blog_single');
+  // }
 
 
   /**
@@ -112,11 +103,13 @@ class BlogSingleController extends Controller
 
       'author_description' => $request->author_description,
 
+      'blog_title' => $request->blog_title
+
 
 
     ];
 
-    blog_single::created($data);
+    blog_single::create($data);
 
     return redirect()->back()->with('session', 'blog single data save successfully!');
   }
@@ -129,24 +122,23 @@ class BlogSingleController extends Controller
    */
   public function show(blog_single $blog_single, $id)
   {
-    $blog_single_details = blog_single::findOrfail($id);
+    $blog_single_details = blog_single::findOrFail($id);
 
-    //check blog image have or not
 
+    // Check blog image existence
     if (file_exists(public_path('Blog_image/' . $blog_single_details->blog_image))) {
       $blogImgUrl = asset('Blog_image/' . $blog_single_details->blog_image);
     }
 
-
-    //check author blog image have or not
-
+    // Check author blog image existence
     if (file_exists(public_path('Blog_author_image/' . $blog_single_details->author_image))) {
-      $authorBlogImgUrl = asset('Blog_image/' . $blog_single_details->author_image);
+      $authorBlogImgUrl = asset('Blog_author_image/' . $blog_single_details->author_image);
     }
-
+    // dd($blog_single_details->blog_title);
 
     return view('webContent.blog_single', compact('blog_single_details', 'blogImgUrl', 'authorBlogImgUrl'));
   }
+
 
   /**
    * Show the form for editing the specified resource.
