@@ -16,15 +16,15 @@ return new class extends Migration
         Schema::create('blog_singles', function (Blueprint $table) {
             $table->id();
 
-            $table->string('blog_images');
-            $table->string('main_contents');
-            $table->string('content_imp_highlights');
-            $table->string('rest_main_contents');
-            $table->date('blog_post_dates');
-            $table->string('categorieses');
-            $table->string('author_images');
-            $table->string('author_names');
-            $table->string('author_descriptions');
+            $table->string('blog_image');
+            $table->string('main_content',255);
+            $table->string('content_imp_highlight',255);
+            $table->string('rest_main_content',255);
+            $table->date('blog_post_date');
+            $table->string('categories');
+            $table->string('author_image');
+            $table->string('author_name',20);
+            $table->string('author_description',200);
 
             $table->timestamps();
         });

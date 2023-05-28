@@ -26,15 +26,15 @@
       "slug": "auth-register-basic",
       "target": "_blank"
     },{
-      "url": "/herosection",
+      "url": "/herosection_admin",
       "icon": "menu-icon tf-icons ti ti-file",
       "name": "Hero Section",
-      "slug": "herosection"
+      "slug": "herosection_admin"
     },{
-      "url": "/herosection",
+      "url": "/blog_single_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Hero Section",
-      "slug": "herosection"
+      "name": "Create Blog",
+      "slug": "blog_single_admin"
     }
   ]
 }

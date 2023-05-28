@@ -10,15 +10,15 @@ class blog_single extends Model
     use HasFactory;
 
 protected $fillable=[
-  'blog_images',
-  'main_contents',
-  'content_imp_highlights',
-  'rest_main_contents',
-  'blog_post_dates',
-  'categorieses',
-  'author_images',
-  'author_names',
-  'author_descriptions',
+  'blog_image',
+  'main_content',
+  'content_imp_highlight',
+  'rest_main_content',
+  'blog_post_date',
+  'categories',
+  'author_image',
+  'author_name',
+  'author_description',
 
 ];
 

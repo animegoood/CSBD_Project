@@ -77,40 +77,40 @@ class BlogSingleController extends Controller
 
     //generate blog image name
 
-    $blogImg_name = time() . Str::upper(Str::Random(16)) . '.' . $request->blog_images->extension();
+    $blogImg_name = time() . Str::upper(Str::Random(16)) . '.' . $request->blog_image->extension();
 
     //move blog image
 
-    $request->blog_images->move(public_path('Blog_image'), $blogImg_name);
+    $request->blog_image->move(public_path('Blog_image'), $blogImg_name);
 
 
     //generate author image name
-    $authorImg_name = time() . Str::upper(Str::random(16)) . '.' . $request->author_images->extension();
+    $authorImg_name = time() . Str::upper(Str::random(16)) . '.' . $request->author_image->extension();
 
     //move author image
-    $request->author_images->move(public_path('Blog_author_image'), $authorImg_name);
+    $request->author_image->move(public_path('Blog_author_image'), $authorImg_name);
 
 
 
     $data = [
       'blog_image' => $blogImg_name,
-      
+
       'author_image' => $authorImg_name,
 
-      'main_content' => $request->main_contents,
+      'main_content' => $request->main_content,
 
-      'content_imp_highlight' => $request->content_imp_highlights,
+      'content_imp_highlight' => $request->content_imp_highlight,
 
-      'rest_main_content' => $request->rest_main_contents,
+      'rest_main_content' => $request->rest_main_content,
 
-      'blog_post_date' => $request->blog_post_dates,
+      'blog_post_date' => $request->blog_post_date,
 
-      'categories' => $request->categorieses,
+      'categories' => $request->categories,
 
 
-      'author_name' => $request->author_names,
+      'author_name' => $request->author_name,
 
-      'author_description' => $request->author_descriptions,
+      'author_description' => $request->author_description,
 
 
 

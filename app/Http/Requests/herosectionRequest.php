@@ -65,7 +65,7 @@ public function messages()
     'profession_2.string' => 'profession_2 must be string',
     'profession_2.required' => 'profession_2 name is required',
 
-    'profession_2.max:20' => 'profession_2 must be 20 Character',
+    'profession_2.max' => 'profession_2 must be 20 Character',
 
     'social_1.string' => 'Mother\'s must be string',
     'social_1.required' => 'Mother\'s name is required',

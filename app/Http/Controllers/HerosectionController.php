@@ -6,7 +6,6 @@ use App\Http\Requests\herosectionRequest;
 use App\Models\herosection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Termwind\Components\Dd;
 
 class HerosectionController extends Controller
 {
@@ -48,7 +47,7 @@ class HerosectionController extends Controller
     //background image
 
     //background image file name
-    $file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Background_img->extension();
+    $file_name = time() . Str::upper(Str::random(16)) . '.' . $request->file('Background_img')->extension();
     // move the background image
     $request->Background_img->move(public_path('background_image'), $file_name);
 
@@ -58,8 +57,7 @@ class HerosectionController extends Controller
     $author_file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Author_background_image->extension();
     // move the authorbackground image
     $request->Author_background_image->move(public_path('Author_background_image'), $author_file_name);
-
-
+    
     //download cv
 
     //download cv file name
