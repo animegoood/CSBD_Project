@@ -55,10 +55,16 @@ Route::get('/herosection_admin',[HerosectionController::class, 'create'])->name(
 
 Route::post('/herosection-store',[HerosectionController::class, 'store'])->name('herosection-store');
 
+Route::get('/aboutsection_admin',[AboutController::class, 'create'])->name('aboutsection_admin');
+
+Route::post('/aboutsection_store',[AboutController::class, 'store'])->name('aboutsection_store');
+
 Route::get('/blog_single_admin',[BlogSingleController::class, 'create'])->name('blog_single_admin');
 
 
 Route::post('/blog_single_store',[BlogSingleController::class, 'store'])->name('blog_single_store');
+
+
 
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');
 Route::get('/auth/register-basic', [RegisterBasic::class,'index'])->name('auth-register-basic');

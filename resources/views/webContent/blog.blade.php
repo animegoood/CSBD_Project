@@ -21,13 +21,13 @@
                 <div class="col-lg-4 col-md-6 wow customFadeInUp slow">
                     <div class="blog-item">
                         <div class="thumbnail">
-                            <img src="{{ $blogImgUrl }}" alt="">
+                            {{-- <img src="{{ $blogImgUrl }}" alt=""> --}}
                         </div>
-                      
+
                         <p>
                             {{ $blog_detail->content_imp_highlight }}
                         </p>
-                        <a href="{{ route('blog_single', $blog_detail->id)>Read More</a>
+                        <a href="{{ route('blog_single', $blog_detail->id)}}">Read More</a>
                     </div>
                 </div>
             @endforeach

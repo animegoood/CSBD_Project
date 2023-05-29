@@ -16,45 +16,56 @@
 
                 <!--blog Single-->
                 @foreach ($blog_single_details as $blog_single_detail)
-                    <!--Blog-single-->
-                    <div class="col-lg-8  wow customFadeInUp slow">
-                        <div class="blog-single">
-                            <div class="thumbnail">
-                                {{-- <img src="{{ $blogImgUrl }}" alt="Blog-Image"> --}}
-                            </div>
-                            <h4 class="title">{{ $blog_single_detail->blog_title }}</h4>
-                            <p>{{ $blog_single_detail->main_content }}
-                            </p>
-                            <br>
-                            <p class="quote">{{ $blog_single_detail->content_imp_highlight }}
-                            </p>
-                            <br>
-                            <p>{{ $blog_single_detail->rest_main_content }}
-                            </p>
-                            <div class="meta">
-                                <p class="mb-0 ">
-                                    <span><i class="far fa-clock"></i>{{ $blog_single_detail->blog_post_date }}</span>
-                                    <span><i class="fas fa-tag"></i>{{ $blog_single_detail->categories }}</span>
-                                </p>
-                                <div class="social-links ml-auto">
-                                    <ul class="list-inline">
-                                        <li> Share:</li>
-                                        <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="footer-author">
-                                {{-- <img src="{{ $authorBlogImgUrl }}" alt=""> --}}
-                                <div class="author">
-                                    <h5>{{ $blog_single_detail->author_name }}</h5>
-                                    <p>{{ $blog_single_detail->author_description }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+
+
+
+
+
+
+
+
+<!--Blog-single-->
+<div class="col-lg-8  wow customFadeInUp slow">
+  <div class="blog-single">
+      <div class="thumbnail">
+          <img src="{{ $blogImgUrl }}" alt="Blog-Image">
+      </div>
+      <h4 class="title">{{ $blog_single_detail->blog_title }}</h4>
+      <p>{{ $blog_single_detail->main_content }}
+      </p>
+      <br>
+      <p class="quote">{{ $blog_single_detail->content_imp_highlight  }}
+      </p>
+      <br>
+      <p>{{ $blog_single_detail->rest_main_content }}
+      </p>
+      <div class="meta">
+          <p class="mb-0 ">
+              <span><i class="far fa-clock"></i>{{ $blog_single_detail->blog_post_date }}</span>
+              <span><i class="fas fa-tag"></i>{{ $blog_single_detail->categories }}</span>
+          </p>
+          <div class="social-links ml-auto">
+              <ul class="list-inline">
+                  <li> Share:</li>
+                  <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-author">
+          <img src="{{ $authorBlogImgUrl }}" alt="">
+          <div class="author">
+              <h5>{{ $blog_single_detail->author_name }}</h5>
+              <p>{{ $blog_single_detail->author_description }}</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+ @endforeach
 
                 <!--Sidebar-->
 

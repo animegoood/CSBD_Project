@@ -25,7 +25,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.pages.aboutSection');
     }
 
     /**
@@ -36,7 +36,31 @@ class AboutController extends Controller
      */
     public function store(StoreaboutRequest $request)
     {
-        //
+      $request->validated();
+      
+      $data=[
+
+
+        'aboutinfo' => $request->aboutinfo,
+        'Yourname' => $request->Yourname,
+        'Youremail' => $request->Youremail,
+        'phone_number' => $request->phone_number,
+        'location' => $request->location,
+        'experience' => $request->experience,
+        'social_1' => $request->social_1,
+        'social_2' => $request->social_2,
+        'social_3' => $request->social_3,
+        'downloadCV' => $request->downloadCV,
+
+
+
+      ];
+
+      about::create($data);
+
+      return redirect()->back()->with('session', 'about section data save sucessfully');
+
+
     }
 
     /**

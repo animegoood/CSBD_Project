@@ -18,7 +18,7 @@ class BlogSingleController extends Controller
 
 
   // blog page view
-  public function blog(blog_single $blog_single)
+  public function blog(blog_single $blog_single,$id)
   {
 
     $blog_details = blog_single::get()->all();
@@ -85,6 +85,8 @@ class BlogSingleController extends Controller
 
     $data = [
       'blog_image' => $blogImg_name,
+      
+      'blog_title' => $request->blog_title,
 
       'author_image' => $authorImg_name,
 
@@ -103,7 +105,6 @@ class BlogSingleController extends Controller
 
       'author_description' => $request->author_description,
 
-      'blog_title' => $request->blog_title
 
 
 

@@ -90,7 +90,7 @@ class HerosectionController extends Controller
 
       "social_5" => $request->social_5,
 
-      // "downloadCV" => $file_name2,
+      // "" => $file_name2,
 
       "Background_img" => $file_name,
 
