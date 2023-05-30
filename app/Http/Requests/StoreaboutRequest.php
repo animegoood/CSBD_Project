@@ -24,10 +24,11 @@ class StoreaboutRequest extends FormRequest
   public function rules()
   {
     return [
+      'intro' => 'string|required',
 
-      'aboutinfo' => 'string|required|max:150',
+      'aboutinfo' => 'string|required',
 
-      'Yourname' => 'string|required|max:25',
+      'Yourname' => 'string|required',
 
       'Youremail' => 'email|required',
 
@@ -37,7 +38,7 @@ class StoreaboutRequest extends FormRequest
 
       'freelancer' => 'string|required',
 
-      'experience' => 'string|required|max:20',
+      'experience' => 'string|required',
 
       'social_1' => 'string|required',
 
@@ -46,6 +47,41 @@ class StoreaboutRequest extends FormRequest
       'social_3' => 'string|required',
 
       'downloadCV' => 'image|required|file',
+
+
+      'work_1' => 'string|required',
+      'work_2' => 'string|required',
+      'work_3' => 'string|required',
+
+      'work_year_1' => 'string|required',
+      'work_year_2' => 'string|required',
+      'work_year_3' => 'string|required',
+
+      'work_description_1' => 'string|required',
+      'work_description_2' => 'string|required',
+      'work_description_3' => 'string|required',
+
+      'eduction_1' => 'string|required',
+      'eduction_2' => 'string|required',
+      'eduction_3' => 'string|required',
+
+      'education_year_1' => 'string|required',
+      'education_year_2' => 'string|required',
+      'education_year_3' => 'string|required',
+
+      'education_description_1' => 'string|required',
+      'education_description_2' => 'string|required',
+      'education_description_3' => 'string|required',
+
+      'photoshop_skill_percent' => 'string|required',
+      'illustrator_skill_percent' => 'string|required',
+      'figma_skill_percent' => 'string|required',
+      'adobeXD_skill_percent' => 'string|required',
+      'react_skill_percent' => 'string|required',
+      'javascript_skill_percent' => 'string|required',
+      'css_skill_percent' => 'string|required',
+
+      'jquery_skill_percent' => 'string|required',
 
 
     ];
@@ -59,15 +95,9 @@ class StoreaboutRequest extends FormRequest
 
       'aboutinfo.required' => 'aboutinfo is required.',
 
-      'aboutinfo.max' => 'aboutinfo Must be 150 Character.',
-
       'Yourname.string' => 'Yourname Must be a String.',
 
       'Yourname.required' => 'Yourname is required.',
-
-      'Yourname.max' => 'Yourname Must be 25 Character.',
-
-
 
       'Youremail.email' => 'Youremail
   must be string',
@@ -108,6 +138,389 @@ class StoreaboutRequest extends FormRequest
       'downloadCV.image' => 'downloadCV must be image',
 
       'downloadCV.required' => 'You must choose a downloadCV',
+
+
+
+      'intro.string' => 'intro Must be a String.',
+
+      'intro.required' => 'intro is required.',
+
+
+
+      'freelancer.string' => 'freelancer Must be a String.',
+
+      'freelancer.required' => 'freelancer is required.',
+
+
+
+      'experience.string' => 'experience Must be a String.',
+
+      'experience.required' => 'experience is required.',
+
+
+      'work_1.string' => 'work_1 Must be a String.',
+
+      'work_1.required' => 'work_1 is required.',
+
+
+
+      'work_2.string' => 'work_2 Must be a String.',
+
+      'work_2.required' => 'work_2 is required.',
+
+
+
+      'work_3.string' => 'work_3 Must be a String.',
+
+      'work_3.required' => 'work_3 is required.',
+
+
+
+      'work_year_1.string' => 'work_year_1 Must be a String.',
+
+      'work_year_1.required' => 'work_year_1 is required.',
+
+
+
+      'work_year_2.string' => 'work_year_2 Must be a String.',
+
+      'work_year_2.required' => 'work_year_2 is required.',
+
+
+
+      'work_year_3.string' => 'work_year_3 Must be a String.',
+
+      'work_year_3.required' => 'work_year_3 is required.',
+
+
+
+      'work_description_1.string' => 'work_description_1 Must be a String.',
+
+      'work_description_1.required' => 'work_description_1 is required.',
+
+
+
+      'work_description_2.string' => 'work_description_2 Must be a String.',
+
+      'work_description_2.required' => 'work_description_2 is required.',
+
+
+
+      'work_description_3.string' => 'work_description_3 Must be a String.',
+
+      'work_description_3.required' => 'work_description_3 is required.',
+
+
+
+      'eduction_1.string' => 'eduction_1 Must be a String.',
+
+      'eduction_1.required' => 'eduction_1 is required.',
+
+
+
+      'eduction_2.string' => 'eduction_2 Must be a String.',
+
+      'eduction_2.required' => 'eduction_2 is required.',
+
+
+
+      'eduction_3.string' => 'eduction_3 Must be a String.',
+
+      'eduction_3.required' => 'eduction_3 is required.',
+
+
+
+      'education_year_1.string' => 'education_year_1 Must be a String.',
+
+      'education_year_1.required' => 'education_year_1 is required.',
+
+
+
+      'education_year_2.string' => 'education_year_2 Must be a String.',
+
+      'education_year_2.required' => 'education_year_2 is required.',
+
+
+
+      'education_year_3.string' => 'education_year_3 Must be a String.',
+
+      'education_year_3.required' => 'education_year_3 is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
+      'aboutinfo.string' => 'aboutinfo Must be a String.',
+
+      'aboutinfo.required' => 'aboutinfo is required.',
+
+
+
     ];
   }
 }

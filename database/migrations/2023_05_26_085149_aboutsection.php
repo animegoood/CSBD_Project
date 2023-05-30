@@ -17,15 +17,15 @@ return new class extends Migration
 
         $table->id();
 
-        $table->string('intro',80);
+        $table->string('intro');
 
-        $table->string('aboutinfo',150);
-        $table->char('Yourname',25);
+        $table->string('aboutinfo');
+        $table->char('Yourname');
         $table->email('Youremail');
         $table->integer('phone_number');
         $table->string('location');
-        $table->string('freelancer',10);
-        $table->string('experience',10);
+        $table->string('freelancer');
+        $table->string('experience');
 
         $table->string('downloadCV');
 
@@ -33,38 +33,38 @@ return new class extends Migration
         $table->string('social_2');
         $table->string('social_3');
 
-        $table->string('work_1',20);
-        $table->string('work_2',20);
-        $table->string('work_3',20);
+        $table->string('work_1');
+        $table->string('work_2');
+        $table->string('work_3');
 
-        $table->string('work_year_1',10);
-        $table->string('work_year_2',10);
-        $table->string('work_year_3',10);
+        $table->string('work_year_1');
+        $table->string('work_year_2');
+        $table->string('work_year_3');
 
-        $table->string('work_description_1',100);
-        $table->string('work_description_2',100);
-        $table->string('work_description_3',100);
+        $table->string('work_description_1');
+        $table->string('work_description_2');
+        $table->string('work_description_3');
 
-        $table->string('eduction_1',20);
-        $table->string('eduction_2',20);
-        $table->string('eduction_3',20);
+        $table->string('eduction_1');
+        $table->string('eduction_2');
+        $table->string('eduction_3');
 
-        $table->string('education_year_1',10);
-        $table->string('education_year_2',10);
-        $table->string('education_year_3',10);
+        $table->string('education_year_1');
+        $table->string('education_year_2');
+        $table->string('education_year_3');
 
-        $table->string('education_description_1',100);
-        $table->string('education_description_2',100);
-        $table->string('education_description_3',100);
+        $table->string('education_description_1');
+        $table->string('education_description_2');
+        $table->string('education_description_3');
 
-        $table->string('photoshop_skill_percent',10);
-        $table->string('illustrator_skill_percent',10);
-        $table->string('figma_skill_percent',10);
-        $table->string('adobeXD_skill_percent',10);
-        $table->string('react_skill_percent',10);
-        $table->string('javascript_skill_percent',10);
-        $table->string('css_skill_percent',10);
-        $table->string('jquery_skill_percent',10);
+        $table->string('photoshop_skill_percent');
+        $table->string('illustrator_skill_percent');
+        $table->string('figma_skill_percent');
+        $table->string('adobeXD_skill_percent');
+        $table->string('react_skill_percent');
+        $table->string('javascript_skill_percent');
+        $table->string('css_skill_percent');
+        $table->string('jquery_skill_percent');
 
         $table->timestamps();
 
