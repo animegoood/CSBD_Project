@@ -46,7 +46,7 @@ class StoreaboutRequest extends FormRequest
 
       'social_3' => 'string|required',
 
-      'downloadCV' => 'image|required|file',
+      'downloadCV' => 'mimes:pdf|required|file',
 
 
       'work_1' => 'string|required',
@@ -135,7 +135,7 @@ class StoreaboutRequest extends FormRequest
 
       'downloadCV.file' => 'downloadCV must be type of file',
 
-      'downloadCV.image' => 'downloadCV must be image',
+      'downloadCV.mimes' => 'downloadCV must be pdf',
 
       'downloadCV.required' => 'You must choose a downloadCV',
 
@@ -248,277 +248,66 @@ class StoreaboutRequest extends FormRequest
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'education_description_1.string' => 'education_description_1 Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'education_description_1.required' => 'education_description_1 is required.',
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'education_description_2.string' => 'education_description_2 Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'education_description_2.required' => 'education_description_2 is required.',
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'education_description_3.string' => 'education_description_3 Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'education_description_3.required' => 'education_description_3 is required.',
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'photoshop_skill_percent.string' => 'photoshop_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'photoshop_skill_percent.required' => 'photoshop_skill_percent is required.',
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'illustrator_skill_percent.string' => 'illustrator_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'illustrator_skill_percent.required' => 'illustrator_skill_percent is required.',
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'figma_skill_percent.string' => 'figma_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'figma_skill_percent.required' => 'figma_skill_percent is required.',
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'adobeXD_skill_percent.string' => 'adobeXD_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'adobeXD_skill_percent.required' => 'adobeXD_skill_percent is required.',
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'react_skill_percent.string' => 'react_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'react_skill_percent.required' => 'react_skill_percent is required.',
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'javascript_skill_percent.string' => 'javascript_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'javascript_skill_percent.required' => 'javascript_skill_percent is required.',
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'css_skill_percent.string' => 'css_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
+      'css_skill_percent.required' => 'css_skill_percent is required.',
 
 
 
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
+      'jquery_skill_percent.string' => 'jquery_skill_percent Must be a String.',
 
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
-
-
-      'aboutinfo.string' => 'aboutinfo Must be a String.',
-
-      'aboutinfo.required' => 'aboutinfo is required.',
-
+      'jquery_skill_percent.required' => 'jquery_skill_percent is required.',
 
 
     ];

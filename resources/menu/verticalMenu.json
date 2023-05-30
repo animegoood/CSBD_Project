@@ -28,12 +28,21 @@
     },{
       "url": "/herosection_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Hero Section",
+      "name": "Create Hero Section",
       "slug": "herosection_admin"
-    },{
+    },
+
+    {
+      "url": "/about_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": "Create about Section",
+      "slug": "about_section_admin"
+    },
+
+    {
       "url": "/blog_single_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Create Blog",
+      "name": "Create Blog Section",
       "slug": "blog_single_admin"
     }
   ]

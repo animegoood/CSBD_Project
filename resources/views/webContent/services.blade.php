@@ -14,6 +14,8 @@
             </div>
 
             <div class="row mb-20 mt-40">
+
+              @for ( $i = 0; $i==7;$i++){
                 <!--service-item-->
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-2s slow">
                     <div class="service-item">
@@ -29,7 +31,9 @@
                         </div>
                     </div>
                 </div>
-
+              }
+                @endfor
+                {{--
                 <!--service-item-->
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
                     <div class="service-item">
@@ -93,7 +97,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!--service-item-->
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-7s slow">
                     <div class="service-item">
@@ -109,8 +112,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                 --}}
 
+            </div>
 
 
             <!--Testimonials-->
@@ -120,6 +124,12 @@
             <div class="row  testimonials mb-50">
                 <div class="col-lg-12">
                     <div class="owl-carousel">
+
+
+
+
+
+
                         <!--testimonial-item-->
                         <div class="testimonials-item">
                             <div class="image">
@@ -138,7 +148,7 @@
                             </div>
                         </div>
 
-
+{{--
                         <!--testimonial-item-->
                         <div class="testimonials-item">
                             <div class="image">
@@ -190,7 +200,7 @@
                             <div class="icon bg-base-color">
                                 <span class="icon_quotations"></span>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

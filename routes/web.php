@@ -55,7 +55,7 @@ Route::get('/herosection_admin',[HerosectionController::class, 'create'])->name(
 
 Route::post('/herosection-store',[HerosectionController::class, 'store'])->name('herosection-store');
 
-Route::get('/aboutsection_admin',[AboutController::class, 'create'])->name('aboutsection_admin');
+Route::get('/about_section_admin',[AboutController::class, 'create'])->name('about_section_admin');
 
 Route::post('/aboutsection_store',[AboutController::class, 'store'])->name('aboutsection_store');
 

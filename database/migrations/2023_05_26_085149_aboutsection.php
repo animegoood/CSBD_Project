@@ -20,8 +20,8 @@ return new class extends Migration
         $table->string('intro');
 
         $table->string('aboutinfo');
-        $table->char('Yourname');
-        $table->email('Youremail');
+        $table->string('Yourname');
+        $table->string('Youremail');
         $table->integer('phone_number');
         $table->string('location');
         $table->string('freelancer');
