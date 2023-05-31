@@ -1,4 +1,6 @@
 @extends('webContent.weblayouts.webHome')
+
+@section('title','Blog Single')
 @section('websection')
 
     <!-- blog section-->
@@ -15,7 +17,7 @@
             <div class="row">
 
                 <!--blog Single-->
-                @foreach ($blog_single_details as $blog_single_detail)
+
                     <!--Blog-single-->
                     <div class="col-lg-8  wow customFadeInUp slow">
                         <div class="blog-single">
@@ -54,8 +56,6 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
-
                 <!--Sidebar-->
 
                 <div class="col-lg-4">

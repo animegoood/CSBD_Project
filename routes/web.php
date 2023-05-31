@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,15 +36,17 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/blog', [BlogSingleController::class, 'blog'])->name('blog');
 
+Route::get('/blog', [BlogSingleController::class,  'show'])->name('blog');
+
 Route::get('/blog_single/{id}', [BlogSingleController::class, 'show'])->name('blog_single');
 
 
+
+Route::get('/services', [ServicesController::class, 'index'])->name('services');
+
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-Route::get('/services', [HomeController::class, 'service'])->name('services');
-
 Route::get('/works', [HomeController::class, 'works'])->name('works');
-
 
 
 
@@ -57,7 +60,11 @@ Route::post('/herosection-store',[HerosectionController::class, 'store'])->name(
 
 Route::get('/about_section_admin',[AboutController::class, 'create'])->name('about_section_admin');
 
-Route::post('/aboutsection_store',[AboutController::class, 'store'])->name('aboutsection_store');
+Route::post('/about_section_store',[AboutController::class, 'store'])->name('about_section_store');
+
+Route::get('/services_section_admin', [ServicesController::class, 'create'])->name('services_section_admin');
+
+Route::post('/services_section_store',[ServicesController::class, 'store'])->name('services_section_store');
 
 Route::get('/blog_single_admin',[BlogSingleController::class, 'create'])->name('blog_single_admin');
 

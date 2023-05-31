@@ -25,7 +25,7 @@ class Storeblog_singleRequest extends FormRequest
   {
     return [
 
-      'blog_title' => 'string|required',
+      'blog_title' => 'string|required|max:100',
 
       'main_content' => 'string|required|max:255',
 
@@ -55,6 +55,7 @@ class Storeblog_singleRequest extends FormRequest
       'blog_title.string' => 'blog_title Must be a String.',
 
       'blog_title.required' => 'blog_title is required.',
+      'blog_title.max'=>'blog_title Must be 255 Character.',
 
       'main_content.string' => 'main_content Must be a String.',
 

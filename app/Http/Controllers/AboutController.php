@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\about;
 use App\Http\Requests\StoreaboutRequest;
 use App\Http\Requests\UpdateaboutRequest;
+use Illuminate\Support\Str;
 
 class AboutController extends Controller
 {
@@ -38,6 +39,16 @@ class AboutController extends Controller
   {
     $request->validated();
 
+
+
+
+    //background image
+
+    //background image file name
+    $downloadCV_name = time() . Str::upper(Str::random(16)) . '.' . $request->file('downloadCV')->extension();
+    // move the background image
+    $request->Background_img->move(public_path('downloadCV_image'), $downloadCV_name);
+
     $data = [
 
       'intro'=> $request->intro,
@@ -52,7 +63,7 @@ class AboutController extends Controller
       'social_1' => $request->social_1,
       'social_2' => $request->social_2,
       'social_3' => $request->social_3,
-      'downloadCV' => $request->downloadCV,
+      'downloadCV' => $downloadCV_name,
 
       'work_1' => $request->work_1,
       'work_2' => $request->work_2,

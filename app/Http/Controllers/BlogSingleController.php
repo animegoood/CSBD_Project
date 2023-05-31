@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\blog_single;
-use Illuminate\Database\Eloquent\Model;
 use App\Http\Requests\Storeblog_singleRequest;
 use App\Http\Requests\Updateblog_singleRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 
 
 
@@ -18,10 +19,10 @@ class BlogSingleController extends Controller
 
 
   // blog page view
-  public function blog(blog_single $blog_single,$id)
+  public function blog(blog_single $blog_single)
   {
 
-    $blog_details = blog_single::get()->all();
+    $blog_details = DB::table('blogsingles');
 
 
 
@@ -68,7 +69,7 @@ class BlogSingleController extends Controller
 
     //generate blog image name
 
-    $blogImg_name = time() . Str::upper(Str::Random(16)) . '.' . $request->blog_image->extension();
+    $blogImg_name = time() . Str::upper(Str::Random(16)) . '.' . $request->file('blog_image')->extension();
 
     //move blog image
 
@@ -76,7 +77,7 @@ class BlogSingleController extends Controller
 
 
     //generate author image name
-    $authorImg_name = time() . Str::upper(Str::random(16)) . '.' . $request->author_image->extension();
+    $authorImg_name = time() . Str::upper(Str::random(16)) . '.' . $request->file('author_image')->extension();
 
     //move author image
     $request->author_image->move(public_path('Blog_author_image'), $authorImg_name);
@@ -85,7 +86,7 @@ class BlogSingleController extends Controller
 
     $data = [
       'blog_image' => $blogImg_name,
-      
+
       'blog_title' => $request->blog_title,
 
       'author_image' => $authorImg_name,
@@ -129,12 +130,12 @@ class BlogSingleController extends Controller
     // Check blog image existence
     if (file_exists(public_path('Blog_image/' . $blog_single_details->blog_image))) {
       $blogImgUrl = asset('Blog_image/' . $blog_single_details->blog_image);
-    }
+    };
 
     // Check author blog image existence
     if (file_exists(public_path('Blog_author_image/' . $blog_single_details->author_image))) {
       $authorBlogImgUrl = asset('Blog_author_image/' . $blog_single_details->author_image);
-    }
+    };
     // dd($blog_single_details->blog_title);
 
     return view('webContent.blog_single', compact('blog_single_details', 'blogImgUrl', 'authorBlogImgUrl'));

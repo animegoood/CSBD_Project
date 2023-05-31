@@ -27,7 +27,7 @@ return new class extends Migration
         $table->string('freelancer');
         $table->string('experience');
 
-        $table->string('downloadCV');
+        $table->text('downloadCV');
 
         $table->string('social_1');
         $table->string('social_2');

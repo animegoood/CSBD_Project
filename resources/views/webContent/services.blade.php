@@ -1,5 +1,7 @@
 @extends('webContent.weblayouts.webHome')
 
+@section('title','Services')
+
 @section('websection')
     <!--Servives section-->
     <div class="section">
@@ -14,8 +16,6 @@
             </div>
 
             <div class="row mb-20 mt-40">
-
-              @for ( $i = 0; $i==7;$i++){
                 <!--service-item-->
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-2s slow">
                     <div class="service-item">
@@ -31,9 +31,8 @@
                         </div>
                     </div>
                 </div>
-              }
-                @endfor
-                {{--
+
+                {{--fpreach part--}}
                 <!--service-item-->
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
                     <div class="service-item">
@@ -49,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-
+{{--
                 <!--service-item-->
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-4s slow">
                     <div class="service-item ">
@@ -148,7 +147,32 @@
                             </div>
                         </div>
 
-{{--
+
+                        {{-- foreach part --}}
+
+
+
+
+                        <!--testimonial-item-->
+                        <div class="testimonials-item">
+                          <div class="image">
+                              <img src="assets/img/testimonials/1.jpg" alt="">
+                          </div>
+                          <h6>Donia Mrgerartin</h6>
+                          <p class="job">Product Design </p>
+
+                          <p>
+                              Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus, eu
+                              luctus neque ultu. Phasellus
+                              faucibus orci a purus mattis tincidunt ut non nulla.
+                          </p>
+                          <div class="icon bg-base-color">
+                              <span class="icon_quotations"></span>
+                          </div>
+                      </div>
+
+
+                        {{--
                         <!--testimonial-item-->
                         <div class="testimonials-item">
                             <div class="image">
@@ -232,9 +256,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow customFadeInUp delay-0-4s slow">
+{{-- foreach part --}}
+                <div class="col-lg-4 wow customFadeInUp delay-0-2s slow">
+                  <!--pricing-item-->
+                  <div class="pricing-item">
+                      <div class="content">
+                          <h5>Basic</h5>
+                          <div class="price">
+                              <h3>09
+                                  <span>$/month</span>
+                              </h3>
+                          </div>
+                          <ul>
+                              <li>10 Pages. </li>
+                              <li>Free Installation.</li>
+                              <li>Fee Hosting. </li>
+                              <li>10 Addon Domains. </li>
+                              <li>Email support</li>
+                          </ul>
+                          <a href="#" class="btn-custom"> Get Basic</a>
+                      </div>
+                  </div>
+              </div>
+                {{-- <div class="col-lg-4 wow customFadeInUp delay-0-4s slow">
                     <!--pricing-item-->
-                    <div class="pricing-item">
+                     <div class="pricing-item">
                         <div class="content">
                             <h5>Standard</h5>
                             <div class="price">
@@ -273,8 +319,8 @@
                             <a href="#" class="btn-custom"> Get Premium</a>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> --}}
+          </div>
             <!--Clients-->
             <div class="section-sub-heading">
                 <h4 class="section-sub-title">Our Clients</h4>
@@ -285,7 +331,17 @@
                         <img src="assets/img/clients/1.png" alt="">
                     </div>
                 </div>
+
+                {{-- foreach part --}}
+
                 <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                  <div class="clients-item">
+                      <img src="assets/img/clients/1.png" alt="">
+                  </div>
+              </div>
+
+            </div>
+            {{--   <div class="col-lg-2 col-md-4 col-sm-4 col-6">
                     <div class="clients-item">
                         <img src="assets/img/clients/2.png" alt="">
                     </div>
@@ -309,8 +365,7 @@
                     <div class="clients-item">
                         <img src="assets/img/clients/1.png" alt="">
                     </div>
-                </div>
-            </div>
+                </div> --}}
 
         </div>
     </div>

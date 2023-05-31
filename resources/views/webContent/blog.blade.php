@@ -1,4 +1,5 @@
 @extends('webContent.weblayouts.webHome')
+@section('title','Blog')
 @section('websection')
 
     <!-- blog-->
@@ -25,7 +26,7 @@
                         </div>
 
                         <p>
-                            {{ $blog_detail->content_imp_highlight }}
+                            {{ $blog_detail["content_imp_highlight"] }}
                         </p>
                         <a href="{{ route('blog_single', $blog_detail->id)}}">Read More</a>
                     </div>

@@ -2,6 +2,9 @@
 
 
 @extends('webContent.weblayouts.webHome')
+
+@section('title','Works')
+
 @section('websection')
     <!-- works section-->
     <div class="section">

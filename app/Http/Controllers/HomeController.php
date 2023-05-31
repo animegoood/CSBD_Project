@@ -38,10 +38,10 @@ class HomeController extends Controller
   }
 
 
-  public function service(){
+  // public function service(){
 
-    return view('webContent.services');
-  }
+  //   return view('webContent.services');
+  // }
 
 
   public function works(){

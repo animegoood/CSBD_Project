@@ -1,4 +1,5 @@
 @extends('webContent.weblayouts.webHome')
+@section('title','Contact')
 
 @section('websection')
 

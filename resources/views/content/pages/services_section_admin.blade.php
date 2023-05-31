@@ -4,14 +4,14 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'about_admin')
+@section('title', 'services admin')
 
 @section('content')
 
     <div class="card " style="height: 100%">
-        <h3 class="text-center " style="color: #07a3bf; "> About Section </h3>
+        <h3 class="text-center " style="color: #07a3bf; ">Services Section </h3>
         <div class="card-body">
-            <form action="{{ route('about_section_store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('services_section_store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 @if (session()->has('session'))
@@ -324,112 +324,39 @@
 
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label" for="downloadCV">
-                          Download CV
+                        <label class="form-label" for="service_icon">
+                          Service Icon
+                        </label>
+                        <div class=" mt-3">
+                            <input class="form-control" type="file" id="service_icon" accept=".png,.jpg"
+                                name="service_icon">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="testimonials_image">
+                        Testimonials Image
                       </label>
                       <div class=" mt-3">
-                          <input class="form-control" type="file" id="downloadCV" accept=".pdf"
-                              name="downloadCV">
+                          <input class="form-control" type="file" id="testimonials_image" accept=".png,.jpg"
+                              name="testimonials_image">
 
                       </div>
                   </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label class="form-label" for="photoshop_skill_percent">photoshop_skill_percent</label>
 
-
-                            <input placeholder="92%" class="form-control" type="text"
-                                name="photoshop_skill_percent" id="photoshop_skill_percent">
-
-
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label" for="illustrator_skill_percent">illustrator_skill_percent</label>
-
-
-                            <input placeholder="92%" class="form-control" type="text"
-                                name="illustrator_skill_percent" id="illustrator_skill_percent">
-
-
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label" for="figma_skill_percent">figma_skill_percent</label>
-
-
-                            <input placeholder="92%" class="form-control" type="text"
-                                name="figma_skill_percent" id="figma_skill_percent">
-
-
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label" for="adobeXD_skill_percent">adobeXD_skill_percent</label>
-
-
-                            <input placeholder="92%" class="form-control" type="text"
-                                name="adobeXD_skill_percent" id="adobeXD_skill_percent">
-
-
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label" for="react_skill_percent">react_skill_percent</label>
-
-
-                            <input placeholder="92%" class="form-control" type="text"
-                                name="react_skill_percent" id="react_skill_percent">
-
-
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label" for="javascript_skill_percent">javascript_skill_percent</label>
-
-
-                            <input placeholder="92%" class="form-control" type="text"
-                                name="javascript_skill_percent" id="javascript_skill_percent">
-
-
-                        </div>
-                        <div class="col-md-2">
-                            <label class="form-label" for="css_skill_percent">css_skill_percent</label>
-
-
-                            <input placeholder="92%" class="form-control" type="text"
-                                name="css_skill_percent" id="css_skill_percent">
-
-
-                        </div>
-                        <div class="col-md-2">
-                          <label class="form-label" for="jquery_skill_percent">jquery_skill_percent</label>
-
-
-                          <input placeholder="92%" class="form-control" type="text"
-                              name="jquery_skill_percent" id="jquery_skill_percent">
-
-
-                      </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="sponser_images">
+                      Sponsers Image
+                    </label>
+                    <div class=" mt-3">
+                        <input class="form-control" type="file" id="sponser_images" accept=".png,.jpg"
+                            name="sponser_images">
 
                     </div>
-
-
-
-
-
                 </div>
 
-                <div style="float: right">
-                    <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                    <button type="reset" class="btn btn-label-secondary">Cancel</button>
                 </div>
-
-            </form>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -437,6 +364,28 @@
 
         </div>
 
+        <div style="float: right">
+            <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+            <button type="reset" class="btn btn-label-secondary">Cancel</button>
+        </div>
+
+        </form>
 
 
-    @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+@endsection

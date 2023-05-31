@@ -23,8 +23,8 @@ return new class extends Migration
       $table->string('social_2');
       $table->string('social_3');
       // $table->string('downloadCV');
-      $table->string('Background_img');
-      $table->string('Author_background_image');
+      $table->text('Background_img');
+      $table->text('Author_background_image');
       $table->timestamps();
     });
   }

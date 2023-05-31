@@ -4,12 +4,12 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Home')
+@section('title', 'blog_admin')
 
 @section('content')
 
     <div class="card " style="height: 100%">
-        <h3 class="text-center " style="color: #07a3bf; "> Hero section </h3>
+        <h3 class="text-center " style="color: #07a3bf; "> Blog Section </h3>
         <div class="card-body">
             <form action="{{ route('blog_single_store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
