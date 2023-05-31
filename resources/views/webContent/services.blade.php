@@ -20,7 +20,7 @@
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-2s slow">
                     <div class="service-item">
                         <div class="icon bg-base-color">
-                            <i class="fas fa-camera-retro"></i>
+                          <i class="fas fa-camera-retro"></i>
                         </div>
                         <div class="content">
                             <h5> Photography </h5>
@@ -135,7 +135,7 @@
                                 <img src="assets/img/testimonials/1.jpg" alt="">
                             </div>
                             <h6>Donia Martin</h6>
-                            <p class="job">Product Design </p>
+                            <p class="job">Product Design</p>
 
                             <p>
                                 Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus, eu

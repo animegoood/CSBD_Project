@@ -13,7 +13,7 @@ class StoreservicesRequest extends FormRequest
    */
   public function authorize()
   {
-    return false;
+    return true;
   }
 
   /**
@@ -26,7 +26,7 @@ class StoreservicesRequest extends FormRequest
     return [
 
 
-      "service_icon" => "file|image|mimes:png,jpg|required",
+      "service_icon" => "string|required",
       "service_name" => "string|required",
       "service_details" => "string|required",
 
@@ -37,7 +37,7 @@ class StoreservicesRequest extends FormRequest
 
 
       "pricing_name" => "string|required",
-      "pricing" => "string|required",
+      "pricing" => "integer|required",
       "pricing_month" => "string|required",
       "pricing_services_1" => "string|required",
       "pricing_services_2" => "string|required",
@@ -55,9 +55,7 @@ class StoreservicesRequest extends FormRequest
     return[
 
 
-      'service_icon.file' => 'service_icon Must be a file.',
-      'service_icon.image' => 'service_icon Must be  image.',
-      'service_icon.mimes' => 'service_icon Must be a mimes.',
+      'service_icon.string' => 'service_icon Must be string.',
       'service_icon.required' => 'service_icon is required.',
 
       'service_name.string' => 'service_name Must be a String.',
@@ -84,7 +82,7 @@ class StoreservicesRequest extends FormRequest
       'pricing_name.string' => 'pricing_name Must be a String.',
       'pricing_name.required' => 'pricing_name is required.',
 
-      'pricing.string' => 'pricing Must be a String.',
+      'pricing.integer' => 'pricing Must be a integer.',
       'pricing.required' => 'pricing is required.',
 
       'pricing_month.string' => 'pricing_month Must be a String.',

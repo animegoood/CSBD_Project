@@ -47,7 +47,7 @@ class AboutController extends Controller
     //background image file name
     $downloadCV_name = time() . Str::upper(Str::random(16)) . '.' . $request->file('downloadCV')->extension();
     // move the background image
-    $request->Background_img->move(public_path('downloadCV_image'), $downloadCV_name);
+    $request->downloadCV->move(public_path('downloadCV_image'), $downloadCV_name);
 
     $data = [
 

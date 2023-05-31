@@ -22,7 +22,7 @@ class BlogSingleController extends Controller
   public function blog(blog_single $blog_single)
   {
 
-    $blog_details = DB::table('blogsingles');
+    $blog_details = DB::table('blogsingles')->get();
 
 
 
@@ -124,17 +124,19 @@ class BlogSingleController extends Controller
    */
   public function show(blog_single $blog_single, $id)
   {
-    $blog_single_details = blog_single::findOrFail($id);
+
+    $blog_details = DB::table('blogsingles')->get($id);
+
 
 
     // Check blog image existence
-    if (file_exists(public_path('Blog_image/' . $blog_single_details->blog_image))) {
-      $blogImgUrl = asset('Blog_image/' . $blog_single_details->blog_image);
+    if (file_exists(public_path('Blog_image/' . $blog_details->blog_image))) {
+      $blogImgUrl = asset('Blog_image/' . $blog_details->blog_image);
     };
 
     // Check author blog image existence
-    if (file_exists(public_path('Blog_author_image/' . $blog_single_details->author_image))) {
-      $authorBlogImgUrl = asset('Blog_author_image/' . $blog_single_details->author_image);
+    if (file_exists(public_path('Blog_author_image/' . $blog_details->author_image))) {
+      $authorBlogImgUrl = asset('Blog_author_image/' . $blog_details->author_image);
     };
     // dd($blog_single_details->blog_title);
 

@@ -31,7 +31,7 @@ return new class extends Migration
           // pricing item
 
             $table->string('pricing_name');
-            $table->string('pricing');
+            $table->integer('pricing');
             $table->string('pricing_month');
             $table->string('pricing_services_1');
             $table->string('pricing_services_2');

@@ -25,5 +25,5 @@ class blog_single extends Model
   ];
 
 
-  protected $table = 'blog_single';
+  protected $table = 'blogsingles';
 }

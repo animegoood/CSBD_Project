@@ -26,150 +26,95 @@
 
                 <div class="row mb-5">
 
+                  <div class="col-md-6">
+                    <label class="form-label" for="service_icon">
+                        Service Icon (only font-awesome)
+                    </label>
+
+                    <input class="form-control" type="text" id="service_icon" name="service_icon" placeholder='<i class="fas fa-camera-retro "></i>'>
+
+
+                </div>
+
+
+
                     <div class="col-md-6">
-                        <label class="form-label" for="intro">intro</label>
+
+                        <label class="form-label" for="service_name">service_name</label>
 
 
-                        <input placeholder="I'm Elizabeth Elmiz, a UX & UI Designer and Photographer" class="form-control"
-                            name="intro" type="text" id="intro">
+                        <input placeholder="Photography" class="form-control"
+                            name="service_name" type="text" id="service_name">
 
 
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="aboutinfo">aboutinfo</label>
+                        <label class="form-label" for="service_details">service_details</label>
 
 
-                        <textarea rows="3" placeholder="I am a freelancer based in the United States and i have been" class="form-control"
-                            name="aboutinfo" type="text" id="aboutinfo"></textarea>
-
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label" for="Yourname">Yourname</label>
-
-
-                        <input placeholder="Elizabeth Elmiz." class="form-control" name="Yourname" type="text"
-                            id="Yourname">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="Youremail">Youremail</label>
-
-
-                        <input placeholder="elizabeth.elmiz@gmail.com" class="form-control" name="Youremail" type="email"
-                            id="Youremail">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="phone_number">phone number</label>
-
-
-                        <input placeholder="+3 (123)-456-78-91." class="form-control" name="phone_number" type="number"
-                            id="phone_number">
+                        <textarea rows="3" placeholder="Working with client and community, we deliver masterplans that create vibrant new places and
+                        spaces, attract people." class="form-control"
+                            name="service_details" type="text" id="service_details"></textarea>
 
 
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="location">location</label>
+                        <label class="form-label" for="testimonials_name">testimonials_name</label>
 
 
-                        <input placeholder="New York City,USA" class="form-control" name="location" type="text"
-                            id="location">
-
-
-                    </div>
-
-
-                    <div class="col-md-6">
-                        <label class="form-label" for="freelancer">freelancer</label>
-
-
-                        <input placeholder="available/unavailable" class="form-control" name="freelancer" type="text"
-                            id="freelancer">
+                        <input placeholder="Donia Martin" class="form-control" name="testimonials_name" type="text"
+                            id="testimonials_name">
 
 
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="experience">experience</label>
+                        <label class="form-label" for="testimonials_job">testimonials_job</label>
 
 
-                        <input placeholder="8 years ." class="form-control" name="experience" type="text"
-                            id="experience">
-
-
-                    </div>
-
-
-
-
-
-                    <div class="col-md-6">
-                        <label class="form-label" for="social_1">Social media 1</label>
-
-
-                        <input placeholder="www.djajknkdn.com" class="form-control" name="social_1" type="url"
-                            id="social_1">
+                        <input placeholder="Product Design" class="form-control" name="testimonials_job" type="text"
+                            id="testimonials_job">
 
 
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="social_2">Social media 2</label>
+                        <label class="form-label" for="testimonials_details">testimonials_details</label>
 
 
-                        <input placeholder="www.djajknkdn.com" class="form-control" name="social_2" type="url"
-                            id="social_2">
 
+                        <textarea rows="3"  placeholder="Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus." class="form-control" name="testimonials_details" type="text"
+                            id="testimonials_details"></textarea>
 
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="social_3">Social media 3</label>
-
-
-                        <input placeholder="www.djajknkdn.com" class="form-control" name="social_3" type="url"
-                            id="social_3">
 
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="work_1">work 1</label>
+                        <label class="form-label" for="pricing_name">pricing_name</label>
 
 
-                        <input placeholder="Full stack Web Developer" class="form-control" name="work_1" type="text"
-                            id="work_1">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="work_2">work 2</label>
-
-
-                        <input placeholder="Back-End Developer" class="form-control" name="work_2" type="text"
-                            id="work_2">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="work_3">work 3</label>
-
-
-                        <input placeholder="UI/UX Designer" class="form-control" name="work_3" type="text"
-                            id="work_3">
+                        <input placeholder="Basic" class="form-control" name="pricing_name" type="text"
+                            id="pricing_name">
 
 
                     </div>
 
 
                     <div class="col-md-6">
-                        <label class="form-label" for="work_year_1">work_year_1</label>
+                        <label class="form-label" for="pricing">pricing</label>
 
 
-                        <input placeholder="2004 - 2007" class="form-control" name="work_year_1" type="text"
-                            id="work_year_1">
+                        <input placeholder="09" class="form-control" name="pricing" type="number"
+                            id="pricing">
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="pricing_month">pricing_month</label>
+
+
+                        <input placeholder="$/month" class="form-control" name="pricing_month" type="text"
+                            id="pricing_month">
 
 
                     </div>
@@ -179,112 +124,54 @@
 
 
                     <div class="col-md-6">
-                        <label class="form-label" for="work_year_2">work_year_2</label>
+                        <label class="form-label" for="pricing_services_1">pricing_services_1</label>
 
 
-                        <input placeholder="2004 - 2007" class="form-control" name="work_year_2" type="text"
-                            id="work_year_2">
-
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label" for="work_year_3">work_year_3</label>
-
-
-                        <input placeholder="2004 - 2007" class="form-control" type="text" name="work_year_3"
-                            id="work_year_3">
+                        <input placeholder="10 Pages." class="form-control" name="pricing_services_1" type="text"
+                            id="pricing_services_1">
 
 
                     </div>
-
-
-
                     <div class="col-md-6">
-                        <label class="form-label" for="work_description_1">work_description_1</label>
+                        <label class="form-label" for="pricing_services_2">pricing_services_2</label>
 
 
-                        <textarea rows="3"
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae."
-                            class="form-control" type="text" name="work_description_1" id="work_description_1"></textarea>
+                        <input placeholder="Free Installation." class="form-control" name="pricing_services_2" type="text"
+                            id="pricing_services_2">
 
 
                     </div>
-
                     <div class="col-md-6">
-                        <label class="form-label" for="work_description_2">work_description_2</label>
+                        <label class="form-label" for="pricing_services_3">pricing_services_3</label>
 
 
-                        <textarea rows="3"
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae."
-                            class="form-control" type="text" name="work_description_2" id="work_description_2"></textarea>
-
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label" for="work_description_3">work_description_3</label>
-
-
-                        <textarea rows="3"
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae."
-                            class="form-control" type="text" name="work_description_3" id="work_description_3"></textarea>
+                        <input placeholder="Fee Hosting." class="form-control" name="pricing_services_3" type="text"
+                            id="pricing_services_3">
 
 
                     </div>
 
 
                     <div class="col-md-6">
-                        <label class="form-label" for="eduction_1">eduction_1</label>
+                        <label class="form-label" for="pricing_services_4">pricing_services_4</label>
 
 
-                        <input placeholder="Academic Degree" class="form-control" type="text" name="eduction_1"
-                            id="eduction_1">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="eduction_2">eduction_2</label>
-
-
-                        <input placeholder="Bachelor’s Degree" class="form-control" type="text" name="eduction_2"
-                            id="eduction_2">
+                        <input placeholder="10 Addon Domains." class="form-control" name="pricing_services_4" type="text"
+                            id="pricing_services_4">
 
 
                     </div>
+
+
+
+
+
                     <div class="col-md-6">
-                        <label class="form-label" for="eduction_3">eduction_3</label>
+                        <label class="form-label" for="pricing_services_5">pricing_services_5</label>
 
 
-                        <input placeholder="Specialization Course" class="form-control" type="text" name="eduction_3"
-                            id="eduction_3">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="education_year_1">education_year_1</label>
-
-
-                        <input placeholder="2004 - 2007" class="form-control" type="text" name="education_year_1"
-                            id="education_year_1">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="education_year_2">education_year_2</label>
-
-
-                        <input placeholder="2004 - 2007" class="form-control" type="text" name="education_year_2"
-                            id="education_year_2">
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="education_year_3">education_year_3 </label>
-
-
-                        <input placeholder="2004 - 2007" class="form-control" type="text" name="education_year_3"
-                            id="education_year_3">
+                        <input placeholder="Email support" class="form-control" name="pricing_services_5" type="text"
+                            id="pricing_services_5">
 
 
                     </div>
@@ -292,69 +179,26 @@
 
 
                     <div class="col-md-6">
-                        <label class="form-label" for="education_description_1">education_description_1</label>
-
-
-                        <textarea rows="3"
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae."
-                            class="form-control" type="text" name="education_description_1" id="education_description_1"></textarea>
-
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label" for="education_description_2">education_description_2</label>
-
-
-                        <textarea rows="3"
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae."
-                            class="form-control" type="text" name="education_description_2" id="education_description_2"></textarea>
-
-
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label" for="education_description_3">education_description_3</label>
-
-
-                        <textarea rows="3"
-                            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae."
-                            class="form-control" type="text" name="education_description_3" id="education_description_3"></textarea>
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="service_icon">
-                          Service Icon
+                        <label class="form-label" for="testimonials_image">
+                            Testimonials Image
                         </label>
-                        <div class=" mt-3">
-                            <input class="form-control" type="file" id="service_icon" accept=".png,.jpg"
-                                name="service_icon">
+                        <div class=" mt-2">
+                            <input class="form-control" type="file" id="testimonials_image" accept=".png,.jpg"
+                                name="testimonials_image">
 
                         </div>
                     </div>
 
                     <div class="col-md-6">
-                      <label class="form-label" for="testimonials_image">
-                        Testimonials Image
-                      </label>
-                      <div class=" mt-3">
-                          <input class="form-control" type="file" id="testimonials_image" accept=".png,.jpg"
-                              name="testimonials_image">
+                        <label class="form-label" for="sponser_images">
+                            Sponsers Image
+                        </label>
+                        <div class=" mt-2">
+                            <input class="form-control" type="file" id="sponser_images" accept=".png,.jpg"
+                                name="sponser_images">
 
-                      </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label class="form-label" for="sponser_images">
-                      Sponsers Image
-                    </label>
-                    <div class=" mt-3">
-                        <input class="form-control" type="file" id="sponser_images" accept=".png,.jpg"
-                            name="sponser_images">
-
+                        </div>
                     </div>
-                </div>
 
                 </div>
 
@@ -362,13 +206,13 @@
 
 
 
-        </div>
+
 
         <div style="float: right">
             <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
             <button type="reset" class="btn btn-label-secondary">Cancel</button>
         </div>
-
+      </div>
         </form>
 
 

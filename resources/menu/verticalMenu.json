@@ -38,6 +38,12 @@
       "name": "Create about Section",
       "slug": "about_section_admin"
     },
+    {
+      "url": "/services_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": "Create Services Section",
+      "slug": "services_section_admin"
+    },
 
     {
       "url": "/blog_single_admin",

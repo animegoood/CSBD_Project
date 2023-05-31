@@ -36,7 +36,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/blog', [BlogSingleController::class, 'blog'])->name('blog');
 
-Route::get('/blog', [BlogSingleController::class,  'show'])->name('blog');
+// Route::get('/blog', [BlogSingleController::class,  'show'])->name('blog');
 
 Route::get('/blog_single/{id}', [BlogSingleController::class, 'show'])->name('blog_single');
 
