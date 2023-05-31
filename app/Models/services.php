@@ -30,10 +30,13 @@ protected $fillable= [
   'pricing_services_3',
   'pricing_services_4',
   'pricing_services_5',
-  
+
   'sponser_images',
 
 
 ];
+
+
+protected $table ='services';
 
 }

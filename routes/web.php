@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 use App\Http\Controllers\BlogSingleController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\pages\HomePage;
 use Illuminate\Support\Facades\Auth;
@@ -34,19 +35,15 @@ Route::get('/home', [HerosectionController::class, 'show'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 
-Route::get('/blog', [BlogSingleController::class, 'blog'])->name('blog');
-
-// Route::get('/blog', [BlogSingleController::class,  'show'])->name('blog');
-
-Route::get('/blog_single/{id}', [BlogSingleController::class, 'show'])->name('blog_single');
-
-
 
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
 
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
 
 Route::get('/works', [HomeController::class, 'works'])->name('works');
+
 
 
 
@@ -66,13 +63,13 @@ Route::get('/services_section_admin', [ServicesController::class, 'create'])->na
 
 Route::post('/services_section_store',[ServicesController::class, 'store'])->name('services_section_store');
 
-Route::get('/blog_single_admin',[BlogSingleController::class, 'create'])->name('blog_single_admin');
 
+Route::post('/contact_section_store',[ContactController::class, 'store'])->name('contact_section_store');
 
-Route::post('/blog_single_store',[BlogSingleController::class, 'store'])->name('blog_single_store');
 
 
 
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');
+
 Route::get('/auth/register-basic', [RegisterBasic::class,'index'])->name('auth-register-basic');
 

@@ -22,20 +22,20 @@ class HomeController extends Controller
 
   public function blog_single(){
 
-    // return view('webContent.blog_single');
+     return view('webContent.blog_single');
   }
 
 
-  // public function blog(){
+   public function blog(){
 
-  //   return view('webContent.blog');
+    return view('webContent.blog');
+   }
+
+
+  // public function contact(){
+
+  //   return view('webContent.contact');
   // }
-
-
-  public function contact(){
-
-    return view('webContent.contact');
-  }
 
 
   // public function service(){

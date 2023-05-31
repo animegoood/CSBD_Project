@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorecontactRequest extends FormRequest
+class UpdateworksectionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StorecontactRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,14 +24,7 @@ class StorecontactRequest extends FormRequest
     public function rules()
     {
         return [
-
-      'send_message_name' => 'string|required',
-      'send_message_email' => 'email|required',
-      'send_message_subject'=> 'string|required',
-
-      'send_message_message'=> 'string|required',
-
-
+            //
         ];
     }
 }
