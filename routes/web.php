@@ -65,10 +65,6 @@ Route::get('/services_section_admin', [ServicesController::class, 'create'])->na
 Route::post('/services_section_store',[ServicesController::class, 'store'])->name('services_section_store');
 
 
-
-Route::get('/contact_section_admin',[ContactController::class, 'create'])->name('contact_section_admin');
-
-
 Route::post('/contact_section_store',[ContactController::class, 'store'])->name('contact_section_store');
 
 

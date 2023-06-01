@@ -1,17 +1,8 @@
 {
   "menu": [
-    {
-      "url": "/home",
-      "name": "WebHome",
-      "icon": "menu-icon tf-icons ti ti-smart-home",
-      "slug": "pages-home"
-    },
-    {
-      "url": "/role_Permission",
-      "name": "Roles",
-      "icon": "menu-icon tf-icons ti ti-smart-home",
-      "slug": "Role"
-    },
+
+
+
     {
       "url": "/auth/login-basic",
       "name": "Login",
@@ -25,7 +16,14 @@
       "icon": "menu-icon tf-icons ti ti-user",
       "slug": "auth-register-basic",
       "target": "_blank"
-    },{
+    },
+    {
+      "url": "/home",
+      "name": "WebHome",
+      "icon": "menu-icon tf-icons ti ti-smart-home",
+      "slug": "pages-home"
+    },
+    {
       "url": "/herosection_admin",
       "icon": "menu-icon tf-icons ti ti-file",
       "name": "Create Hero Section",
@@ -46,10 +44,17 @@
     },
 
     {
-      "url": "/blog_single_admin",
+      "url": "/blog_admin",
       "icon": "menu-icon tf-icons ti ti-file",
       "name": "Create Blog Section",
-      "slug": "blog_single_admin"
+      "slug": "blog_admin"
+    },
+
+      {
+      "url": "/work_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": "Create work Section",
+      "slug": "work_section_admin"
     }
   ]
 }
