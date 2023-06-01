@@ -47,7 +47,7 @@ class HerosectionController extends Controller
     //background image
 
     //background image file name
-    $file_name = time() . Str::upper(Str::random(16)) . '.' . $request->file('Background_img')->extension();
+    $file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Background_img->extension();
     // move the background image
     $request->Background_img->move(public_path('background_image'), $file_name);
 

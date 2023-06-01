@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\worksection;
 use App\Http\Requests\StoreworksectionRequest;
 use App\Http\Requests\UpdateworksectionRequest;
+use Illuminate\Support\Str;
+use PhpParser\Node\Stmt\Return_;
 
 class WorksectionController extends Controller
 {
@@ -15,7 +17,7 @@ class WorksectionController extends Controller
      */
     public function index()
     {
-        //
+      return view('webContent.works');
     }
 
     /**
@@ -25,7 +27,7 @@ class WorksectionController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.pages.work_section_admin');
     }
 
     /**
@@ -36,7 +38,73 @@ class WorksectionController extends Controller
      */
     public function store(StoreworksectionRequest $request)
     {
-        //
+
+
+       $request->validated();
+
+
+
+
+
+
+
+
+
+       $photography_work_name = time()  .  Str::upper(Str::random(16)) .'.'. $request->photography->extension();
+
+       $request->photography->move(public_path('photography_works',$photography_work_name));
+
+
+
+       $illustrator_work_name = time()  .  Str::upper(Str::random(16)) .'.'. $request->illustrator->extension();
+
+       $request->illustrator->move(public_path('illustrator_works',$illustrator_work_name));
+
+
+
+
+
+
+       $graphicDesign_work_name = time()  .  Str::upper(Str::random(16)) .'.'. $request->graphicDesign->extension();
+
+       $request->graphicDesign->move(public_path('graphicDesign_works',$graphicDesign_work_name));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      $data=[
+
+
+
+
+
+
+        'photography' =>$photography_work_name ,
+        'illustrator'=> $illustrator_work_name,
+        'graphicDesign'=> $graphicDesign_work_name,
+
+
+
+
+      ];
+
+      worksection::create($data);
+
+      return redirect()->back()->with('session','work section data save successfully ');
+
+
+
+
     }
 
     /**

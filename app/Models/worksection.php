@@ -14,7 +14,9 @@ class worksection extends Model
 
 
 
-
+    'photography',
+    'illustrator',
+    'graphicDesign'
 
   ];
 

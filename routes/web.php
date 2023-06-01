@@ -11,6 +11,7 @@ use App\Http\Controllers\BlogSingleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\pages\HomePage;
+use App\Http\Controllers\WorksectionController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -42,7 +43,7 @@ Route::get('/services', [ServicesController::class, 'index'])->name('services');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 
-Route::get('/works', [HomeController::class, 'works'])->name('works');
+Route::get('/works', [WorksectionController::class, 'index'])->name('works');
 
 
 
@@ -64,7 +65,18 @@ Route::get('/services_section_admin', [ServicesController::class, 'create'])->na
 Route::post('/services_section_store',[ServicesController::class, 'store'])->name('services_section_store');
 
 
+
+Route::get('/contact_section_admin',[ContactController::class, 'create'])->name('contact_section_admin');
+
+
 Route::post('/contact_section_store',[ContactController::class, 'store'])->name('contact_section_store');
+
+
+Route::get('/work_section_admin',[WorksectionController::class, 'create'])->name('work_section_admin');
+
+
+Route::post('/work_section_store',[WorksectionController::class, 'store'])->name('work_section_store');
+
 
 
 
