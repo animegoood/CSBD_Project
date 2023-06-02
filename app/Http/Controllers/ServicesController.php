@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\services;
 use App\Http\Requests\StoreservicesRequest;
 use App\Http\Requests\UpdateservicesRequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class ServicesController extends Controller
@@ -58,12 +59,12 @@ class ServicesController extends Controller
 
       'service_icon' => $request->service_icon,
       'service_name' => $request->service_name,
-      'service_details' => $request->service_details,
+      'service_description' => $request->service_description,
 
       'testimonials_image' => $testimonials_image_name,
       'testimonials_name' => $request->testimonials_name,
       'testimonials_job' => $request->testimonials_job,
-      'testimonials_details' => $request->testimonials_details,
+      'testimonials_description' => $request->testimonials_description,
 
 
       'pricing_name' => $request->pricing_name,
@@ -95,7 +96,10 @@ class ServicesController extends Controller
    */
   public function show(services $services)
   {
-      // $service_details = services::first();
+      $service_details = DB::table('services')->get();
+
+
+      return view('webContent.services',compact('service_details'));
 
 
 

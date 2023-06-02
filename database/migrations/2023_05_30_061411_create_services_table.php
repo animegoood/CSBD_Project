@@ -19,14 +19,14 @@ return new class extends Migration
           //service item
             $table->text('service_icon');
             $table->string('service_name',20);
-            $table->string('service_details',255);
+            $table->string('service_description',255);
 
           // testimonials item
 
             $table->text('testimonials_image');
             $table->string('testimonials_name');
             $table->string('testimonials_job');
-            $table->string('testimonials_details');
+            $table->string('testimonials_description',255);
 
           // pricing item
 

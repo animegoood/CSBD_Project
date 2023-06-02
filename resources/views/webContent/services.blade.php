@@ -4,6 +4,9 @@
 
 @section('websection')
     <!--Servives section-->
+    @foreach ($service_details as $service_detail )
+
+
     <div class="section">
         <div class="container">
             <div class="row">
@@ -35,14 +38,14 @@
                 {{--fpreach part--}}
 
                 <!--service-item-->
-                {{-- @foreach ($service_details as $service_detail ) --}}
+
 
 
 
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
                     <div class="service-item">
                         <div class="icon bg-base-color">
-                            {{$service_detail->service_icon}}
+                          <i class="{{$service_detail->service_icon}}"></i>
                         </div>
                         <div class="content">
                             <h5>{{$service_detail->service_name}}</h5>
@@ -52,71 +55,7 @@
                     </div>
                 </div>
 
-                @endforeach
-{{--
-                <!--service-item-->
-                <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-4s slow">
-                    <div class="service-item ">
-                        <div class="icon bg-base-color">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="content">
-                            <h5> Web Development </h5>
-                            <p>
-                                Working with client and community, we deliver masterplans that create vibrant new places and
-                                spaces, attract people.
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <!--service-item-->
-                <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-5s slow">
-                    <div class="service-item ">
-                        <div class="icon bg-base-color">
-                            <i class="fas fa-images"></i>
-                        </div>
-                        <div class="content">
-                            <h5> Graphic Design </h5>
-                            <p>
-                                Working with client and community, we deliver masterplans that create vibrant new places and
-                                spaces, attract people.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!--service-item-->
-                <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-6s slow">
-                    <div class="service-item ">
-                        <div class="icon bg-base-color">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <div class="content">
-                            <h5>Branding </h5>
-                            <p>
-                                Working with client and community, we deliver masterplans that create vibrant new places and
-                                spaces, attract people.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--service-item-->
-                <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-7s slow">
-                    <div class="service-item">
-                        <div class="icon bg-base-color">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                        <div class="content">
-                            <h5>Marketing </h5>
-                            <p>
-                                Working with client and community, we deliver masterplans that create vibrant new places and
-                                spaces, attract people.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                 --}}
 
             </div>
 
@@ -137,16 +76,12 @@
                         <!--testimonial-item-->
                         <div class="testimonials-item">
                             <div class="image">
-                                <img src="assets/img/testimonials/1.jpg" alt="">
+                                <img src="{{asset('Testimonials_image/'.$service_detail->testimonials_image)}}" alt="">
                             </div>
-                            <h6>Donia Martin</h6>
-                            <p class="job">Product Design</p>
+                            <h6>{{$service_detail->testimonials_name}}</h6>
+                            <p class="job">{{$service_detail->testimonials_job}}</p>
 
-                            <p>
-                                Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus, eu
-                                luctus neque ultu. Phasellus
-                                faucibus orci a purus mattis tincidunt ut non nulla.
-                            </p>
+                            <p>{{$service_detail->testimonials_description}}</p>
                             <div class="icon bg-base-color">
                                 <span class="icon_quotations"></span>
                             </div>
@@ -244,24 +179,24 @@
                     <!--pricing-item-->
                     <div class="pricing-item">
                         <div class="content">
-                            <h5>Basic</h5>
+                            <h5>{{$service_detail->pricing_name}}</h5>
                             <div class="price">
-                                <h3>09
-                                    <span>$/month</span>
+                                <h3>{{$service_detail->pricing}}
+                                    <span>{{$service_detail->pricing_month}}</span>
                                 </h3>
                             </div>
                             <ul>
-                                <li>10 Pages. </li>
-                                <li>Free Installation.</li>
-                                <li>Fee Hosting. </li>
-                                <li>10 Addon Domains. </li>
-                                <li>Email support</li>
+                                <li>{{$service_detail->pricing_services_1}}</li>
+                                <li>{{$service_detail->pricing_services_2}}</li>
+                                <li>{{$service_detail->pricing_services_3}} </li>
+                                <li>{{$service_detail->pricing_services_4}}</li>
+                                <li>{{$service_detail->pricing_services_5}}</li>
                             </ul>
-                            <a href="#" class="btn-custom"> Get Basic</a>
+                            <a href="#" class="btn-custom">Get {{$service_detail->pricing_name}}</a>
                         </div>
                     </div>
                 </div>
-{{-- foreach part --}}
+                                {{-- foreach part --}}
                 <div class="col-lg-4 wow customFadeInUp delay-0-2s slow">
                   <!--pricing-item-->
                   <div class="pricing-item">
@@ -341,7 +276,7 @@
 
                 <div class="col-lg-2 col-md-4 col-sm-4 col-6">
                   <div class="clients-item">
-                      <img src="assets/img/clients/1.png" alt="">
+                      <img src="{{asset('sponser_img/'.$service_detail->sponser_images)}}" alt="">
                   </div>
               </div>
 
@@ -376,4 +311,5 @@
     </div>
 
 
+    @endforeach
 @stop

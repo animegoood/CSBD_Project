@@ -31,7 +31,7 @@
                         Service Icon (only font-awesome)
                     </label>
 
-                    <input class="form-control" type="text" id="service_icon" name="service_icon" placeholder='<i class="fas fa-camera-retro "></i>'>
+                    <input class="form-control" type="text" id="  service_icon" name="  service_icon" placeholder='<i class="fas fa-camera-retro "></i>'>
 
 
                 </div>

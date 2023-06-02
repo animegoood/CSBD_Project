@@ -26,7 +26,7 @@ class StoreservicesRequest extends FormRequest
     return [
 
 
-      "service_icon" => "string|required",
+      "  service_icon" => "string|required",
       "service_name" => "string|required",
       "service_description" => "string|required",
 
@@ -55,8 +55,8 @@ class StoreservicesRequest extends FormRequest
     return[
 
 
-      'service_icon.string' => 'service_icon Must be string.',
-      'service_icon.required' => 'service_icon is required.',
+      '  service_icon.string' => '  service_icon Must be string.',
+      '  service_icon.required' => '  service_icon is required.',
 
       'service_name.string' => 'service_name Must be a String.',
       'service_name.required' => 'service_name is required.',

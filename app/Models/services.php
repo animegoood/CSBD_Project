@@ -14,12 +14,12 @@ protected $fillable= [
 
   'service_icon',
   'service_name',
-  'service_details',
+  'service_description',
 
   'testimonials_image',
   'testimonials_name',
   'testimonials_job',
-  'testimonials_details',
+  'testimonials_description',
 
 
   'pricing_name',

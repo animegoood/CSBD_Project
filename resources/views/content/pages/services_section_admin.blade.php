@@ -27,11 +27,11 @@
                 <div class="row mb-5">
 
                   <div class="col-md-6">
-                    <label class="form-label" for="service_icon">
+                    <label class="form-label" for="  service_icon">
                         Service Icon (only font-awesome)
                     </label>
 
-                    <input class="form-control" type="text" id="service_icon" name="service_icon" placeholder='<i class="fas fa-camera-retro "></i>'>
+                    <input class="form-control" type="text" id="  service_icon" name="service_icon" placeholder='<i class="fas fa-camera-retro "></i>'>
 
 
                 </div>
@@ -50,12 +50,12 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="service_details">service_details</label>
+                        <label class="form-label" for="service_description">service_description</label>
 
 
                         <textarea rows="3" placeholder="Working with client and community, we deliver masterplans that create vibrant new places and
                         spaces, attract people." class="form-control"
-                            name="service_details" type="text" id="service_details"></textarea>
+                            name="service_description" type="text" id="service_description"></textarea>
 
 
                     </div>
@@ -79,12 +79,12 @@
 
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="testimonials_details">testimonials_details</label>
+                        <label class="form-label" for="testimonials_description">testimonials_description</label>
 
 
 
-                        <textarea rows="3"  placeholder="Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus." class="form-control" name="testimonials_details" type="text"
-                            id="testimonials_details"></textarea>
+                        <textarea rows="3"  placeholder="Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus." class="form-control" name="testimonials_description" type="text"
+                            id="testimonials_description"></textarea>
 
 
                     </div>
