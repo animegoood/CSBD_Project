@@ -115,7 +115,7 @@ class WorksectionController extends Controller
      */
     public function show(worksection $worksection)
     {
-        //
+        
     }
 
     /**

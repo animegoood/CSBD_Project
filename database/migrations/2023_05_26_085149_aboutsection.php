@@ -57,14 +57,14 @@ return new class extends Migration
         $table->string('education_description_2');
         $table->string('education_description_3');
 
-        $table->string('photoshop_skill_percent');
-        $table->string('illustrator_skill_percent');
-        $table->string('figma_skill_percent');
-        $table->string('adobeXD_skill_percent');
-        $table->string('react_skill_percent');
-        $table->string('javascript_skill_percent');
-        $table->string('css_skill_percent');
-        $table->string('jquery_skill_percent');
+        $table->integer('photoshop_skill_percent',);
+        $table->integer('illustrator_skill_percent');
+        $table->integer('figma_skill_percent');
+        $table->integer('adobeXD_skill_percent');
+        $table->integer('react_skill_percent');
+        $table->integer('javascript_skill_percent');
+        $table->integer('css_skill_percent');
+        $table->integer('jquery_skill_percent');
 
         $table->timestamps();
 

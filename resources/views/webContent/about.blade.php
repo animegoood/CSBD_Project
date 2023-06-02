@@ -20,28 +20,26 @@
             <div class="row d-flex align-items-center mb-50 wow customFadeInUp slow">
                 <div class="col-lg-7 ">
                     <div class="about-info">
-                        <h5>I'm Elizabeth Elmiz, a UX & UI Designer and Photographer</h5>
-                        <p>I am a freelancer based in the United States and i have been building noteworthy UX/UI designs
-                            and websites for years,
-                            which comply with the latest design trends.</p>
+                        <h5>{{$about_details->intro}}</h5>
+                        <p>{{$about_details->aboutinfo}}</p>
                         <div class="g-listes">
                             <ul class="liste">
-                                <li><span>Name:</span>Elizabeth Elmiz.</li>
-                                <li><span>Phone:</span>+3 (123)-456-78-91.</li>
-                                <li><span>Freelancer:</span>Available.</li>
+                                <li><span>Name:</span>{{$about_details->Yourname}}</li>
+                                <li><span>Phone:</span>{{$about_details->phone_number}}</li>
+                                <li><span>Freelancer:</span>{{$about_details->freelancer}}</li>
                             </ul>
                             <ul class="liste">
-                                <li><span>Email:</span>elizabeth.elmiz@gmail.com.</li>
-                                <li><span>Location:</span>New York City,USA.</li>
-                                <li><span>Experience:</span>8 years .</li>
+                                <li><span>Email:</span>{{$about_details->Youremail}}</li>
+                                <li><span>Location:</span>{{$about_details->location}}</li>
+                                <li><span>Experience:</span>{{$about_details->experience}}</li>
                             </ul>
                         </div>
                         <div class="g-bottom">
-                            <a href="#" class="btn-custom">Downland My CV</a>
+                            <a href="{{'downloadCV_image/'. $about_details->downloadCV  }}" class="btn-custom" download="{{$about_details->downloadCV}}">Downland My CV</a>
                             <ul class="social-icons  list-inline">
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="{{$about_details->social_1}}"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="{{$about_details->social_2}}"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="{{$about_details->social_3}}"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -86,25 +84,25 @@
                         <div class="timeline-item">
                             <div class="icon"></div>
                             <div class="box">
-                                <h5>Full stack Web Developer </h5>
-                                <small class="bg-base-color"> 2004 - 2007</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                                <h5>{{$about_details->work_1}}</h5>
+                                <small class="bg-base-color">{{$about_details->work_year_1}}</small>
+                                <p>{{$about_details->work_description_1}}</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="icon"></div>
                             <div class="box">
-                                <h5>Back-End Developer</h5>
-                                <small class="bg-base-color"> 2004 - 2007</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                                <h5>{{$about_details->work_2}}</h5>
+                                <small class="bg-base-color">{{$about_details->work_year_2}}</small>
+                                <p>{{$about_details->work_description_2}}</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="icon"></div>
                             <div class="box ">
-                                <h5>UI/UX Designer </h5>
-                                <small class="bg-base-color"> 2004 - 2007</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                                <h5>{{$about_details->work_3}}</h5>
+                                <small class="bg-base-color">{{$about_details->work_year_3}}</small>
+                                <p>{{$about_details->work_description_3}}</p>
                             </div>
                         </div>
                     </div>
@@ -114,25 +112,25 @@
                         <div class="timeline-item">
                             <div class="icon"></div>
                             <div class="box ">
-                                <h5>Academic Degree</h5>
-                                <small class="bg-base-color"> 2004 - 2007</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                                <h5>{{$about_details->eduction_1}}</h5>
+                                <small class="bg-base-color"> {{$about_details->education_year_1}}</small>
+                                <p>{{$about_details->education_description_1}}</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="icon"> </div>
                             <div class="box ">
-                                <h5>Bachelor’s Degree</h5>
-                                <small class="bg-base-color"> 2004 - 2007</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                                <h5>{{$about_details->eduction_2}}</h5>
+                                <small class="bg-base-color">{{$about_details->education_year_2}}</small>
+                                <p>{{$about_details->education_description_2}}</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="icon"></div>
                             <div class="box">
-                                <h5>Specialization Course </h5>
-                                <small class="bg-base-color"> 2004 - 2007</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                                <h5>{{$about_details->eduction_3}}</h5>
+                                <small class="bg-base-color"> {{$about_details->education_year_3}}</small>
+                                <p>{{$about_details->education_description_3}}</p>
                             </div>
                         </div>
                     </div>
@@ -149,7 +147,7 @@
                     <div class="skill-item">
                         <p>Photoshop</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="92"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->photoshop_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>92%</span>
                             </div>
@@ -160,7 +158,7 @@
                     <div class="skill-item">
                         <p>Illustrator</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="80"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->illustrator_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>80%</span>
                             </div>
@@ -171,7 +169,7 @@
                     <div class="skill-item">
                         <p>Figma </p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="75"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->figma_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>75%</span>
                             </div>
@@ -182,7 +180,7 @@
                     <div class="skill-item">
                         <p>Adobe XD</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="70"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->adobeXD_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>70%</span>
                             </div>
@@ -194,7 +192,7 @@
                     <div class="skill-item">
                         <p>React</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="92"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->react_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>92%</span>
                             </div>
@@ -205,7 +203,7 @@
                     <div class="skill-item">
                         <p>Javascript</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="80"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->javascript_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>80%</span>
                             </div>
@@ -216,7 +214,7 @@
                     <div class="skill-item">
                         <p>CSS </p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="75"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->css_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>75%</span>
                             </div>
@@ -227,7 +225,7 @@
                     <div class="skill-item">
                         <p>Jquery</p>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="70"
+                            <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->jquery_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
                                 <span>70%</span>
                             </div>

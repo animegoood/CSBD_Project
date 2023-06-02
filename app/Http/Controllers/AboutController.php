@@ -7,6 +7,8 @@ use App\Http\Requests\StoreaboutRequest;
 use App\Http\Requests\UpdateaboutRequest;
 use Illuminate\Support\Str;
 
+use Illuminate\Support\Facades\Response;
+
 class AboutController extends Controller
 {
   /**
@@ -42,11 +44,11 @@ class AboutController extends Controller
 
 
 
-    //background image
+    //downloadCV
 
-    //background image file name
-    $downloadCV_name = time() . Str::upper(Str::random(16)) . '.' . $request->file('downloadCV')->extension();
-    // move the background image
+    //downloadCV  file name
+    $downloadCV_name = time() . Str::upper(Str::random(16)) . '.' . $request->downloadCV->extension();
+    // move the downloadCV
     $request->downloadCV->move(public_path('downloadCV_image'), $downloadCV_name);
 
     $data = [
@@ -106,6 +108,8 @@ class AboutController extends Controller
     about::create($data);
 
     return redirect()->back()->with('session', 'about section data save sucessfully');
+
+
   }
 
   /**
@@ -116,8 +120,15 @@ class AboutController extends Controller
    */
   public function show(about $about)
   {
-    //
+
+    $about_details = about::first();
+
+
+    return view('webContent.about' , compact('about_details'));
+
+
   }
+
 
   /**
    * Show the form for editing the specified resource.

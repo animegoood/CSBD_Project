@@ -36,8 +36,19 @@ Route::get('/home', [HerosectionController::class, 'show'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 
+Route::get('/about', [AboutController::class, 'show'])->name('about');
+
+
+
+
 
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
+
+Route::get('/services', [ServicesController::class, 'show'])->name('services');
+
+
+
+
 
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

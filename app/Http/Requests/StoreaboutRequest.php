@@ -73,15 +73,15 @@ class StoreaboutRequest extends FormRequest
       'education_description_2' => 'string|required',
       'education_description_3' => 'string|required',
 
-      'photoshop_skill_percent' => 'string|required',
-      'illustrator_skill_percent' => 'string|required',
-      'figma_skill_percent' => 'string|required',
-      'adobeXD_skill_percent' => 'string|required',
-      'react_skill_percent' => 'string|required',
-      'javascript_skill_percent' => 'string|required',
-      'css_skill_percent' => 'string|required',
+      'photoshop_skill_percent' => 'integer|required',
+      'illustrator_skill_percent' => 'integer|required',
+      'figma_skill_percent' => 'integer|required',
+      'adobeXD_skill_percent' => 'integer|required',
+      'react_skill_percent' => 'integer|required',
+      'javascript_skill_percent' => 'integer|required',
+      'css_skill_percent' => 'integer|required',
 
-      'jquery_skill_percent' => 'string|required',
+      'jquery_skill_percent' => 'integer|required',
 
 
     ];
@@ -265,47 +265,47 @@ class StoreaboutRequest extends FormRequest
       'education_description_3.required' => 'education_description_3 is required.',
 
 
-      'photoshop_skill_percent.string' => 'photoshop_skill_percent Must be a String.',
+      'photoshop_skill_percent.integer' => 'photoshop_skill_percent Must be a integer.',
 
       'photoshop_skill_percent.required' => 'photoshop_skill_percent is required.',
 
 
 
-      'illustrator_skill_percent.string' => 'illustrator_skill_percent Must be a String.',
+      'illustrator_skill_percent.integer' => 'illustrator_skill_percent Must be a integer.',
 
       'illustrator_skill_percent.required' => 'illustrator_skill_percent is required.',
 
 
 
-      'figma_skill_percent.string' => 'figma_skill_percent Must be a String.',
+      'figma_skill_percent.integer' => 'figma_skill_percent Must be a integer.',
 
       'figma_skill_percent.required' => 'figma_skill_percent is required.',
 
 
-      'adobeXD_skill_percent.string' => 'adobeXD_skill_percent Must be a String.',
+      'adobeXD_skill_percent.integer' => 'adobeXD_skill_percent Must be a integer.',
 
       'adobeXD_skill_percent.required' => 'adobeXD_skill_percent is required.',
 
 
 
-      'react_skill_percent.string' => 'react_skill_percent Must be a String.',
+      'react_skill_percent.integer' => 'react_skill_percent Must be a integer.',
 
       'react_skill_percent.required' => 'react_skill_percent is required.',
 
 
 
-      'javascript_skill_percent.string' => 'javascript_skill_percent Must be a String.',
+      'javascript_skill_percent.integer' => 'javascript_skill_percent Must be a integer.',
 
       'javascript_skill_percent.required' => 'javascript_skill_percent is required.',
 
 
-      'css_skill_percent.string' => 'css_skill_percent Must be a String.',
+      'css_skill_percent.integer' => 'css_skill_percent Must be a integer.',
 
       'css_skill_percent.required' => 'css_skill_percent is required.',
 
 
 
-      'jquery_skill_percent.string' => 'jquery_skill_percent Must be a String.',
+      'jquery_skill_percent.integer' => 'jquery_skill_percent Must be a integer.',
 
       'jquery_skill_percent.required' => 'jquery_skill_percent is required.',
 

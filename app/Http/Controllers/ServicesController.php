@@ -95,7 +95,12 @@ class ServicesController extends Controller
    */
   public function show(services $services)
   {
-    //
+      // $service_details = services::first();
+
+
+
+
+
   }
 
   /**
