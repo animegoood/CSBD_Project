@@ -271,9 +271,15 @@ class StoreaboutRequest extends FormRequest
 
 
 
+
+
+
       'illustrator_skill_percent.integer' => 'illustrator_skill_percent Must be a integer.',
 
       'illustrator_skill_percent.required' => 'illustrator_skill_percent is required.',
+
+
+
 
 
 
@@ -282,9 +288,17 @@ class StoreaboutRequest extends FormRequest
       'figma_skill_percent.required' => 'figma_skill_percent is required.',
 
 
+
+
+
+
+
+
       'adobeXD_skill_percent.integer' => 'adobeXD_skill_percent Must be a integer.',
 
       'adobeXD_skill_percent.required' => 'adobeXD_skill_percent is required.',
+
+
 
 
 
@@ -294,9 +308,17 @@ class StoreaboutRequest extends FormRequest
 
 
 
+
+
+
+
+
+
       'javascript_skill_percent.integer' => 'javascript_skill_percent Must be a integer.',
 
       'javascript_skill_percent.required' => 'javascript_skill_percent is required.',
+
+
 
 
       'css_skill_percent.integer' => 'css_skill_percent Must be a integer.',
@@ -305,9 +327,16 @@ class StoreaboutRequest extends FormRequest
 
 
 
+
+
       'jquery_skill_percent.integer' => 'jquery_skill_percent Must be a integer.',
 
       'jquery_skill_percent.required' => 'jquery_skill_percent is required.',
+
+
+
+
+
 
 
     ];

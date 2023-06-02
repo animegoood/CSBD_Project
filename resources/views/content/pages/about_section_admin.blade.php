@@ -324,22 +324,22 @@
 
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label" for="downloadCV">
-                          Download CV
-                      </label>
-                      <div class=" mt-3">
-                          <input class="form-control" type="file" id="downloadCV" accept=".pdf"
-                              name="downloadCV">
+                        <label class="form-label" for="downloadCV">
+                            Download CV
+                        </label>
+                        <div class=" mt-3">
+                            <input class="form-control" type="file" id="downloadCV" accept=".pdf"
+                                name="downloadCV">
 
-                      </div>
-                  </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-2">
                             <label class="form-label" for="photoshop_skill_percent">photoshop_skill_percent</label>
 
 
-                            <input placeholder="92%" class="form-control" type="number"
-                                name="photoshop_skill_percent" id="photoshop_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="photoshop_skill_percent" id="photoshop_skill_percent">
 
 
                         </div>
@@ -347,8 +347,8 @@
                             <label class="form-label" for="illustrator_skill_percent">illustrator_skill_percent</label>
 
 
-                            <input placeholder="92%" class="form-control" type="number"
-                                name="illustrator_skill_percent" id="illustrator_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="illustrator_skill_percent" id="illustrator_skill_percent">
 
 
                         </div>
@@ -356,8 +356,8 @@
                             <label class="form-label" for="figma_skill_percent">figma_skill_percent</label>
 
 
-                            <input placeholder="92%" class="form-control" type="number"
-                                name="figma_skill_percent" id="figma_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="figma_skill_percent" id="figma_skill_percent">
 
 
                         </div>
@@ -365,8 +365,8 @@
                             <label class="form-label" for="adobeXD_skill_percent">adobeXD_skill_percent</label>
 
 
-                            <input placeholder="92%" class="form-control" type="number"
-                                name="adobeXD_skill_percent" id="adobeXD_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="adobeXD_skill_percent" id="adobeXD_skill_percent">
 
 
                         </div>
@@ -374,8 +374,8 @@
                             <label class="form-label" for="react_skill_percent">react_skill_percent</label>
 
 
-                            <input placeholder="92%" class="form-control" type="number"
-                                name="react_skill_percent" id="react_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="react_skill_percent" id="react_skill_percent">
 
 
                         </div>
@@ -383,8 +383,8 @@
                             <label class="form-label" for="javascript_skill_percent">javascript_skill_percent</label>
 
 
-                            <input placeholder="92%" class="form-control" type="number"
-                                name="javascript_skill_percent" id="javascript_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="javascript_skill_percent" id="javascript_skill_percent">
 
 
                         </div>
@@ -392,20 +392,20 @@
                             <label class="form-label" for="css_skill_percent">css_skill_percent</label>
 
 
-                            <input placeholder="92%" class="form-control" type="number"
-                                name="css_skill_percent" id="css_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="css_skill_percent" id="css_skill_percent">
 
 
                         </div>
                         <div class="col-md-2">
-                          <label class="form-label" for="jquery_skill_percent">jquery_skill_percent</label>
+                            <label class="form-label" for="jquery_skill_percent">jquery_skill_percent</label>
 
 
-                          <input placeholder="92%" class="form-control" type="number"
-                              name="jquery_skill_percent" id="jquery_skill_percent">
+                            <input placeholder="92%" class="form-control" type="number" min="1" max="100"
+                                pattern="\d{1,3}" name="jquery_skill_percent" id="jquery_skill_percent">
 
 
-                      </div>
+                        </div>
 
                     </div>
 

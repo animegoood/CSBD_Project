@@ -149,7 +149,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->photoshop_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>92%</span>
+                                <span>{{$about_details->photoshop_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->illustrator_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>80%</span>
+                                <span>{{$about_details->illustrator_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->figma_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>75%</span>
+                                <span>{{$about_details->figma_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->adobeXD_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>70%</span>
+                                <span>{{$about_details->adobeXD_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->react_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>92%</span>
+                                <span>{{$about_details->react_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->javascript_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>80%</span>
+                                <span>{{$about_details->javascript_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>
@@ -216,7 +216,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->css_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>75%</span>
+                                <span>{{$about_details->css_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>
@@ -227,7 +227,7 @@
                         <div class="skill-progress">
                             <div class="skill-progress-bar bg-base-color" role="progressbar" aria-valuenow="{{$about_details->jquery_skill_percent}}"
                                 aria-valuemin="0" aria-valuemax="100">
-                                <span>70%</span>
+                                <span>{{$about_details->jquery_skill_percent}}%</span>
                             </div>
                         </div>
                     </div>

@@ -28,12 +28,12 @@ class StoreservicesRequest extends FormRequest
 
       "service_icon" => "string|required",
       "service_name" => "string|required",
-      "service_details" => "string|required",
+      "service_description" => "string|required",
 
       "testimonials_image" => "file|image|mimes:png,jpg|required",
       "testimonials_name" => "string|required",
       "testimonials_job" => "string|required",
-      "testimonials_details" => "string|required",
+      "testimonials_description" => "string|required",
 
 
       "pricing_name" => "string|required",
@@ -61,8 +61,8 @@ class StoreservicesRequest extends FormRequest
       'service_name.string' => 'service_name Must be a String.',
       'service_name.required' => 'service_name is required.',
 
-      'service_details.string' => 'service_details Must be a String.',
-      'service_details.required' => 'service_details is required.',
+      'service_description.string' => 'service_description Must be a String.',
+      'service_description.required' => 'service_description is required.',
 
 
       'testimonials_image.file' => 'testimonials_image Must be a file.',
@@ -76,8 +76,8 @@ class StoreservicesRequest extends FormRequest
       'testimonials_job.string' => 'testimonials_job Must be a String.',
       'testimonials_job.required' => 'testimonials_job is required.',
 
-      'testimonials_details.string' => 'testimonials_details Must be a String.',
-      'testimonials_details.required' => 'testimonials_details is required.',
+      'testimonials_description.string' => 'testimonials_description Must be a String.',
+      'testimonials_description.required' => 'testimonials_description is required.',
 
       'pricing_name.string' => 'pricing_name Must be a String.',
       'pricing_name.required' => 'pricing_name is required.',

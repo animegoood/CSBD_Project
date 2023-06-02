@@ -33,21 +33,26 @@
                 </div>
 
                 {{--fpreach part--}}
+
                 <!--service-item-->
+                {{-- @foreach ($service_details as $service_detail ) --}}
+
+
+
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
                     <div class="service-item">
                         <div class="icon bg-base-color">
-                            <i class="fas fa-palette"></i>
+                            {{$service_detail->service_icon}}
                         </div>
                         <div class="content">
-                            <h5> Web Design </h5>
-                            <p>
-                                Working with client and community, we deliver masterplans that create vibrant new places and
-                                spaces, attract people.
+                            <h5>{{$service_detail->service_name}}</h5>
+                            <p>{{$service_detail->service_description}}
                             </p>
                         </div>
                     </div>
                 </div>
+
+                @endforeach
 {{--
                 <!--service-item-->
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-4s slow">
