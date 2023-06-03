@@ -21,21 +21,21 @@
                     <!--phone-->
                     <div class="contact-item ">
                         <p><i class="fab fa-whatsapp base-color"></i> Phone: </p>
-                        <p><a href="tel:+31234567891">+3 (123)-456-78-91</a></p>
+                        <p><a href="tel:{{$contact_details->phone_number}}">{{$contact_details->phone_number}}</a></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <!--Email-->
                     <div class="contact-item">
                         <p><i class="fas fa-envelope base-color"></i> Email: </p>
-                        <p> <a href="mailto:elizabeth.elmiz@gmail.com">elizabeth93@gmail.com </a></p>
+                        <p> <a href="mailto:{{$contact_details->Youremail}}">{{$contact_details->Youremail}}</a></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <!--Adress-->
                     <div class="contact-item">
                         <p><i class="fas fa-map-marker-alt base-color"></i> Adress: </p>
-                        <p>New York City, USA</p>
+                        <p>{{$contact_details->location}}</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -43,9 +43,9 @@
                     <div class="contact-item">
                         <p><i class="fas fa-share-alt base-color"></i>Socials media: </p>
                         <ul class="social-icons list-inline">
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"> <i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+                            <li><a href="{{$contact_details->social_1}}"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="{{$contact_details->social_2}}"> <i class="fab fa-twitter"></i></a></li>
+                            <li><a href="{{$contact_details->social_3}}"> <i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

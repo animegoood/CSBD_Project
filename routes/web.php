@@ -42,7 +42,10 @@ Route::get('/about', [AboutController::class, 'show'])->name('about');
 
 Route::get('/blog', [BlogSingleController::class, 'index'])->name('blog');
 
-Route::get('/blog_single', [BlogSingleController::class, 'index_single'])->name('blog_single');
+
+Route::get('/blog_single/{id}', [BlogSingleController::class, 'index_single'])->name('blog_single');
+
+Route::get('/blog_single/{id}', [BlogSingleController::class, 'show'])->name('blog_single');
 
 
 

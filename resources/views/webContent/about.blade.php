@@ -35,7 +35,7 @@
                             </ul>
                         </div>
                         <div class="g-bottom">
-                            <a href="{{'downloadCV_image/'. $about_details->downloadCV  }}" class="btn-custom" download="{{$about_details->downloadCV}}">Downland My CV</a>
+                            <a href="{{'downloadCV_image/'. $about_details->downloadCV  }}" class="btn-custom" download="My CV">Downland My CV</a>
                             <ul class="social-icons  list-inline">
                                 <li><a href="{{$about_details->social_1}}"><i class="fab fa-facebook"></i></a></li>
                                 <li><a href="{{$about_details->social_2}}"><i class="fab fa-twitter"></i></a></li>

@@ -30,11 +30,11 @@
 
                     <div class="col-md-6">
 
-                        <label class="form-label" for="photography_name">photography_name</label>
+                        <label class="form-label" for="Blog_titles">Blog_titles</label>
                         <div class="mt-2">
 
 
-                            <input type="text" id="photography_name" name="photography_name" class="form-control">
+                            <input type="text" id="Blog_titles" name="Blog_titles" class="form-control">
                         </div>
 
 
@@ -45,26 +45,24 @@
 
                     <div class="col-md-6">
 
-                      <label class="form-label" for="illustrator_name">illustrator_name</label>
+                      <label class="form-label" for="Blog_descrioption">Blog_descrioption</label>
                       <div class="mt-2">
 
 
-                          <input type="text" id="illustrator_name" name="illustrator_name" class="form-control">
+                          <input type="text" id="Blog_descrioption" name="Blog_descrioption" class="form-control">
                       </div>
 
 
 
                   </div>
 
-
-
                   <div class="col-md-6">
 
-                    <label class="form-label" for="graphicDesign_name">graphicDesign_name</label>
+                    <label class="form-label" for="Blog_highlight_description">Blog_highlight_description</label>
                     <div class="mt-2">
 
 
-                        <input type="text" id="graphicDesign_name" name="graphicDesign_name" class="form-control">
+                        <input type="text" id="Blog_highlight_description" name="Blog_highlight_description" class="form-control">
                     </div>
 
 
@@ -72,26 +70,94 @@
                 </div>
 
 
+                <div class="col-md-6">
+
+                  <label class="form-label" for="Blog_image_description">Blog_image_description</label>
+                  <div class="mt-2">
+
+
+                      <input type="text" id="Blog_image_description" name="Blog_image_description" class="form-control">
+                  </div>
+
+
+
+              </div>
+
+
+              <div class="col-md-6">
+
+                <label class="form-label" for="Blog_date">Blog_date</label>
+                <div class="mt-2">
+
+
+                    <input type="date" id="Blog_date" name="Blog_date" class="form-control">
+                </div>
+
+
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <label class="form-label" for="Blog_categories">Blog_categories</label>
+              <div class="mt-2">
+
+
+                  <input type="text" id="Blog_categories" name="Blog_categories" class="form-control">
+              </div>
+
+
+
+          </div>
+
+          <div class="col-md-6">
+
+            <label class="form-label" for="Blog_author_name">Blog_author_name</label>
+            <div class="mt-2">
+
+
+                <input type="text" id="Blog_author_name" name="Blog_author_name" class="form-control">
+            </div>
+
+
+
+        </div>
+
+
+        <div class="col-md-6">
+
+          <label class="form-label" for="Blog_author_description">Blog_author_description</label>
+          <div class="mt-2">
+
+
+              <input type="text" id="Blog_author_description" name="Blog_author_description" class="form-control">
+          </div>
+
+
+
+      </div>
+
 
 
                     <div class="col-md-6">
-                        <label class="form-label" for="photography">
-                            Photography Image
+                        <label class="form-label" for="Blog_thumbnail">
+                            Blog_thumbnail Image
                         </label>
                         <div class=" mt-2">
-                            <input class="form-control" type="file" id="photography" accept=".png,.jpg"
-                                name="photography">
+                            <input class="form-control" type="file" id="Blog_thumbnail" accept=".png,.jpg"
+                                name="Blog_thumbnail">
 
                         </div>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="illustrator">
-                            Illustrator Image
+                        <label class="form-label" for="Blog_image">
+                            Blog_image Image
                         </label>
                         <div class=" mt-2">
-                            <input class="form-control" type="file" id="illustrator" accept=".png,.jpg"
-                                name="illustrator">
+                            <input class="form-control" type="file" id="Blog_image" accept=".png,.jpg"
+                                name="Blog_image">
 
                         </div>
                     </div>
@@ -100,12 +166,12 @@
 
 
                     <div class="col-md-6">
-                        <label class="form-label" for="graphicDesign">
-                            Graphic Design Image
+                        <label class="form-label" for="Blog_author_image">
+                          Blog_author Image
                         </label>
                         <div class=" mt-2">
-                            <input class="form-control" type="file" id="graphicDesign" accept=".png,.jpg"
-                                name="graphicDesign">
+                            <input class="form-control" type="file" id="Blog_author_image" accept=".png,.jpg"
+                                name="Blog_author_image">
 
                         </div>
                     </div>

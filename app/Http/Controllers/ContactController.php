@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\contact;
+use App\Models\about;
 use App\Http\Requests\StorecontactRequest;
 use App\Http\Requests\UpdatecontactRequest;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -15,7 +17,9 @@ class ContactController extends Controller
    */
   public function index()
   {
-    return view('webContent.contact');
+    $contact_details =about::first();
+
+    return view('webContent.contact' , compact('contact_details'));
   }
 
   /**

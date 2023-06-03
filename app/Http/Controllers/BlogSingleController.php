@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\blog_single;
 use App\Http\Requests\Storeblog_singleRequest;
 use App\Http\Requests\Updateblog_singleRequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class BlogSingleController extends Controller
@@ -15,8 +16,14 @@ class BlogSingleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        return view('webContent.blog');
+
+      $blogs = DB::table('blog_singles')->get();
+
+      return view('webContent.blog',compact('blogs'));
+
+
     }
 
     public function index_single()
@@ -113,9 +120,13 @@ class BlogSingleController extends Controller
      * @param  \App\Models\blog_single  $blog_single
      * @return \Illuminate\Http\Response
      */
-    public function show(blog_single $blog_single)
+    public function show(blog_single $blog_single,$id)
     {
-        //
+        $blog_details = DB::table('blog_singles')->get()->all($id);
+
+
+      return view('webContent.blog_single',compact('blog_details'));
+
     }
 
     /**
