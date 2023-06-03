@@ -44,10 +44,10 @@
     },
 
     {
-      "url": "/blog_admin",
+      "url": "/blog_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
       "name": "Create Blog Section",
-      "slug": "blog_admin"
+      "slug": "blog_section_admin"
     },
 
       {
@@ -58,3 +58,6 @@
     }
   ]
 }
+
+
+

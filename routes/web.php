@@ -40,6 +40,10 @@ Route::get('/about', [AboutController::class, 'show'])->name('about');
 
 
 
+Route::get('/blog', [BlogSingleController::class, 'index'])->name('blog');
+
+Route::get('/blog_single', [BlogSingleController::class, 'index_single'])->name('blog_single');
+
 
 
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
@@ -55,6 +59,8 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 
 Route::get('/works', [WorksectionController::class, 'index'])->name('works');
+
+Route::get('/works', [WorksectionController::class, 'show'])->name('works');
 
 
 
@@ -83,6 +89,12 @@ Route::get('/work_section_admin',[WorksectionController::class, 'create'])->name
 
 
 Route::post('/work_section_store',[WorksectionController::class, 'store'])->name('work_section_store');
+
+
+Route::get('/blog_section_admin',[BlogSingleController::class, 'create'])->name('blog_section_admin');
+
+
+Route::post('/blog_section_store',[BlogSingleController::class, 'store'])->name('blog_section_store');
 
 
 

@@ -53,8 +53,8 @@
                     <a href="{{route('works')}}">Works</a>
                 </li>
                 <li>
-                  
-                    {{-- <a href="{{route('blog')}}">Blog</a> --}}
+
+                    <a href="{{route('blog')}}">Blog</a>
                 </li>
                 <li>
                     <a href="{{route('contact')}}">Contact</a>

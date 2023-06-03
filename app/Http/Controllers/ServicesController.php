@@ -96,7 +96,7 @@ class ServicesController extends Controller
    */
   public function show(services $services)
   {
-      $service_details = DB::table('services')->get();
+      $service_details = DB::table('services')->get()->all();
 
 
       return view('webContent.services',compact('service_details'));

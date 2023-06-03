@@ -1,9 +1,6 @@
-
-
-
 @extends('webContent.weblayouts.webHome')
 
-@section('title','Works')
+@section('title', 'Works')
 
 @section('websection')
     <!-- works section-->
@@ -31,38 +28,48 @@
                     </div>
                 </div>
             </div>
+
+
+
+
             <div class="works-items">
                 <div class="row">
+
+
+
+                    @foreach ($work_details as $work_detail)
                     <!--works-item-->
                     <div class="col-lg-4 col-md-6 mix photography ">
                         <div class="works-item wow customFadeInUp slow">
                             <div class="image">
-                                <img src="{{asset('assets/img/works/1.jpg')}}" alt="">
-                                <div class="overly">
-                                    <div class="info d-flex align-items-center">
-                                        <p>Name - photography</p>
-                                        <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/1.jpg')}}" class="view-work">
-                                                <i class="fas fa-images"></i>
-                                            </a>
-                                            <a href="#"><i class="fas fa-link"></i></a>
+                                    <img src="{{ asset('photography_works/' . $work_detail->photography) }}"
+                                        alt="">
+                                    <div class="overly">
+                                        <div class="info d-flex align-items-center">
+                                            <p>{{ $work_detail->photography_name }}- photography</p>
+                                            <div class="details d-flex align-items-center ml-auto">
+                                                <a href="{{ asset('photography_works/' . $work_detail->photography) }}"
+                                                    class="view-work">
+                                                    <i class="fas fa-images"></i>
+                                                </a>
+                                                <a href="#"><i class="fas fa-link"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <!--works-item-->
                     <div class="col-lg-4 col-md-6 mix illustrator ">
                         <div class="works-item wow customFadeInUp delay-0-2s slow">
                             <div class="image">
-                                <img src="{{asset('assets/img/works/2.jpg')}}" alt="">
+                                <img src="{{ asset('illustrator_works/' . $work_detail->illustrator) }}" alt="">
                                 <div class="overly">
                                     <div class="info d-flex align-items-center">
-                                        <p >Name - illustrator</p>
+                                        <p>{{$work_detail->illustrator_name}}- illustrator</p>
                                         <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/2.jpg')}}" class="view-work">
+                                            <a href="{{ asset('illustrator_works/' . $work_detail->illustrator) }}" class="view-work">
                                                 <i class="fas fa-images"></i>
                                             </a>
                                             <a href="#">
@@ -79,12 +86,12 @@
                     <div class="col-lg-4 col-md-6 mix graphic ">
                         <div class="works-item wow customFadeInUp delay-0-3s slow">
                             <div class="image">
-                                <img src="{{asset('assets/img/works/3.jpg')}}" alt="">
+                                <img src= "{{ asset('graphicDesign_works/'.$work_detail->graphicDesign)}}" alt="">
                                 <div class="overly">
                                     <div class="info d-flex align-items-center">
                                         <p>Name - Graphic design</p>
                                         <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/3.jpg')}}" class="view-work">
+                                            <a href="{{ asset('graphicDesign_works/'.$work_detail->graphicDesign)}}" class="view-work">
                                                 <i class="fas fa-images"></i>
                                             </a>
                                             <a href="#">
@@ -97,139 +104,12 @@
                         </div>
                     </div>
 
-                    <!--works-item-->
-                    <div class="col-lg-4 col-md-6 mix photography ">
-                        <div class="works-item wow customFadeInUp delay-0-4s slow">
-                            <div class="image">
-                                <img src="{{asset('assets/img/works/4.jpg')}}" alt="">
-                                <div class="overly">
-                                    <div class="info d-flex align-items-center">
-                                        <p>Name - photography</p>
-                                        <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/4.jpg')}}" class="view-work">
-                                                <i class="fas fa-images"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!--works-item-->
-                    <div class="col-lg-4 col-md-6 mix graphic ">
-                        <div class="works-item wow customFadeInUp delay-0-5s slow">
-                            <div class="image">
-                                <img src="{{asset('assets/img/works/5.jpg')}}" alt="">
-                                <div class="overly">
-                                    <div class="info d-flex align-items-center">
-                                        <p>Name - Graphic design</p>
-                                        <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/5.jpg')}}" class="view-work">
-                                                <i class="fas fa-images"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
-                    <!--works-item-->
-                    <div class="col-lg-4 col-md-6 mix graphic ">
-                        <div class="works-item wow customFadeInUp delay-0-6s slow">
-                            <div class="image">
-                                <img src="{{asset('assets/img/works/6.jpg')}}" alt="">
-                                <div class="overly">
-                                    <div class="info d-flex align-items-center">
-                                        <p>Name - Graphic design</p>
-                                        <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/6.jpg')}}" class="view-work">
-                                                <i class="fas fa-images"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--works-item-->
-                    <div class="col-lg-4 col-md-6 mix graphic ">
-                        <div class="works-item wow customFadeInUp delay-0-7s slow">
-                            <div class="image">
-                                <img src="{{asset('assets/img/works/7.jpg')}}" alt="">
-                                <div class="overly">
-                                    <div class="info d-flex align-items-center">
-                                        <p> Name - Graphic design</p>
-                                        <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/7.jpg')}}" class="view-work">
-                                                <i class="fas fa-images"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--works-item-->
-                    <div class="col-lg-4 col-md-6 mix illustrator ">
-                        <div class="works-item wow customFadeInUp delay-0-8s slow">
-                            <div class="image">
-                                <img src="{{asset('assets/img/works/8.jpg')}}" alt="">
-                                <div class="overly">
-                                    <div class="info d-flex align-items-center">
-                                        <p>Name - illustrator</p>
-                                        <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/8.jpg')}}" class="view-work">
-                                                <i class="fas fa-images"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--works-item-->
-                    <div class="col-lg-4 col-md-6 mix photography">
-                        <div class="works-item wow customFadeInUp delay-0-9s slow">
-                            <div class="image">
-                                <img src="{{asset('assets/img/works/9.jpg')}}" alt="">
-                                <div class="overly">
-                                    <div class="info d-flex align-items-center">
-                                        <p>Name - photography</p>
-                                        <div class="details d-flex align-items-center ml-auto">
-                                            <a href="{{asset('assets/img/works/9.jpg')}}" class="view-work">
-                                                <i class="fas fa-images"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 

@@ -24,26 +24,18 @@ class Storeblog_singleRequest extends FormRequest
   public function rules()
   {
     return [
+      'Blog_thumbnail' => 'file|image|required|mimes:png,jpg',
+      'Blog_titles' => 'string|required',
+      'Blog_descrioption' => 'string|required',
+      'Blog_highlight_description' => 'string|required',
+      'Blog_image' => 'file|image|required|mimes:png,jpg',
+      'Blog_image_description' => 'string|required',
 
-      'blog_title' => 'string|required|max:100',
-
-      'main_content' => 'string|required|max:255',
-
-      'content_imp_highlight' => 'string|required|max:255',
-
-      'rest_main_content' => 'string|required|max:255',
-
-      'blog_post_date' => 'date|required',
-
-      'categories' => 'string|required',
-
-      'author_name' => 'string|required|max:20',
-
-      'author_description' => 'string|required|max:100',
-
-      'blog_image' => 'file|image|required',
-      'author_image' => 'file|image|required'
-
+      'Blog_date' => 'required|date',
+      'Blog_categories' => 'string|required',
+      'Blog_author_image' => 'file|image|required|mimes:png,jpg',
+      'Blog_author_name' => 'string|required',
+      'Blog_author_description' => 'string|required'
 
     ];
   }
@@ -52,64 +44,56 @@ class Storeblog_singleRequest extends FormRequest
   {
     return [
 
-      'blog_title.string' => 'blog_title Must be a String.',
-
-      'blog_title.required' => 'blog_title is required.',
-      'blog_title.max'=>'blog_title Must be 255 Character.',
-
-      'main_content.string' => 'main_content Must be a String.',
-
-      'main_content.required' => 'main_content is required.',
-
-      'main_content.max' => 'main_content Must be 255 Character.',
 
 
+      'Blog_titles.string' => 'Blog_titles must be string',
+      'Blog_titles.required' => 'Blog_titles name is required',
 
-      'content_imp_highlight.string' => 'content_imp_highlight
-  must be string',
+      'Blog_descrioption.string' => 'Blog_descrioption must be string',
+      'Blog_descrioption.required' => 'Blog_descrioption name is required',
 
-      'content_imp_highlight.required' => 'content_imp_highlight is required',
+      'Blog_highlight_description.string' => 'Blog_highlight_description must be string',
+      'Blog_highlight_description.required' => 'Blog_highlight_description name is required',
 
-      'content_imp_highlight.max' => 'content_imp_highlight must be 255 Character',
 
 
-      'rest_main_content.string' => 'rest_main_content must be string',
 
-      'rest_main_content.required' => 'rest_main_content name is required',
+      'Blog_image_description.string' => 'Blog_image_description must be string',
+      'Blog_image_description.required' => 'Blog_image_description name is required',
 
-      'rest_main_content.max' => 'Rest Main Content must be 255 Character',
+      'Blog_date.date' => 'Blog_date must be date',
+      'Blog_date.required' => 'Blog_date name is required',
 
-      'blog_post_date.date' => 'Date must be date',
+      'Blog_categories.string' => 'Blog_categories must be string',
+      'Blog_categories.required' => 'Blog_categories name is required',
 
-      'blog_post_date.required' => 'Date is required',
+      'Blog_author_name.string' => 'Blog_author_name must be string',
+      'Blog_author_name.required' => 'Blog_author_name name is required',
 
-      'categories.string' => 'categories must be string',
+      'Blog_author_description.string' => 'Blog_author_description must be string',
+      'Blog_author_description.required' => 'Blog_author_description name is required',
 
-      'categories.required' => 'categories is required',
 
-      'author_name.string' => 'author_name must be string',
+      'Blog_thumbnail.file' => 'Blog_thumbnail must be type of file',
+      'Blog_thumbnail.image' => 'Blog_thumbnail must be image',
 
-      'author_name.required' => 'author_name is required',
+      'Blog_thumbnail.required' => 'You must choose a Blog_thumbnail',
+      'Blog_thumbnail.mimes'=>'Blog_thumbnail must be jpg/png image',
 
-      'author_name.max' => 'author_name must be 20 Character',
+      'Blog_image.file' => 'Blog_image must be type of file',
+      'Blog_image.image' => 'Blog_image must be image',
+      'Blog_image.required' => 'Blog_image must be required',
+      'Blog_image.mimes' => 'Blog_image must be jpg/png image',
 
-      'author_description.string' => 'author_description must be string',
+      'Blog_author_image.file' => 'Blog_author_image must be type of file',
+      'Blog_author_image.image' => 'Blog_author_image must be image',
+      'Blog_author_image.required' => 'Blog_author_image must be required',
+      'Blog_author_image.mimes' => 'Blog_author_image must be jpg/png image',
 
-      'author_description.required' => 'author_description is required',
 
-      'author_description.max' => 'author_description must be 100 Character',
 
-      'blog_image.file' => 'blog_image must be type of file',
 
-      'blog_image.image' => 'blog_image must be image',
 
-      'blog_image.required' => 'You must choose a blog_image',
-
-      'author_image.file' => 'author_image must be type of file',
-
-      'author_image.image' => 'author_image must be image',
-
-      'author_image.required' => 'You must choose a author_image',
     ];
   }
 }

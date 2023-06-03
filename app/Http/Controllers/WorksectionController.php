@@ -6,8 +6,7 @@ use App\Models\worksection;
 use App\Http\Requests\StoreworksectionRequest;
 use App\Http\Requests\UpdateworksectionRequest;
 use Illuminate\Support\Str;
-use PhpParser\Node\Stmt\Return_;
-
+use Illuminate\Support\Facades\DB;
 class WorksectionController extends Controller
 {
     /**
@@ -49,16 +48,18 @@ class WorksectionController extends Controller
 
 
 
+    //background image
 
-       $photography_work_name = time()  .  Str::upper(Str::random(16)) .'.'. $request->photography->extension();
-
-       $request->photography->move(public_path('photography_works',$photography_work_name));
+    //background image file name
+    $photography_work_name = time() . Str::upper(Str::random(16)) . '.' . $request->photography->extension();
+    // move the background image
+    $request->photography->move(public_path('photography_works'), $photography_work_name);
 
 
 
        $illustrator_work_name = time()  .  Str::upper(Str::random(16)) .'.'. $request->illustrator->extension();
 
-       $request->illustrator->move(public_path('illustrator_works',$illustrator_work_name));
+       $request->illustrator->move(public_path('illustrator_works'),$illustrator_work_name);
 
 
 
@@ -67,7 +68,7 @@ class WorksectionController extends Controller
 
        $graphicDesign_work_name = time()  .  Str::upper(Str::random(16)) .'.'. $request->graphicDesign->extension();
 
-       $request->graphicDesign->move(public_path('graphicDesign_works',$graphicDesign_work_name));
+       $request->graphicDesign->move(public_path('graphicDesign_works'),$graphicDesign_work_name);
 
 
 
@@ -86,6 +87,10 @@ class WorksectionController extends Controller
 
 
 
+
+        'photography_name' => $request->photography_name,
+        'illustrator_name'=> $request->illustrator_name,
+        'graphicDesign_name'=> $request->graphicDesign_name,
 
 
 
@@ -115,7 +120,10 @@ class WorksectionController extends Controller
      */
     public function show(worksection $worksection)
     {
-        
+
+        $work_details = DB::table('worksections')->get()->all();
+
+        return view('webContent.works', compact('work_details'));
     }
 
     /**

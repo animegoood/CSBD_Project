@@ -1,11 +1,11 @@
 @extends('webContent.weblayouts.webHome')
 
-@section('title','Services')
+@section('title', 'Services')
 
 @section('websection')
     <!--Servives section-->
-    @foreach ($service_details as $service_detail )
 
+    {{-- {{$service_detail->id}} --}}
 
     <div class="section">
         <div class="container">
@@ -23,7 +23,7 @@
                 <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-2s slow">
                     <div class="service-item">
                         <div class="icon bg-base-color">
-                          <i class="fas fa-camera-retro"></i>
+                            <i class="fas fa-camera-retro"></i>
                         </div>
                         <div class="content">
                             <h5> Photography </h5>
@@ -35,28 +35,25 @@
                     </div>
                 </div>
 
-                {{--fpreach part--}}
+                {{-- fpreach part --}}
 
                 <!--service-item-->
 
 
-
-
-                <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
-                    <div class="service-item">
-                        <div class="icon bg-base-color">
-                          <i class="{{$service_detail->service_icon}}"></i>
-                        </div>
-                        <div class="content">
-                            <h5>{{$service_detail->service_name}}</h5>
-                            <p>{{$service_detail->service_description}}
-                            </p>
+                @foreach ($service_details as $service_detail)
+                    <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
+                        <div class="service-item">
+                            <div class="icon bg-base-color">
+                                <i class="{{ $service_detail->service_icon }}"></i>
+                            </div>
+                            <div class="content">
+                                <h5>{{ $service_detail->service_name }}</h5>
+                                <p>{{ $service_detail->service_description }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-
+                @endforeach
             </div>
 
 
@@ -72,22 +69,22 @@
 
 
 
+                        @foreach ($service_details as $service_detail)
+                            <!--testimonial-item-->
+                            <div class="testimonials-item">
+                                <div class="image">
+                                    <img src="{{ asset('Testimonials_image/' . $service_detail->testimonials_image) }}"
+                                        alt="">
+                                </div>
+                                <h6>{{ $service_detail->testimonials_name }}</h6>
+                                <p class="job">{{ $service_detail->testimonials_job }}</p>
 
-                        <!--testimonial-item-->
-                        <div class="testimonials-item">
-                            <div class="image">
-                                <img src="{{asset('Testimonials_image/'.$service_detail->testimonials_image)}}" alt="">
+                                <p>{{ $service_detail->testimonials_description }}</p>
+                                <div class="icon bg-base-color">
+                                    <span class="icon_quotations"></span>
+                                </div>
                             </div>
-                            <h6>{{$service_detail->testimonials_name}}</h6>
-                            <p class="job">{{$service_detail->testimonials_job}}</p>
-
-                            <p>{{$service_detail->testimonials_description}}</p>
-                            <div class="icon bg-base-color">
-                                <span class="icon_quotations"></span>
-                            </div>
-                        </div>
-
-
+                        @endforeach
                         {{-- foreach part --}}
 
 
@@ -95,21 +92,21 @@
 
                         <!--testimonial-item-->
                         <div class="testimonials-item">
-                          <div class="image">
-                              <img src="assets/img/testimonials/1.jpg" alt="">
-                          </div>
-                          <h6>Donia Mrgerartin</h6>
-                          <p class="job">Product Design </p>
+                            <div class="image">
+                                <img src="assets/img/testimonials/1.jpg" alt="">
+                            </div>
+                            <h6>Donia Mrgerartin</h6>
+                            <p class="job">Product Design </p>
 
-                          <p>
-                              Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus, eu
-                              luctus neque ultu. Phasellus
-                              faucibus orci a purus mattis tincidunt ut non nulla.
-                          </p>
-                          <div class="icon bg-base-color">
-                              <span class="icon_quotations"></span>
-                          </div>
-                      </div>
+                            <p>
+                                Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus, eu
+                                luctus neque ultu. Phasellus
+                                faucibus orci a purus mattis tincidunt ut non nulla.
+                            </p>
+                            <div class="icon bg-base-color">
+                                <span class="icon_quotations"></span>
+                            </div>
+                        </div>
 
 
                         {{--
@@ -175,49 +172,52 @@
             </div>
 
             <div class="row mb-50">
+
+              @foreach ($service_details as $service_detail)
+              <!--pricing-item-->
+              <div class="col-lg-4 wow customFadeInUp delay-0-2s slow">
+                        <div class="pricing-item">
+                            <div class="content">
+                                <h5>{{ $service_detail->pricing_name }}</h5>
+                                <div class="price">
+                                    <h3>{{ $service_detail->pricing }}
+                                        <span>{{ $service_detail->pricing_month }}</span>
+                                    </h3>
+                                </div>
+                                <ul>
+                                    <li>{{ $service_detail->pricing_services_1 }}</li>
+                                    <li>{{ $service_detail->pricing_services_2 }}</li>
+                                    <li>{{ $service_detail->pricing_services_3 }} </li>
+                                    <li>{{ $service_detail->pricing_services_4 }}</li>
+                                    <li>{{ $service_detail->pricing_services_5 }}</li>
+                                </ul>
+                                <a href="#" class="btn-custom">Get {{ $service_detail->pricing_name }}</a>
+                            </div>
+                        </div>
+                      </div>
+                      @endforeach
+                {{-- foreach part --}}
                 <div class="col-lg-4 wow customFadeInUp delay-0-2s slow">
                     <!--pricing-item-->
                     <div class="pricing-item">
                         <div class="content">
-                            <h5>{{$service_detail->pricing_name}}</h5>
+                            <h5>Basic</h5>
                             <div class="price">
-                                <h3>{{$service_detail->pricing}}
-                                    <span>{{$service_detail->pricing_month}}</span>
+                                <h3>09
+                                    <span>$/month</span>
                                 </h3>
                             </div>
                             <ul>
-                                <li>{{$service_detail->pricing_services_1}}</li>
-                                <li>{{$service_detail->pricing_services_2}}</li>
-                                <li>{{$service_detail->pricing_services_3}} </li>
-                                <li>{{$service_detail->pricing_services_4}}</li>
-                                <li>{{$service_detail->pricing_services_5}}</li>
+                                <li>10 Pages. </li>
+                                <li>Free Installation.</li>
+                                <li>Fee Hosting. </li>
+                                <li>10 Addon Domains. </li>
+                                <li>Email support</li>
                             </ul>
-                            <a href="#" class="btn-custom">Get {{$service_detail->pricing_name}}</a>
+                            <a href="#" class="btn-custom"> Get Basic</a>
                         </div>
                     </div>
                 </div>
-                                {{-- foreach part --}}
-                <div class="col-lg-4 wow customFadeInUp delay-0-2s slow">
-                  <!--pricing-item-->
-                  <div class="pricing-item">
-                      <div class="content">
-                          <h5>Basic</h5>
-                          <div class="price">
-                              <h3>09
-                                  <span>$/month</span>
-                              </h3>
-                          </div>
-                          <ul>
-                              <li>10 Pages. </li>
-                              <li>Free Installation.</li>
-                              <li>Fee Hosting. </li>
-                              <li>10 Addon Domains. </li>
-                              <li>Email support</li>
-                          </ul>
-                          <a href="#" class="btn-custom"> Get Basic</a>
-                      </div>
-                  </div>
-              </div>
                 {{-- <div class="col-lg-4 wow customFadeInUp delay-0-4s slow">
                     <!--pricing-item-->
                      <div class="pricing-item">
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                 </div> --}}
-          </div>
+            </div>
             <!--Clients-->
             <div class="section-sub-heading">
                 <h4 class="section-sub-title">Our Clients</h4>
@@ -273,13 +273,13 @@
                 </div>
 
                 {{-- foreach part --}}
-
-                <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                  <div class="clients-item">
-                      <img src="{{asset('sponser_img/'.$service_detail->sponser_images)}}" alt="">
-                  </div>
-              </div>
-
+                @foreach ($service_details as $service_detail)
+                    <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                        <div class="clients-item">
+                            <img src="{{ asset('sponser_img/' . $service_detail->sponser_images) }}" alt="">
+                        </div>
+                    </div>
+                @endforeach
             </div>
             {{--   <div class="col-lg-2 col-md-4 col-sm-4 col-6">
                     <div class="clients-item">
@@ -311,5 +311,5 @@
     </div>
 
 
-    @endforeach
+
 @stop

@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class worksection extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-  protected $fillable=[
+  protected $fillable = [
 
-
+    'photography_name',
+    'illustrator_name',
+    'graphicDesign_name',
 
 
     'photography',
@@ -21,6 +23,4 @@ class worksection extends Model
   ];
 
   protected $table = 'worksections';
-
-
 }

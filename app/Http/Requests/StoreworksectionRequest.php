@@ -26,6 +26,13 @@ class StoreworksectionRequest extends FormRequest
         return [
 
 
+
+
+          'photography_name'=> 'string|required',
+          'illustrator_name'=> 'string|required',
+
+          'graphicDesign_name'=> 'string|required',
+
           'photography'=> 'file|image|mimes:png,jpg|required',
           'illustrator'=> 'file|image|mimes:png,jpg|required',
           'graphicDesign'=> 'file|image|mimes:png,jpg|required'
@@ -40,6 +47,19 @@ class StoreworksectionRequest extends FormRequest
 
     public function messages()
     {return[
+
+
+
+      'photography_name.string' => 'photography_name must be string',
+      'photography_name.required' => 'photography_name must be required',
+
+
+      'illustrator_name.string' => 'illustrator_name must be string',
+      'illustrator_name.required' => 'illustrator_name must be required',
+
+
+      'graphicDesign_name.string' => 'graphicDesign_name must be string',
+      'graphicDesign_name.required' => 'graphicDesign_name must be required',
 
 
 

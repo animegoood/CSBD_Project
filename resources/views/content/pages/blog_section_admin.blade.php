@@ -4,14 +4,14 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Works admin')
+@section('title', 'blog admin')
 
 @section('content')
 
     <div class="card " style="height: 100%">
-        <h3 class="text-center " style="color: #07a3bf; ">Work Section </h3>
+        <h3 class="text-center " style="color: #07a3bf; ">blog Section </h3>
         <div class="card-body">
-            <form action="{{ route('work_section_store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('blog_section_store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 @if (session()->has('session'))

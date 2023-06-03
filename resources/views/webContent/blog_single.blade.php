@@ -1,6 +1,6 @@
 @extends('webContent.weblayouts.webHome')
 
-@section('title','Blog Single')
+@section('title', 'Blog post')
 @section('websection')
 
     <!-- blog section-->
@@ -15,53 +15,96 @@
                 </div>
             </div>
             <div class="row">
+                <!--Blog-single-->
+                <div class="col-lg-8  wow customFadeInUp slow">
+                    <div class="blog-single">
+                        <div class="thumbnail">
+                            <img src="assets/img/blog/3.jpg" alt="">
+                        </div>
+                        <h4 class="title">Daily Habits to increase your productivity levels.</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute
+                            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-                <!--blog Single-->
+                        <p class="quote">sunt in culpa qui officia deserunt mollit anim id est laborum
+                            .Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            Ut enim ad minim veniam.
+                        </p>
 
-                    <!--Blog-single-->
-                    <div class="col-lg-8  wow customFadeInUp slow">
-                        <div class="blog-single">
-                            <div class="thumbnail">
-                                <img src="{{ $blogImgUrl }}" alt="Blog-Image">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute
+                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat
+                        cupidatat non proident,
+
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <img src="assets/img/blog/2.jpg" alt="">
                             </div>
-                            <h4 class="title">{{ $blog_single_detail->blog_title }}</h4>
-                            <p>{{ $blog_single_detail->main_content }}
-                            </p>
-                            <br>
-                            <p class="quote">{{ $blog_single_detail->content_imp_highlight }}
-                            </p>
-                            <br>
-                            <p>{{ $blog_single_detail->rest_main_content }}
-                            </p>
-                            <div class="meta">
-                                <p class="mb-0 ">
-                                    <span><i class="far fa-clock"></i>{{ $blog_single_detail->blog_post_date }}</span>
-                                    <span><i class="fas fa-tag"></i>{{ $blog_single_detail->categories }}</span>
+                            <div class="col-lg-7">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat. Duis aute irure
+                                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    Excepteur sint occaecat cupidatat
+                                    non proident ,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit.
                                 </p>
-                                <div class="social-links ml-auto">
-                                    <ul class="list-inline">
-                                        <li> Share:</li>
-                                        <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
                             </div>
-                            <div class="footer-author">
-                                <img src="{{ $authorBlogImgUrl }}" alt="">
-                                <div class="author">
-                                    <h5>{{ $blog_single_detail->author_name }}</h5>
-                                    <p>{{ $blog_single_detail->author_description }}</p>
-                                </div>
+                        </div>
+                        Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt
+                        in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute
+                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat
+                        cupidatat non proident.
+                        </p>
+                        <div class="meta">
+                            <p class="mb-0 ">
+                                <span><i class="far fa-clock"></i>August 21, 2020</span>
+                                <span><i class="fas fa-tag"></i>Lifestyle</span>
+                            </p>
+                            <div class="social-links ml-auto">
+                                <ul class="list-inline">
+                                    <li> Share:</li>
+                                    <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-author">
+                            <img src="assets/img/author.jpg" alt="">
+                            <div class="author">
+                                <h5>Elizabeth Elmiz</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua.
+                                    Quis ipsum suspendisse vel facilisis.</p>
                             </div>
                         </div>
                     </div>
+                </div>
+
                 <!--Sidebar-->
-
                 <div class="col-lg-4">
-
                     <!--Search-->
-
                     <div class="widget widget-search  wow customFadeInUp delay-0-2s slow">
                         <div class="widget-title">
                             <h5>Search</h5>
