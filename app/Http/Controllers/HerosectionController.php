@@ -58,12 +58,6 @@ class HerosectionController extends Controller
     // move the authorbackground image
     $request->Author_background_image->move(public_path('Author_background_image'), $author_file_name);
 
-    //download cv
-
-    //download cv file name
-    // $file_name2 = time() . Str::upper(Str::random(16)) . '.' . $request->downloadCV->extension();
-    // move the download cv
-    // $request->Background_img->move(public_path('downloadCV'), $file_name2);
 
 
 

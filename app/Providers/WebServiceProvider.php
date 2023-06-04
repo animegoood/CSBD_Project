@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Providers\FortifyServiceProvider;
 use Laravel\Fortify\Fortify;
-
 class WebServiceProvider extends ServiceProvider
 {
   /**

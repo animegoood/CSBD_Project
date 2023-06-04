@@ -46,15 +46,13 @@
                         <h4 class="mb-1 pt-2">Adventure starts here 🚀</h4>
                         <p class="mb-4">Make your app management easy and fun!</p>
 
-                        @if (Session::has('error'))
-                        <div class="alert alert-danger p-1 text-center">
-                            {{ Session::get('error') }}
-                        </div>
-                    @endif
+                        @if (session()->has('success'))
+                            {{ session()->get('success') }}
+                        @endif
 
-                        @if ($errors->any())
-                            @foreach ($errors->all() as $message)
-                                <span class="text-danger">{{ $message }}</span>
+                        @if ($errors->any())v
+                            @foreach ($errors->all() as $messages)
+                                <span class="input-error">{{ $messages }}</span>
                             @endforeach
                         @endif
 
@@ -75,6 +73,8 @@
                                 <input type="text" class="form-control" id="email" name="email"
                                     placeholder="Enter your email">
                             </div>
+
+
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Password</label>
                                 <div class="input-group input-group-merge">
@@ -110,7 +110,7 @@
 
                         <p class="text-center">
                             <span>Already have an account?</span>
-                            <a href="{{ url('auth/login-basic') }}">
+                            <a href="{{ route('login') }}">
                                 <span>Sign in instead</span>
                             </a>
                         </p>

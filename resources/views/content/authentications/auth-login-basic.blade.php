@@ -45,15 +45,13 @@
                         <h4 class="mb-1 pt-2">Welcome to {{ config('variables.templateName') }}! 👋</h4>
                         <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
+                        @if (session()->has('success'))
+                        {{ session()->get('success') }}
+                    @endif
 
-                        @if (Session::has('error'))
-                            <div class="alert alert-danger p-1 text-center">
-                                {{ Session::get('error') }}
-                            </div>
-                        @endif
-                        @if ($errors->any())
-                        @foreach ($errors->all() as $message)
-                            <span class="text-danger">{{ $message }}</span>
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $messages)
+                            <span class="input-error">{{ $messages}}</span>
                         @endforeach
                     @endif
 
@@ -77,7 +75,6 @@
                                         aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                                 </div>
-
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">
@@ -94,7 +91,7 @@
 
                         <p class="text-center">
                             <span>New on our platform?</span>
-                            <a href="{{ url('auth/register-basic') }}">
+                            <a href="{{ route('register') }}">
                                 <span>Create an account</span>
                             </a>
                         </p>
