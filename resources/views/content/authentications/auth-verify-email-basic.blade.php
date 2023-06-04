@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <!-- Logo -->
                     <div class="app-brand justify-content-center mb-4 mt-2">
-                        <a href="{{ url('/') }}" class="app-brand-link gap-2">
+                        <a href="{{ url('/home') }}" class="app-brand-link gap-2">
                             <span class="app-brand-logo demo">@include('_partials.macros', ['height' => 20, 'withbg' => 'fill: #fff;'])</span>
                             <span
                                 class="app-brand-text demo text-body fw-bold ms-1">{{ config('variables.templateName') }}</span>
@@ -31,7 +31,7 @@
                         Account activation link sent to your email address: hello@example.com Please follow the link inside
                         to continue.
                     </p>
-                    <a class="btn btn-primary w-100 mb-3" href="{{ url('/') }}">
+                    <a class="btn btn-primary w-100 mb-3" href="{{ url('login') }}">
                         Skip for now
                     </a>
                     <p class="text-center mb-0">Didn't get the mail?
