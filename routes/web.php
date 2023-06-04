@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminProfileController;
 
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\pages\HomePage;
 use App\Http\Controllers\WorksectionController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -67,10 +68,15 @@ Route::get('/works', [WorksectionController::class, 'show'])->name('works');
 
 
 
-
+Route::group(['middleware' => ['auth']], function () {
 //admin route
 
 Route::get('/', [HomePage::class,'index'])->name('pages-home');
+
+ Route::get('/admin_profile',[AdminProfileController::class, 'index'])->name('admin_profile');
+// Route::get('/admin_profile',[AdminProfileController::class,'index3']);
+// Route::get('/admin_profile',[AdminProfileController::class,'index3']);
+// Route::post('/admin_profile',[AdminProfileController::class,'index3']);
 
 Route::get('/herosection_admin',[HerosectionController::class, 'create'])->name('herosection_admin');
 
@@ -100,7 +106,7 @@ Route::get('/blog_section_admin',[BlogSingleController::class, 'create'])->name(
 Route::post('/blog_section_store',[BlogSingleController::class, 'store'])->name('blog_section_store');
 
 
-
+});
 
 
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');

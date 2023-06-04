@@ -1,6 +1,6 @@
 @extends('layouts/layoutMaster')
 
-@section('title', 'User Profile - Profile')
+@section('title', 'Admin Profile - Profile')
 
 @section('vendor-style')
 <link rel="stylesheet" href="{{asset('assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css')}}">
@@ -24,7 +24,7 @@
 
 @section('content')
 <h4 class="fw-bold py-3 mb-4">
-  <span class="text-muted fw-light">User Profile /</span> Profile
+  <span class="text-muted fw-light">Admin Profile /</span> Profile
 </h4>
 
 
@@ -124,7 +124,7 @@
     <!--/ Profile Overview -->
   </div>
   <div class="col-xl-8 col-lg-7 col-md-7">
-   
+
     </div>
     <!-- Projects table -->
     <div class="card mb-4">

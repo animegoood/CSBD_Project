@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Providers\FortifyServiceProvider;
 use Laravel\Fortify\Fortify;
+
 class WebServiceProvider extends ServiceProvider
 {
   /**
@@ -24,6 +25,7 @@ class WebServiceProvider extends ServiceProvider
    */
   public function boot()
   {
+
     Fortify::registerView(function () {
       $pageConfigs = ['myLayout' => 'blank'];
       return view('content.authentications.auth-register-basic', ['pageConfigs' => $pageConfigs]);
@@ -34,10 +36,9 @@ class WebServiceProvider extends ServiceProvider
       return view('content.authentications.auth-login-basic', ['pageConfigs' => $pageConfigs]);
     });
 
-
     Fortify::verifyEmailView(function () {
       $pageConfigs = ['myLayout' => 'blank'];
       return view('content.authentications.auth-verify-email-basic', ['pageConfigs' => $pageConfigs]);
-  });
+    });
   }
 }
