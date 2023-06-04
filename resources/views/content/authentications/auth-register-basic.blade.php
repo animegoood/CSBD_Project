@@ -50,9 +50,9 @@
                             {{ session()->get('success') }}
                         @endif
 
-                        @if ($errors->any())v
-                            @foreach ($errors->all() as $messages)
-                                <span class="input-error">{{ $messages }}</span>
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $message)
+                                <span class="input-error">{{ $message }}</span>
                             @endforeach
                         @endif
 
@@ -73,8 +73,6 @@
                                 <input type="text" class="form-control" id="email" name="email"
                                     placeholder="Enter your email">
                             </div>
-
-
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Password</label>
                                 <div class="input-group input-group-merge">
@@ -110,7 +108,7 @@
 
                         <p class="text-center">
                             <span>Already have an account?</span>
-                            <a href="{{ route('login') }}">
+                            <a href="{{ url('auth/login-basic') }}">
                                 <span>Sign in instead</span>
                             </a>
                         </p>

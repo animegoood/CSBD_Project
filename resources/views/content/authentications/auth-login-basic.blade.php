@@ -45,21 +45,17 @@
                         <h4 class="mb-1 pt-2">Welcome to {{ config('variables.templateName') }}! 👋</h4>
                         <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-                        @if (session()->has('success'))
-                        {{ session()->get('success') }}
-                    @endif
-
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $messages)
-                            <span class="input-error">{{ $messages}}</span>
-                        @endforeach
-                    @endif
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger p-1 text-center">
+                                {{ Session::get('error') }}
+                            </div>
+                        @endif
 
                         <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email or Username</label>
-                                <input type="text" class="form-control" id="email" name="email-username"
+                                <input type="text" class="form-control" id="email" name="email"
                                     placeholder="Enter your email or username" autofocus>
                             </div>
                             <div class="mb-3 form-password-toggle">
@@ -91,7 +87,7 @@
 
                         <p class="text-center">
                             <span>New on our platform?</span>
-                            <a href="{{ route('register') }}">
+                            <a href="{{ url('auth/register-basic') }}">
                                 <span>Create an account</span>
                             </a>
                         </p>
