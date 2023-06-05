@@ -59,6 +59,12 @@
                 <li>
                     <a href="{{route('contact')}}">Contact</a>
                 </li>
+                <li>
+                  <a href="{{route('login')}}">login</a>
+              </li>
+              <li>
+                <a href="{{route('register')}}">register</a>
+            </li>
 
             </ul>
         </nav>

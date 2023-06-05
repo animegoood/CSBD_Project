@@ -141,7 +141,59 @@ class HerosectionController extends Controller
    */
   public function update(Request $request, herosection $herosection)
   {
-    //
+
+    $request->validated();
+
+    //background image
+
+    //background image file name
+    $file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Background_img->extension();
+    // move the background image
+    $request->Background_img->move(public_path('background_image'), $file_name);
+
+    //authorbackground image
+
+    //authorbackground image file name
+    $author_file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Author_background_image->extension();
+    // move the authorbackground image
+    $request->Author_background_image->move(public_path('Author_background_image'), $author_file_name);
+
+
+
+
+    //collect data from   adminpage
+
+    $data = [
+      "name_Symbol" => $request->name_Symbol,
+
+      "Yourname" => $request->Yourname,
+
+      "profession_1" => $request->profession_1,
+
+      "profession_2" => $request->profession_2,
+
+      "social_1" => $request->social_1,
+
+      "social_2" => $request->social_2,
+
+
+
+      "social_3" => $request->social_3,
+
+      "social_4" => $request->social_4,
+
+      "social_5" => $request->social_5,
+
+      // "" => $file_name2,
+
+      "Background_img" => $file_name,
+
+      "Author_background_image" => $author_file_name,
+
+    ];
+    herosection::create($data);
+
+    return redirect()->back()->with('session', 'Hero section data save successfully!');
   }
 
   /**

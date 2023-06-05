@@ -64,7 +64,7 @@
   </div>
 </div>
 <!--/ Header -->
-
+{{-- 
 <!-- Navbar pills -->
 <div class="row">
   <div class="col-md-12">
@@ -76,7 +76,7 @@
     </ul>
   </div>
 </div>
-<!--/ Navbar pills -->
+<!--/ Navbar pills --> --}}
 
 <!-- User Profile Content -->
 <div class="row">

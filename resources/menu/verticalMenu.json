@@ -18,7 +18,7 @@
       "target": "_blank"
     },
     {
-      "url": "/home",
+      "url": "/admin_home",
       "name": "WebHome",
       "icon": "menu-icon tf-icons ti ti-smart-home",
       "slug": "pages-home"

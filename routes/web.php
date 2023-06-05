@@ -28,9 +28,9 @@ use Illuminate\Support\Facades\Auth;
 
 
 // web Page Route
-Route::get('/home', [HerosectionController::class, 'index'])->name('home');
+Route::get('/', [HerosectionController::class, 'index'])->name('home');
 
-Route::get('/home', [HerosectionController::class, 'show'])->name('home');
+Route::get('/', [HerosectionController::class, 'show'])->name('home');
 
 
 
@@ -68,10 +68,10 @@ Route::get('/works', [WorksectionController::class, 'show'])->name('works');
 
 
 
-Route::group(['middleware' => ['auth']], function () {
+// Route::group(['middleware' => ['auth']], function () {
 //admin route
 
-Route::get('/', [HomePage::class,'index'])->name('pages-home');
+Route::get('/admin_home', [HomePage::class,'index'])->name('admin_home');
 
  Route::get('/admin_profile',[AdminProfileController::class, 'index'])->name('admin_profile');
 // Route::get('/admin_profile',[AdminProfileController::class,'index3']);
@@ -106,7 +106,7 @@ Route::get('/blog_section_admin',[BlogSingleController::class, 'create'])->name(
 Route::post('/blog_section_store',[BlogSingleController::class, 'store'])->name('blog_section_store');
 
 
-});
+// });
 
 
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');
