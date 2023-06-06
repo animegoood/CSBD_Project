@@ -27,7 +27,7 @@ class ServicesController extends Controller
    */
   public function create()
   {
-    return view('content.pages.services_section_admin');
+    return view('content.pages.admin_services.services_section_admin');
   }
 
   /**

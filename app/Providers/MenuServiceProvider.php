@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use Spatie\FlareClient\View;
 use Illuminate\Support\ServiceProvider;
 class MenuServiceProvider extends ServiceProvider
 {

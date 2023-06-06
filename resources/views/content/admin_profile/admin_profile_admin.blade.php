@@ -14,9 +14,7 @@
 @endsection
 
 
-@section('vendor-script')
-<script src="{{asset('assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js')}}"></script>
-@endsection
+
 
 @section('page-script')
 <script src="{{asset('assets/js/pages-profile.js')}}"></script>
@@ -64,7 +62,7 @@
   </div>
 </div>
 <!--/ Header -->
-{{-- 
+{{--
 <!-- Navbar pills -->
 <div class="row">
   <div class="col-md-12">
@@ -80,10 +78,12 @@
 
 <!-- User Profile Content -->
 <div class="row">
-  <div class="col-xl-4 col-lg-5 col-md-5">
+  <div class="col-md-12">
     <!-- About User -->
     <div class="card mb-4">
       <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
         <small class="card-text text-uppercase">About</small>
         <ul class="list-unstyled mb-4 mt-3">
           <li class="d-flex align-items-center mb-3"><i class="ti ti-user"></i><span class="fw-bold mx-2">Full Name:</span> <span>John Doe</span></li>
@@ -92,59 +92,25 @@
           <li class="d-flex align-items-center mb-3"><i class="ti ti-flag"></i><span class="fw-bold mx-2">Country:</span> <span>USA</span></li>
           <li class="d-flex align-items-center mb-3"><i class="ti ti-file-description"></i><span class="fw-bold mx-2">Languages:</span> <span>English</span></li>
         </ul>
+      </div>
+      <div class="col-md-6">
         <small class="card-text text-uppercase">Contacts</small>
         <ul class="list-unstyled mb-4 mt-3">
           <li class="d-flex align-items-center mb-3"><i class="ti ti-phone-call"></i><span class="fw-bold mx-2">Contact:</span> <span>(123) 456-7890</span></li>
           <li class="d-flex align-items-center mb-3"><i class="ti ti-brand-skype"></i><span class="fw-bold mx-2">Skype:</span> <span>john.doe</span></li>
           <li class="d-flex align-items-center mb-3"><i class="ti ti-mail"></i><span class="fw-bold mx-2">Email:</span> <span>john.doe@example.com</span></li>
         </ul>
-        <small class="card-text text-uppercase">Teams</small>
-        <ul class="list-unstyled mb-0 mt-3">
-          <li class="d-flex align-items-center mb-3"><i class="ti ti-brand-angular text-danger me-2"></i>
-            <div class="d-flex flex-wrap"><span class="fw-bold me-2">Backend Developer</span><span>(126 Members)</span></div>
-          </li>
-          <li class="d-flex align-items-center"><i class="ti ti-brand-react-native text-info me-2"></i>
-            <div class="d-flex flex-wrap"><span class="fw-bold me-2">React Developer</span><span>(98 Members)</span></div>
-          </li>
-        </ul>
+
       </div>
+  
+      </div>
+    </div>
     </div>
     <!--/ About User -->
-    <!-- Profile Overview -->
-    <div class="card mb-4">
-      <div class="card-body">
-        <p class="card-text text-uppercase">Overview</p>
-        <ul class="list-unstyled mb-0">
-          <li class="d-flex align-items-center mb-3"><i class="ti ti-check"></i><span class="fw-bold mx-2">Task Compiled:</span> <span>13.5k</span></li>
-          <li class="d-flex align-items-center mb-3"><i class="ti ti-layout-grid"></i><span class="fw-bold mx-2">Projects Compiled:</span> <span>146</span></li>
-          <li class="d-flex align-items-center"><i class="ti ti-users"></i><span class="fw-bold mx-2">Connections:</span> <span>897</span></li>
-        </ul>
-      </div>
-    </div>
-    <!--/ Profile Overview -->
-  </div>
-  <div class="col-xl-8 col-lg-7 col-md-7">
 
-    </div>
-    <!-- Projects table -->
-    <div class="card mb-4">
-      <div class="card-datatable table-responsive">
-        <table class="datatables-projects table border-top">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th>Name</th>
-              <th>Leader</th>
-              <th>Team</th>
-              <th class="w-px-200">Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-    <!--/ Projects table -->
+
+  </div>
+
   </div>
 </div>
 <!--/ User Profile Content -->

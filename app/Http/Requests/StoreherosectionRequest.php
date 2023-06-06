@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class herosectionRequest extends FormRequest
+class StoreherosectionRequest extends FormRequest
 {
   /**
    * Determine if the user is authorized to make this request.
@@ -24,6 +24,7 @@ class herosectionRequest extends FormRequest
   public function rules()
   {
     return [
+
       'name_Symbol' => 'string|required|max:1',
 
       'Yourname' => 'string|required|max:20',
@@ -32,19 +33,16 @@ class herosectionRequest extends FormRequest
 
       'profession_2' => 'string|required|max:20',
 
-      'social_1' => 'string|required',
+      'social_1' => 'url|required',
 
-      'social_2' => 'string|required',
+      'social_2' => 'url|required',
 
-      'social_3' => 'string|required',
+      'social_3' => 'url|required',
 
       'Background_img' => 'file|image|required',
       'Author_background_image' => 'file|image|required'
-
-
     ];
   }
-
   public function messages()
   {
     return [
@@ -67,13 +65,13 @@ class herosectionRequest extends FormRequest
 
       'profession_2.max' => 'profession_2 must be 20 Character',
 
-      'social_1.string' => 'Mother\'s must be string',
+      'social_1.url' => 'Mother\'s must be url',
       'social_1.required' => 'Mother\'s name is required',
 
-      'social2.string' => 'Mother\'s must be string',
+      'social2.url' => 'Mother\'s must be url',
       'social2.required' => 'Mother\'s name is required',
 
-      'social_3.string' => 'Mother\'s must be string',
+      'social_3.url' => 'Mother\'s must be url',
       'social_3.required' => 'Mother\'s name is required',
 
       'Background_img.file' => 'Background_img must be type of file',

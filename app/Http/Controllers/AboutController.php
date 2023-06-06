@@ -28,7 +28,7 @@ class AboutController extends Controller
    */
   public function create()
   {
-    return view('content.pages.about_section_admin');
+    return view('content.pages.admin_about.about_section_admin');
   }
 
   /**

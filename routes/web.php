@@ -26,8 +26,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-
 // web Page Route
+
 Route::get('/', [HerosectionController::class, 'index'])->name('home');
 
 Route::get('/', [HerosectionController::class, 'show'])->name('home');
@@ -54,11 +54,6 @@ Route::get('/services', [ServicesController::class, 'index'])->name('services');
 
 Route::get('/services', [ServicesController::class, 'show'])->name('services');
 
-
-
-
-
-
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 
@@ -67,9 +62,10 @@ Route::get('/works', [WorksectionController::class, 'index'])->name('works');
 Route::get('/works', [WorksectionController::class, 'show'])->name('works');
 
 
+//admin route
+
 
 // Route::group(['middleware' => ['auth']], function () {
-//admin route
 
 Route::get('/admin_home', [HomePage::class,'index'])->name('admin_home');
 
@@ -78,13 +74,47 @@ Route::get('/admin_home', [HomePage::class,'index'])->name('admin_home');
 // Route::get('/admin_profile',[AdminProfileController::class,'index3']);
 // Route::post('/admin_profile',[AdminProfileController::class,'index3']);
 
-Route::get('/herosection_admin',[HerosectionController::class, 'create'])->name('herosection_admin');
+//hero section
+
+Route::get('/herosection_admin',[HerosectionController::class, 'admin'])->name('herosection_admin');
+
+Route::get('/herosection_create',[HerosectionController::class, 'create'])->name('herosection_create');
+
 
 Route::post('/herosection-store',[HerosectionController::class, 'store'])->name('herosection-store');
 
-Route::get('/about_section_admin',[AboutController::class, 'create'])->name('about_section_admin');
+Route::get('/herosection_edit',[HerosectionController::class, 'edit'])->name('herosection_edit');
+
+Route::patch('/herosection_update',[HerosectionController::class, 'update'])->name('herosection_update');
+
+Route::delete('/herosection_destroy',[HerosectionController::class, 'destroy'])->name('herosection_destroy');
+
+//about section
+
+
+
+Route::get('/herosection_admin',[AboutController::class, 'admin'])->name('herosection_admin');
+
+Route::get('/about_section_create',[AboutController::class, 'create'])->name('about_section_create');
 
 Route::post('/about_section_store',[AboutController::class, 'store'])->name('about_section_store');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/services_section_admin', [ServicesController::class, 'create'])->name('services_section_admin');
 

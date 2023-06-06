@@ -38,7 +38,7 @@ class BlogSingleController extends Controller
      */
     public function create()
     {
-        return view('content.pages.blog_section_admin');
+        return view('content.pages.admin_blog.blog_section_admin');
     }
 
     /**

@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\herosectionRequest;
 use App\Models\herosection;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreherosectionRequest;
+use App\Http\Requests\UpdateherosectionRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\File;
+
+
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class HerosectionController extends Controller
 {
@@ -16,7 +23,6 @@ class HerosectionController extends Controller
    */
   public function index()
   {
-
     $pageConfigs = ['myLayout' => 'blank'];
 
     return view('webContent.home', ['pageConfigs' => $pageConfigs]);
@@ -29,18 +35,36 @@ class HerosectionController extends Controller
    */
   public function create()
   {
+    //   if (!Auth::check()) {
+    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
 
-    return view('content.pages.herosection');
+    return view('content.pages.admin_home.herosection');
+  }
+
+  public function admin()
+
+  {
+
+    //   if (!Auth::check()) {
+    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
+
+    return view('content.pages.hero_section_admin');
   }
 
   /**
    * Store a newly created resource in storage.
    *
-   * @param \App\Http\Requests\herosectionRequest $request
+   * @param  \App\Http\Requests\StoreherosectionRequest  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(herosectionRequest $request)
+  public function store(StoreherosectionRequest $request)
   {
+
+    //   if (!Auth::check()) {
+    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
 
     $request->validated();
 
@@ -104,22 +128,24 @@ class HerosectionController extends Controller
    */
   public function show(herosection $herosection)
   {
+    //   if (!Auth::check()) {
+    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
+
     $herosection_details = herosection::first();
 
-    if (file_exists(public_path('background_image/' . $herosection_details->background_img))) {
+    if (File::exists(public_path('background_image/') . $herosection_details->background_img)) {
       $bgimg_path =  asset('background_image/' . $herosection_details->Background_img);
     };
 
 
-    if (file_exists(public_path('Author_background_image/' . $herosection_details->Author_background_image))) {
+    if (File::exists(public_path('Author_background_image/') . $herosection_details->Author_background_image)) {
       $authorimg_path =  asset('Author_background_image/' . $herosection_details->Author_background_image);
     };
 
 
     return view('WebContent.home', compact('herosection_details', 'bgimg_path', 'authorimg_path'));
   }
-
-
 
   /**
    * Show the form for editing the specified resource.
@@ -129,71 +155,123 @@ class HerosectionController extends Controller
    */
   public function edit(herosection $herosection)
   {
-    //
+    //  if (!Auth::check()) {
+  //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+  // }
+
+
+    $herosection_update = herosection::first();
+    return view('content.pages.admin_home.admin_home_edit', compact('herosection_update'));
   }
 
   /**
    * Update the specified resource in storage.
    *
-   * @param  \Illuminate\Http\Request  $request
+   * @param  \App\Http\Requests\UpdateherosectionRequest  $request
    * @param  \App\Models\herosection  $herosection
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, herosection $herosection)
+  public function update(UpdateherosectionRequest $request, herosection $herosection)
   {
 
-    $request->validated();
+  //   if (!Auth::check()) {
+  //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+  // }
 
-    //background image
+  $request->validated();
 
-    //background image file name
-    $file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Background_img->extension();
-    // move the background image
-    $request->Background_img->move(public_path('background_image'), $file_name);
 
-    //authorbackground image
+  //for old image delete
 
-    //authorbackground image file name
-    $author_file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Author_background_image->extension();
-    // move the authorbackground image
-    $request->Author_background_image->move(public_path('Author_background_image'), $author_file_name);
+  $get_data = herosection::first();
+  $image_name = $get_data->Background_img;
+  $image2_name = $get_data->Author_background_image;
 
 
 
+  if($request->hasFile('Background_img')){
 
-    //collect data from   adminpage
-
-    $data = [
-      "name_Symbol" => $request->name_Symbol,
-
-      "Yourname" => $request->Yourname,
-
-      "profession_1" => $request->profession_1,
-
-      "profession_2" => $request->profession_2,
-
-      "social_1" => $request->social_1,
-
-      "social_2" => $request->social_2,
+    if(File::exists(public_path('background_image/') . $image_name)){
 
 
+      File::delete(public_path('background_image/') . $image_name);
 
-      "social_3" => $request->social_3,
+    }
 
-      "social_4" => $request->social_4,
+       //background image
 
-      "social_5" => $request->social_5,
+  //background image file name
 
-      // "" => $file_name2,
 
-      "Background_img" => $file_name,
+  $file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Background_img->extension();
+  // move the background image
+  $request->Background_img->move(public_path('background_image'), $file_name);
 
-      "Author_background_image" => $author_file_name,
 
-    ];
-    herosection::create($data);
+  }else{
+    $file_name = $get_data->Background_img;
+  }
 
-    return redirect()->back()->with('session', 'Hero section data save successfully!');
+
+
+  if($request->hasFile('Author_background_image')){
+
+    if(File::exists(public_path('Author_background_image').$image2_name)){
+      File::delete(public_path('Author_background_image') . $image2_name);
+    }
+
+
+
+
+  //authorbackground image
+
+  //authorbackground image file name
+  $author_file_name = time() . Str::upper(Str::random(16)) . '.' . $request->Author_background_image->extension();
+  // move the authorbackground image
+  $request->Author_background_image->move(public_path('Author_background_image'), $author_file_name);
+
+
+  }else{
+    $author_file_name = $get_data->Author_background_image;
+  }
+
+
+
+
+
+  //collect data from   adminpage
+
+  $data = [
+    "name_Symbol" => $request->name_Symbol,
+
+    "Yourname" => $request->Yourname,
+
+    "profession_1" => $request->profession_1,
+
+    "profession_2" => $request->profession_2,
+
+    "social_1" => $request->social_1,
+
+    "social_2" => $request->social_2,
+
+
+
+    "social_3" => $request->social_3,
+
+    "social_4" => $request->social_4,
+
+    "social_5" => $request->social_5,
+
+    // "" => $file_name2,
+
+    "Background_img" => $file_name,
+
+    "Author_background_image" => $author_file_name,
+
+  ];
+  herosection::first()->update($data);
+
+  return redirect()->back()->with('session', 'Hero section data  update successfully!');
   }
 
   /**
@@ -204,6 +282,44 @@ class HerosectionController extends Controller
    */
   public function destroy(herosection $herosection)
   {
-    //
-  }
+
+    // delete the applicant
+    if (Auth::check()) {
+     if (herosection::first()->exists()) {
+
+
+
+         // remove file from storage
+         $appliction = herosection::first();
+         $image_path = $appliction->Background_img;
+         $image_path2 = $appliction->Author_background_image;
+
+         if (File::exists(public_path('background_image/') . $image_path)) {
+             File::delete(public_path('background_image/') . $image_path);
+
+             if (File::exists(public_path('Author_background_image/') . $image_path2)) {
+              File::delete(public_path('Author_background_image/') . $image_path2);}
+
+
+
+
+         } else {
+             return redirect()->back()->with('destroy-error', 'Images are not found associated with this appliction!');
+         }
+         $appliction = herosection::first()->delete();
+
+         return redirect()->route('herosection_admin')->with('destroy-success', 'appliction deleted successfully!');
+     } else {
+         return redirect()->route('herosection_admin')->with('destroy-error', 'appliction does not exist! So can not delete!');
+     }
+  //   }else {
+      return redirect()->route('login')->with('error', 'You are not authorized to delete this appliction!');
+  // }
+
+
+ }
+
+
+
+}
 }
