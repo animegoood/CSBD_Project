@@ -128,9 +128,7 @@ class HerosectionController extends Controller
    */
   public function show(herosection $herosection)
   {
-    //   if (!Auth::check()) {
-    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    
 
     $herosection_details = herosection::first();
 
@@ -285,14 +283,16 @@ class HerosectionController extends Controller
 
     // delete the applicant
     if (Auth::check()) {
+
      if (herosection::first()->exists()) {
 
 
 
          // remove file from storage
-         $appliction = herosection::first();
-         $image_path = $appliction->Background_img;
-         $image_path2 = $appliction->Author_background_image;
+         $table_data = herosection::first();
+
+         $image_path = $table_data->Background_img;
+         $image_path2 = $table_data->Author_background_image;
 
          if (File::exists(public_path('background_image/') . $image_path)) {
              File::delete(public_path('background_image/') . $image_path);
@@ -304,17 +304,17 @@ class HerosectionController extends Controller
 
 
          } else {
-             return redirect()->back()->with('destroy-error', 'Images are not found associated with this appliction!');
+             return redirect()->back()->with('destroy-error', 'Images are not found associated with this table_data!');
          }
-         $appliction = herosection::first()->delete();
+         $table_data = herosection::first()->delete();
 
-         return redirect()->route('herosection_admin')->with('destroy-success', 'appliction deleted successfully!');
+         return redirect()->route('herosection_admin')->with('destroy-success', 'Table data deleted successfully!');
      } else {
-         return redirect()->route('herosection_admin')->with('destroy-error', 'appliction does not exist! So can not delete!');
+         return redirect()->route('herosection_admin')->with('destroy-error', 'Table data does not exist! So can not delete!');
      }
-  //   }else {
+    }else {
       return redirect()->route('login')->with('error', 'You are not authorized to delete this appliction!');
-  // }
+  }
 
 
  }
@@ -322,4 +322,4 @@ class HerosectionController extends Controller
 
 
 }
-}
+

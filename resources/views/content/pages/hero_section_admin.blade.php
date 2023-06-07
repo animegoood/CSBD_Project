@@ -29,7 +29,7 @@ $configData = Helper::appClasses();
       @csrf
       @method('DELETE')
 
-      <input type="submit" value="Delete">
+      <button type="submit" class="btn btn-primary me-sm-3 me-1">Delete</button>
 
   </form>
 

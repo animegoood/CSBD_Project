@@ -36,8 +36,19 @@ class BlogSingleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function admin()
+    {
+
+      return view('content.pages.blog_section_admin');
+
+    }
+
     public function create()
     {
+
+       //   if (!Auth::check()) {
+    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
         return view('content.pages.admin_blog.blog_section_admin');
     }
 
@@ -49,6 +60,11 @@ class BlogSingleController extends Controller
      */
     public function store(Storeblog_singleRequest $request)
     {
+
+       //   if (!Auth::check()) {
+    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
+
        $request->validated();
 
 

@@ -9,14 +9,38 @@
 @section('content')
 
 
-<div class="container">
-  <div class="card item-center">
+    <div class="container">
+        <div class="card item-center">
 
-    <h1 class="text-center " style="color: #07a3bf; ">Web About Page</h1>
+            <h1 class="text-center " style="color: #07a3bf; ">Web About Page</h1>
 
-  <div class="card-body">
+            <div class="card-body">
 
-      <div class="row">
+                <table>
+
+                    <thead>
+                        <td>blog image</td>
+                        <td>blog title</td>
+                        <td>edit</td>
+                        <td>delete</td>
+
+                    </thead>
+                    <tbody>
+
+
+                    </tbody>
+
+
+
+
+
+
+                </table>
+
+
+
+
+                {{-- <div class="row">
 
         <div class="col-md-4">
 
@@ -42,12 +66,12 @@
 
         </div>
 
+    </div> --}}
+
+            </div>
+
+
+        </div>
     </div>
-
-  </div>
-
-
-</div>
-</div>
 
 @endsection

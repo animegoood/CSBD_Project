@@ -93,11 +93,17 @@ Route::delete('/herosection_destroy',[HerosectionController::class, 'destroy'])-
 
 
 
-Route::get('/herosection_admin',[AboutController::class, 'admin'])->name('herosection_admin');
+Route::get('/about_section_admin',[AboutController::class, 'admin'])->name('about_section_admin');
 
 Route::get('/about_section_create',[AboutController::class, 'create'])->name('about_section_create');
 
 Route::post('/about_section_store',[AboutController::class, 'store'])->name('about_section_store');
+
+Route::get('/about_section_edit',[AboutController::class, 'edit'])->name('about_section_edit');
+
+Route::patch('/about_section_update',[AboutController::class, 'update'])->name('about_section_update');
+
+Route::delete('/about_section_destroy',[AboutController::class, 'destroy'])->name('about_section_destroy');
 
 
 
