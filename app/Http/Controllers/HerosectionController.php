@@ -119,9 +119,9 @@ class HerosectionController extends Controller
     ];
     herosection::create($data);
 
-    Alert::success('success', 'Hero section data  update successfully!');
+    
 
-    return redirect()->back();
+    return redirect()->back()->with('success', 'Hero section data  update successfully!');
   }
 
   /**

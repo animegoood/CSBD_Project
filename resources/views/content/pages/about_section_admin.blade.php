@@ -10,7 +10,7 @@
 
 
 <div class="container">
-  <div class="card item-center">
+  <div class="card">
 
     <h1 class="text-center " style="color: #07a3bf; ">Web About Page</h1>
 
@@ -36,7 +36,7 @@
                 @csrf
                 @method('DELETE')
 
-                <button type="submit" class="btn btn-primary me-sm-3 me-1 text-center">Delete</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
 
             </form>
 
