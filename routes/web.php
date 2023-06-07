@@ -107,24 +107,38 @@ Route::delete('/about_section_destroy',[AboutController::class, 'destroy'])->nam
 
 
 
+// services section
+
+
+Route::get('/services_section_admin', [ServicesController::class, 'admin'])->name('services_section_admin');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Route::get('/services_section_admin', [ServicesController::class, 'create'])->name('services_section_admin');
+Route::get('/services_section_create', [ServicesController::class, 'create'])->name('services_section_create');
 
 Route::post('/services_section_store',[ServicesController::class, 'store'])->name('services_section_store');
+
+
+
+
+Route::get('/services_section_edit',[ServicesController::class, 'edit'])->name('services_section_edit');
+
+
+
+Route::patch('/services_section_update',[ServicesController::class, 'update'])->name('services_section_update');
+
+
+
+Route::delete('/services_section_destroy',[ServicesController::class, 'destroy'])->name('services_section_destroy');
+
+
+
+
+
+
+
+
+
 
 
 Route::post('/contact_section_store',[ContactController::class, 'store'])->name('contact_section_store');

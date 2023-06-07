@@ -31,75 +31,79 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/colors/color-4.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/custom.css') }}">
-</head>
 
-<body>
+
+  </head>
+
+  <body>
+
 
 
     <!--Menu-->
     <div class="main-menu fixed-top">
-        <nav class="nav-menu">
-            <ul class="menu" id="menu">
-                <li >
-                    <a href="{{route('home')}}" >Home</a>
-                </li>
-                <li>
-                    <a href="{{route('about')}}">About</a>
-                </li>
-                <li>
-                    <a href="{{route('services')}}">Services</a>
-                </li>
-                <li>
-                    <a href="{{route('works')}}">Works</a>
-                </li>
-                <li>
+      <nav class="nav-menu">
+        <ul class="menu" id="menu">
+          <li >
+            <a href="{{route('home')}}" >Home</a>
+          </li>
+          <li>
+            <a href="{{route('about')}}">About</a>
+          </li>
+          <li>
+            <a href="{{route('services')}}">Services</a>
+          </li>
+          <li>
+            <a href="{{route('works')}}">Works</a>
+          </li>
+          <li>
 
-                    <a href="{{route('blog')}}">Blog</a>
+            <a href="{{route('blog')}}">Blog</a>
                 </li>
                 <li>
                     <a href="{{route('contact')}}">Contact</a>
-                </li>
-                <li>
-                  <a href="{{route('login')}}">login</a>
-              </li>
-              <li>
-                <a href="{{route('register')}}">register</a>
+                  </li>
+                  <li>
+                    <a href="{{route('login')}}">login</a>
+                  </li>
+                  <li>
+                    <a href="{{route('register')}}">register</a>
             </li>
 
-            </ul>
+          </ul>
         </nav>
         <!--hamburger-menu-->
         <a class="hamburger-menu js-toggle-menu" href="#">
-            <div class="g-lines">
+          <div class="g-lines">
                 <span class="line line-dark"></span>
                 <span class="line line-dark"></span>
                 <span class="line line-dark"></span>
-            </div>
-        </a>
-    </div>
+              </div>
+            </a>
+          </div>
 
 
 
-    <section>
-      @yield('websection')
-    </section>
+          <section>
+            @yield('websection')
+          </section>
 
 
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{asset('assets/webJs/jquery-3.5.0.min.js') }}"></script>
-    <script src="{{asset('assets/webJs/popper.min.js') }}"></script>
-    <script src="{{asset('assets/webJs/bootstrap.min.js') }}"></script>
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="{{asset('assets/webJs/jquery-3.5.0.min.js') }}"></script>
+          <script src="{{asset('assets/webJs/popper.min.js') }}"></script>
+          <script src="{{asset('assets/webJs/bootstrap.min.js') }}"></script>
 
-    <!-- JS Plugins  -->
-    <script src="{{asset('assets/webJs/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{asset('assets/webJs/owl.carousel.min.js') }}"></script>
-    <script src="{{asset('assets/webJs/jquery.mixitup.js') }}"></script>
-    <script src="{{asset('assets/webJs/wow.min.js') }}"></script>
+          <!-- JS Plugins  -->
+          <script src="{{asset('assets/webJs/jquery.magnific-popup.min.js') }}"></script>
+          <script src="{{asset('assets/webJs/owl.carousel.min.js') }}"></script>
+          <script src="{{asset('assets/webJs/jquery.mixitup.js') }}"></script>
+          <script src="{{asset('assets/webJs/wow.min.js') }}"></script>
     <script src="{{asset('assets/webJs/ajax-contact.js') }}"></script>
     <script src="{{asset('assets/webJs/jquery.animatedheadline.min.js') }}"></script>
     <script src="{{asset('assets/webJs/main.js') }}"></script>
 
+    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
 </body>
 
