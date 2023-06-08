@@ -1,5 +1,5 @@
 @php
-$configData = Helper::appClasses();
+    $configData = Helper::appClasses();
 @endphp
 
 @extends('layouts/layoutMaster')
@@ -7,31 +7,40 @@ $configData = Helper::appClasses();
 @section('title', 'works')
 
 @section('content')
-<h1 class="text-center " style="color: #07a3bf; ">Web works Page</h1>
 
 
-<div class="row">
+    <div class="container">
+        <div class="card">
+
+            <h1 class="text-center " style="color: #07a3bf; ">Web works Page</h1>
+
+            <div class="card-body">
+
+                <div class="d-flex " style="     flex-diraction: row; justify-content: center; gap: 70px;flex-wrap: wrap;">
 
 
-  <div class="col-md-6">
+                <div>
 
-    <a href="{{ route('works_section_create') }}" class="btn btn-primary  "> create works section</a>
+                    <a href="{{ route('work_section_create') }}" class="btn btn-primary  "> create works section</a>
 
-  </div>
+                </div>
 
-  <div class="col-md-6">
+                <div>
 
-    <form action="{{ route('works_section_destroy') }}" method="POST">
-      @csrf
-      @method('DELETE')
+                    <form action="{{ route('work_section_destroy') }}" method="POST">
+                        @csrf
+                        @method('DELETE')
 
-      <button type="submit" class="btn btn-primary me-sm-3 me-1">Delete works section</button>
+                        <button type="submit" class="btn btn-danger">Delete works section</button>
 
-  </form>
+                    </form>
 
-  </div>
-</div>
+                </div>
+            </div>
+          </div>
 
+        </div>
+    </div>
 
 
 

@@ -31,7 +31,7 @@
   <div class="col-12">
     <div class="card mb-4">
       <div class="user-profile-header-banner">
-        <img src="{{ asset('assets/img/pages/profile-banner.png') }}" alt="Banner image" class="rounded-top">
+        <img src="{{ asset('assets/img/pages/profile-banner.png') }}" alt="cover image" class="rounded-top">
       </div>
       <div class="user-profile-header d-flex flex-column flex-sm-row text-sm-start text-center mb-4">
         <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
@@ -52,9 +52,7 @@
                   <i class='ti ti-calendar'></i> Joined April 2021</li>
               </ul>
             </div>
-            <a href="javascript:void(0)" class="btn btn-primary">
-              <i class='ti ti-user-check me-1'></i>Connected
-            </a>
+           
           </div>
         </div>
       </div>
@@ -102,7 +100,7 @@
         </ul>
 
       </div>
-  
+
       </div>
     </div>
     </div>

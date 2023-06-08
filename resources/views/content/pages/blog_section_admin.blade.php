@@ -4,74 +4,46 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'About')
+@section('title', 'Home')
 
 @section('content')
 
 
     <div class="container">
-        <div class="card item-center">
+        <div class="card">
 
-            <h1 class="text-center " style="color: #07a3bf; ">Web About Page</h1>
+            <h1 class="text-center " style="color: #07a3bf; ">Web Home Page</h1>
 
             <div class="card-body">
 
-                <table>
+                <div class="d-flex " style="     flex-diraction: row; justify-content: center; gap: 70px;flex-wrap: wrap;">
 
-                    <thead>
-                        <td>blog image</td>
-                        <td>blog title</td>
-                        <td>edit</td>
-                        <td>delete</td>
+                    <div>
 
-                    </thead>
-                    <tbody>
-                      <th>{{  }}</th>
+                        <a href="{{ route('herosection_create') }}" class="btn btn-primary  "> create hero section</a>
 
-                    </tbody>
+                    </div>
+                    <div>
 
+                        <a href="{{ route('herosection_edit') }}" class="btn btn-primary  "> edit hero section</a>
 
+                    </div>
+                    <div>
 
+                        <form action="{{ route('herosection_destroy') }}" method="POST">
+                            @csrf
+                            @method('DELETE')
 
+                            <button type="submit" class="btn btn-danger">Delete hero section</button>
 
+                        </form>
 
-                </table>
-
-
-
-
-                {{-- <div class="row">
-
-        <div class="col-md-4">
-
-            <a href="{{ route('about_section_create') }}" class="btn btn-primary text-center  "> Create about section</a>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <a href="{{ route('about_section_edit') }}" class="btn btn-primary text-center "> Edit about section</a>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <form action="{{ route('about_section_destroy') }}" method="POST">
-                @csrf
-                @method('DELETE')
-
-                <button type="submit" class="btn btn-primary me-sm-3 me-1 text-center">Delete</button>
-
-            </form>
-
-        </div>
-
-    </div> --}}
-
+                    </div>
+                </div>
             </div>
-
 
         </div>
     </div>
+
 
 @endsection

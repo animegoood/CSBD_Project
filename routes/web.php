@@ -73,7 +73,7 @@ Route::get('/admin_home', [HomePage::class,'index'])->name('admin_home');
 
 // admin profile
 
- Route::get('/admin_profile',[AdminProfileController::class, 'index'])->name('admin_profile');
+Route::get('/admin_profile',[AdminProfileController::class, 'index'])->name('admin_profile');
 
 
 Route::get('/admin_profile_admin',[AdminProfileController::class,'admin'])->name('admin_profile_admin');
@@ -127,8 +127,6 @@ Route::get('/services_section_create', [ServicesController::class, 'create'])->n
 Route::post('/services_section_store',[ServicesController::class, 'store'])->name('services_section_store');
 
 
-
-
 Route::get('/services_section_edit',[ServicesController::class, 'edit'])->name('services_section_edit');
 
 
@@ -142,10 +140,24 @@ Route::delete('/services_section_destroy',[ServicesController::class, 'destroy']
 
 // blog section
 
-Route::get('/blog_section_admin',[BlogSingleController::class, 'create'])->name('blog_section_admin');
 
+Route::get('/blog_section_admin',[BlogSingleController::class, 'admin'])->name('blog_section_admin');
+
+Route::get('/blog_section_create',[BlogSingleController::class, 'create'])->name('blog_section_create');
 
 Route::post('/blog_section_store',[BlogSingleController::class, 'store'])->name('blog_section_store');
+
+Route::get('/blog_section_edit',[BlogSingleController::class, 'edit'])->name('blog_section_edit');
+
+Route::patch('/blog_section_update',[BlogSingleController::class, 'update'])->name('blog_section_update');
+
+
+Route::delete('/blog_section_update',[BlogSingleController::class, 'update'])->name('blog_section_update');
+
+// Route::post('/blog_section_update',[BlogSingleController::class, 'update'])->name('blog_section_update');
+
+
+
 
 // contact section
 

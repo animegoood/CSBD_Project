@@ -15,7 +15,7 @@ class AdminProfileController extends Controller
      */
     public function index()
     {
-        return view('content.admin_profile.admin_profile_admin');
+        return view('content.admin_profile.admin_profile');
     }
 
     /**
@@ -23,9 +23,14 @@ class AdminProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function admin()
+    {
+      return view('content.admin_profile.profile_admin');
+    }
     public function create()
     {
-        //
+
     }
 
     /**

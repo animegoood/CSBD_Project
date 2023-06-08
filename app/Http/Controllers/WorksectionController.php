@@ -39,7 +39,7 @@ class WorksectionController extends Controller
   }
   public function create()
   {
-    return view('content.pages.admin_work.work_section_admin');
+    return view('content.pages.admin_work.work_section_create');
   }
 
   /**

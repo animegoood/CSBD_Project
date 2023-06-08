@@ -10,6 +10,13 @@
       "slug": "pages-home"
     },
     {
+      "url": "/admin_profile_admin",
+      "name": "Admin Profile",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "slug": "admin_profile_admin"
+
+    },
+    {
       "url": "/herosection_admin",
       "icon": "menu-icon tf-icons ti ti-file",
       "name": " Hero Section",
@@ -34,21 +41,13 @@
       "icon": "menu-icon tf-icons ti ti-file",
       "name": " Blog Section",
       "slug": "blog_section_admin"
-    },
-
-      {
+    },{
       "url": "/work_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
       "name": " Work Section",
       "slug": "work_section_admin"
-    },
-    {
-      "url": "/admin_profile_admin",
-      "name": "Admin Profile",
-      "icon": "menu-icon tf-icons ti ti-login",
-      "slug": "admin_profile_admin",
-      "target": "_blank"
     }
+
   ]
 }
 

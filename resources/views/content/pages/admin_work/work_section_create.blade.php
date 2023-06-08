@@ -9,7 +9,7 @@
 @section('content')
 
     <div class="card " style="height: 100%">
-        <h3 class="text-center " style="color: #07a3bf; ">Work Section </h3>
+        <h3 class="text-center " style="color: hsl(189, 93%, 39%); ">Work Section </h3>
         <div class="card-body">
             <form action="{{ route('work_section_store') }}" method="POST" enctype="multipart/form-data">
                 @csrf

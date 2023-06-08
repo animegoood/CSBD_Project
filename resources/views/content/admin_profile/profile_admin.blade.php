@@ -12,7 +12,7 @@
     <div class="container">
         <div class="card">
 
-            <h1 class="text-center " style="color: #07a3bf; ">Web services Page</h1>
+            <h1 class="text-center " style="color: #07a3bf; ">Admin Profile Page</h1>
 
 
             <div class="card-body">
@@ -21,24 +21,23 @@
 
 
 
-                    <div class="">
+                    <div>
 
-                        <a href="{{ route('services_section_create') }}" class="btn btn-primary  "> create services
-                            section</a>
-
-                    </div>
-                    <div class="">
-
-                        <a href="{{ route('services_section_edit') }}" class="btn btn-primary  "> edit services section</a>
+                        <a href="{{ route('services_section_create') }}" class="btn btn-primary  "> Create Admin Profile</a>
 
                     </div>
-                    <div class="">
+                    <div>
+
+                        <a href="{{ route('services_section_edit') }}" class="btn btn-primary  "> Edit Admin Profile</a>
+
+                    </div>
+                    <div>
 
                         <form action="{{ route('services_section_destroy') }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger">Delete services section</button>
+                            <button type="submit" class="btn btn-danger">Delete Admin Profile</button>
 
                         </form>
 

@@ -22,7 +22,6 @@ class Kernel extends HttpKernel
     \App\Http\Middleware\TrimStrings::class,
     \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
 
-    \RealRashid\SweetAlert\ToSweetAlert::class,
   ];
 
   /**
@@ -40,6 +39,7 @@ class Kernel extends HttpKernel
       \App\Http\Middleware\VerifyCsrfToken::class,
       \Illuminate\Routing\Middleware\SubstituteBindings::class,
       \App\Http\Middleware\LocaleMiddleware::class,
+      \RealRashid\SweetAlert\ToSweetAlert::class,
     ],
 
     'api' => [

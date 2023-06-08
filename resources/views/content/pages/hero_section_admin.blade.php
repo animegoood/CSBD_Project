@@ -16,20 +16,21 @@
 
             <div class="card-body">
 
-                <div class="row">
+                <div class="d-flex " style="     flex-diraction: row; justify-content: center; gap: 70px;flex-wrap: wrap;">
 
 
-                    <div class="col-md-4">
+
+                    <div>
 
                         <a href="{{ route('herosection_create') }}" class="btn btn-primary  "> create hero section</a>
 
                     </div>
-                    <div class="col-md-4">
+                    <div>
 
                         <a href="{{ route('herosection_edit') }}" class="btn btn-primary  "> edit hero section</a>
 
                     </div>
-                    <div class="col-md-4">
+                    <div>
 
                         <form action="{{ route('herosection_destroy') }}" method="POST">
                             @csrf
