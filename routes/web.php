@@ -65,12 +65,20 @@ Route::get('/works', [WorksectionController::class, 'show'])->name('works');
 //admin route
 
 
-// Route::group(['middleware' => ['auth']], function () {
+// Route::group(['middleware' => ['auth','verify'], function () {
+//admin home page
 
 Route::get('/admin_home', [HomePage::class,'index'])->name('admin_home');
 
+
+// admin profile
+
  Route::get('/admin_profile',[AdminProfileController::class, 'index'])->name('admin_profile');
-// Route::get('/admin_profile',[AdminProfileController::class,'index3']);
+
+
+Route::get('/admin_profile_admin',[AdminProfileController::class,'admin'])->name('admin_profile_admin');
+
+
 // Route::get('/admin_profile',[AdminProfileController::class,'index3']);
 // Route::post('/admin_profile',[AdminProfileController::class,'index3']);
 
@@ -132,32 +140,34 @@ Route::patch('/services_section_update',[ServicesController::class, 'update'])->
 Route::delete('/services_section_destroy',[ServicesController::class, 'destroy'])->name('services_section_destroy');
 
 
-
-
-
-
-
-
-
-
-
-Route::post('/contact_section_store',[ContactController::class, 'store'])->name('contact_section_store');
-
-
-Route::get('/work_section_admin',[WorksectionController::class, 'create'])->name('work_section_admin');
-
-
-Route::post('/work_section_store',[WorksectionController::class, 'store'])->name('work_section_store');
-
+// blog section
 
 Route::get('/blog_section_admin',[BlogSingleController::class, 'create'])->name('blog_section_admin');
 
 
 Route::post('/blog_section_store',[BlogSingleController::class, 'store'])->name('blog_section_store');
 
+// contact section
+
+Route::post('/contact_section_store',[ContactController::class, 'store'])->name('contact_section_store');
+
+
+//work section
+
+Route::get('/work_section_admin',[WorksectionController::class, 'admin'])->name('work_section_admin');
+
+Route::get('/work_section_create',[WorksectionController::class, 'create'])->name('work_section_create');
+
+
+Route::post('/work_section_store',[WorksectionController::class, 'store'])->name('work_section_store');
+
+Route::delete('/work_section_destroy',[WorksectionController::class, 'destroy'])->name('work_section_destroy');
+
 
 // });
 
+
+//authentication
 
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');
 

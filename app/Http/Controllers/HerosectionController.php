@@ -119,7 +119,7 @@ class HerosectionController extends Controller
     ];
     herosection::create($data);
 
-    
+
 
     return redirect()->back()->with('success', 'Hero section data  update successfully!');
   }
@@ -300,13 +300,13 @@ class HerosectionController extends Controller
             File::delete(public_path('Author_background_image/') . $image_path2);
           }
         } else {
-          return redirect()->back()->with('destroy-error', 'Images are not found associated with this table_data!');
+          return redirect()->back()->with('error', 'Images are not found associated with this table_data!');
         }
         $table_data = herosection::first()->delete();
 
-        return redirect()->route('herosection_admin')->with('destroy-success', 'Table data deleted successfully!');
+        return redirect()->route('herosection_admin')->with('success', 'Table data deleted successfully!');
       } else {
-        return redirect()->route('herosection_admin')->with('destroy-error', 'Table data does not exist! So can not delete!');
+        return redirect()->route('herosection_admin')->with('error', 'Table data does not exist! So can not delete!');
       }
     } else {
       return redirect()->route('login')->with('error', 'You are not authorized to delete this appliction!');

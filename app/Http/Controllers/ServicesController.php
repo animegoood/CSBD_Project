@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\services;
 use App\Http\Requests\StoreservicesRequest;
 use App\Http\Requests\UpdateservicesRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -131,13 +132,11 @@ class ServicesController extends Controller
    * @param  \App\Models\services  $services
    * @return \Illuminate\Http\Response
    */
-  public function update(UpdateservicesRequest $request, services $services)
+  public function update(UpdateservicesRequest $request, services $services,$id)
   {
 
 
-    //   if (!Auth::check()) {
-    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+
 
 
 
@@ -147,7 +146,7 @@ class ServicesController extends Controller
 
 
 
-    $get_data = services::first();
+    $get_data = DB::table('services')->findOr($id);
     $image_path1 = $get_data->testimonials_image;
     $image_path2 = $get_data->sponser_images;
 
@@ -155,44 +154,41 @@ class ServicesController extends Controller
     //for testimonial image
 
 
-    if($request->hasFile('testimonials_image')){
+    if ($request->hasFile('testimonials_image')) {
 
-    if (File::exists(public_path('Testimonials_image/') . $image_path1)) {
+      if (File::exists(public_path('Testimonials_image/') . $image_path1)) {
 
-      File::delete(public_path('Testimonials_image/') . $image_path1);
-    }
-    // for image testimonial
+        File::delete(public_path('Testimonials_image/') . $image_path1);
+      }
+      // for image testimonial
 
-    $testimonials_image_name = time() . Str::upper(Str::random(10)) . '.' . $request->testimonials_image->extension();
+      $testimonials_image_name = time() . Str::upper(Str::random(10)) . '.' . $request->testimonials_image->extension();
 
-    $request->testimonials_image->move(public_path('Testimonials_image'), $testimonials_image_name);
-
-  }
-  else{
-    $testimonials_image_name = $get_data->testimonials_image ;
-  }
-
-
-
-//sponser image
-
-  if($request->hasFile('sponser_images')){
-
-    if (File::exists(public_path('sponser_img/') . $image_path1)) {
-
-      File::delete(public_path('sponser_img/') . $image_path1);
+      $request->testimonials_image->move(public_path('Testimonials_image'), $testimonials_image_name);
+    } else {
+      $testimonials_image_name = $get_data->testimonials_image;
     }
 
 
-    // for image sponser
-    $sponserimage_name = time() . Str::upper(Str::random(10)) . '.' . $request->sponser_images->extension();
 
-    $request->sponser_images->move(public_path('sponser_img'), $sponserimage_name);
+    //sponser image
 
-  }else{
+    if ($request->hasFile('sponser_images')) {
 
-    $sponserimage_name = $get_data->sponser_images;
-  }
+      if (File::exists(public_path('sponser_img/') . $image_path2)) {
+
+        File::delete(public_path('sponser_img/') . $image_path2);
+      }
+
+
+      // for image sponser
+      $sponserimage_name = time() . Str::upper(Str::random(10)) . '.' . $request->sponser_images->extension();
+
+      $request->sponser_images->move(public_path('sponser_img'), $sponserimage_name);
+    } else {
+
+      $sponserimage_name = $get_data->sponser_images;
+    }
 
 
 
@@ -229,7 +225,7 @@ class ServicesController extends Controller
 
     ];
 
-    services::first()->update($data);
+    DB::table('services')->findOr($id)->update($data);
 
 
     return redirect()->back()->with('session', 'Services data save successfully!');
@@ -243,6 +239,33 @@ class ServicesController extends Controller
    */
   public function destroy(services $services)
   {
-    //
+    if (Auth::check()) {
+      if (DB::table('services')->all()->exists()) {
+
+
+        // remove file from storage
+        $table_data = DB::table('services')->all();
+
+        $image_path = $table_data->testimonials_image;
+        $image_path2 = $table_data->sponserimage_name;
+
+        if (File::exists(public_path('background_image/') . $image_path)) {
+          File::delete(public_path('background_image/') . $image_path);
+
+          if (File::exists(public_path('Author_background_image/') . $image_path2)) {
+            File::delete(public_path('Author_background_image/') . $image_path2);
+          }
+        } else {
+          return redirect()->back()->with('error', 'Images are not found associated with this table_data!');
+        }
+        DB::table('services')->all()->delete();
+
+        return redirect()->back()->with('success', 'Table data deleted successfully!');
+      } else {
+        return redirect()->back()->with('error', 'Table data does not exist! So can not delete!');
+      }
+    } else {
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
   }
 }

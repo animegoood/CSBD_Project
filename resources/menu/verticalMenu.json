@@ -4,57 +4,50 @@
 
 
     {
-      "url": "/auth/login-basic",
-      "name": "Login",
-      "icon": "menu-icon tf-icons ti ti-login",
-      "slug": "auth-login-basic",
-      "target": "_blank"
-    },
-    {
-      "url": "/auth/register-basic",
-      "name": "Register",
-      "icon": "menu-icon tf-icons ti ti-user",
-      "slug": "auth-register-basic",
-      "target": "_blank"
-    },
-    {
-      "url": "/admin_home",
-      "name": "WebHome",
+      "url": "/",
+      "name": "Web Home",
       "icon": "menu-icon tf-icons ti ti-smart-home",
       "slug": "pages-home"
     },
     {
       "url": "/herosection_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Create Hero Section",
+      "name": " Hero Section",
       "slug": "herosection_admin"
     },
 
     {
       "url": "/about_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Create about Section",
+      "name": " About Section",
       "slug": "about_section_admin"
     },
     {
       "url": "/services_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Create Services Section",
+      "name": " Services Section",
       "slug": "services_section_admin"
     },
 
     {
       "url": "/blog_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Create Blog Section",
+      "name": " Blog Section",
       "slug": "blog_section_admin"
     },
 
       {
       "url": "/work_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Create work Section",
+      "name": " Work Section",
       "slug": "work_section_admin"
+    },
+    {
+      "url": "/admin_profile_admin",
+      "name": "Admin Profile",
+      "icon": "menu-icon tf-icons ti ti-login",
+      "slug": "admin_profile_admin",
+      "target": "_blank"
     }
   ]
 }
