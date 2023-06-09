@@ -6,86 +6,247 @@ use App\Models\admin_profile;
 use App\Http\Requests\Storeadmin_profileRequest;
 use App\Http\Requests\Updateadmin_profileRequest;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+
 class AdminProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('content.admin_profile.admin_profile');
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
+    return view('content.admin_profile.admin_profile');
+  }
+
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+
+  public function admin()
+  {
+    return view('content.admin_profile.profile_admin');
+  }
+
+  public function create()
+  {
+    return view('content.admin_profile.profile_admin_create');
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \App\Http\Requests\Storeadmin_profileRequest  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Storeadmin_profileRequest $request)
+  {
+    $request->validated();
+
+
+
+    //admin profile image
+
+    //admin profile image file name
+
+    $admin_img_name = time() . Str::upper(Str::random(16)) . '.' . $request->admin_image->extension();
+
+    // move the admin profile image
+    $request->admin_image->move(public_path('admin_profile_image'), $admin_img_name);
+
+    //cover profile image
+
+    //cover profile image file name
+    $cover_image_name = time() . Str::upper(Str::random(16)) . '.' . $request->cover_image->extension();
+    // move the cover profile image
+    $request->cover_image->move(public_path('cover_profile_image'), $cover_image_name);
+
+
+
+
+
+
+    $data = [
+
+
+      'admin_name' =>$request->admin_name,
+      'profession'=>$request->profession,
+      'city'=>$request->city,
+
+      'profession_joinend'=>$request->profession_joinend,
+      'role'=>$request->role,
+      'country'=>$request->country,
+      'language'=>$request->language,
+
+
+      'contact'=>$request->contact,
+      'skype'=>$request->skype,
+      'email'=>$request->email,
+      'admin_image'=>$admin_img_name,
+      'cover_image'=>$cover_image_name,
+
+
+
+    ];
+
+    admin_profile::create($data);
+
+
+    return redirect()->route('admin_profile_admin')->with('success','Admin Profile data save successfully');
+
+
+  }
+
+  /**
+   * Display the specified resource.
+   *
+   * @param  \App\Models\admin_profile  $admin_profile
+   * @return \Illuminate\Http\Response
+   */
+  public function show(admin_profile $admin_profile)
+  {
+     $admin_profile_details = DB::table('admin_profiles')->first();
+
+
+     return view('content.admin_profile.admin_profile', compact('admin_profile_details'));
+  }
+
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  \App\Models\admin_profile  $admin_profile
+   * @return \Illuminate\Http\Response
+   */
+  public function edit(admin_profile $admin_profile)
+  {
+    $admin_profile_update = admin_profile::first();
+    return view('content.admin_profile.profile_admin_edit', compact('admin_profile_update'));
+  }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \App\Http\Requests\Updateadmin_profileRequest  $request
+   * @param  \App\Models\admin_profile  $admin_profile
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Updateadmin_profileRequest $request, admin_profile $admin_profile)
+  {
+
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    $request->validated();
 
-    public function admin()
-    {
-      return view('content.admin_profile.profile_admin');
-    }
-    public function create()
-    {
 
-    }
+    //for old image delete
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\Storeadmin_profileRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Storeadmin_profileRequest $request)
-    {
-        //
-    }
+    $get_data = admin_profile::first();
+    $image_name = $get_data->admin_image;
+    $image2_name = $get_data->cover_image;
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\admin_profile  $admin_profile
-     * @return \Illuminate\Http\Response
-     */
-    public function show(admin_profile $admin_profile)
-    {
-        //
+
+
+    if ($request->hasFile('admin_image')) {
+
+      if (File::exists(public_path('admin_profile_image/') . $image_name)) {
+
+
+        File::delete(public_path('admin_profile_image/') . $image_name);
+      }
+
+      ///admin profile image
+
+    //admin profile image file name
+
+    $admin_img_name = time() . Str::upper(Str::random(16)) . '.' . $request->admin_image->extension();
+
+    // move the admin profile image
+    $request->admin_image->move(public_path('admin_profile_image'), $admin_img_name);
+
+    } else {
+      $admin_img_name = $get_data->admin_image;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\admin_profile  $admin_profile
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(admin_profile $admin_profile)
-    {
-        //
+
+
+    if ($request->hasFile('cover_image')) {
+
+      if (File::exists(public_path('cover_profile_image/') . $image2_name)) {
+        File::delete(public_path('cover_profile_image/') . $image2_name);
+      }
+
+
+
+
+      //cover profile image
+
+    //cover profile image file name
+    $cover_image_name = time() . Str::upper(Str::random(16)) . '.' . $request->cover_image->extension();
+    // move the cover profile image
+    $request->cover_image->move(public_path('cover_profile_image'), $cover_image_name);
+
+    } else {
+      $cover_image_name = $get_data->cover_image;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\Updateadmin_profileRequest  $request
-     * @param  \App\Models\admin_profile  $admin_profile
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Updateadmin_profileRequest $request, admin_profile $admin_profile)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\admin_profile  $admin_profile
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(admin_profile $admin_profile)
-    {
-        //
-    }
+
+
+
+
+
+
+
+
+
+    $data = [
+
+
+      'admin_name' =>$request->admin_name,
+      'profession'=>$request->profession,
+      'city'=>$request->city,
+
+      'profession_joinend'=>$request->profession_joinend,
+      'role'=>$request->role,
+      'country'=>$request->country,
+      'language'=>$request->language,
+
+
+      'contact'=>$request->contact,
+      'skype'=>$request->skype,
+      'email'=>$request->email,
+      'admin_image'=>$admin_img_name,
+      'cover_image'=>$cover_image_name,
+
+
+
+    ];
+
+    admin_profile::create($data);
+
+
+    return redirect()->route('admin_profile_admin')->with('success','Admin Profile data update successfully');
+
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  \App\Models\admin_profile  $admin_profile
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy(admin_profile $admin_profile)
+  {
+    //
+  }
 }

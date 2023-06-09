@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\herosection;
 use App\Http\Requests\StoreherosectionRequest;
 use App\Http\Requests\UpdateherosectionRequest;
-use Illuminate\Console\View\Components\Alert as ComponentsAlert;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
 
@@ -110,18 +108,20 @@ class HerosectionController extends Controller
 
       "social_5" => $request->social_5,
 
-      // "" => $file_name2,
 
       "Background_img" => $file_name,
 
       "Author_background_image" => $author_file_name,
 
     ];
+
+
+
     herosection::create($data);
 
 
 
-    return redirect()->back()->with('success', 'Hero section data  update successfully!');
+    return redirect()->route('herosection_admin')->with('success', 'Hero section data  save successfully!');
   }
 
   /**
@@ -164,6 +164,8 @@ class HerosectionController extends Controller
 
     $herosection_update = herosection::first();
     return view('content.pages.admin_home.admin_home_edit', compact('herosection_update'));
+
+    
   }
 
   /**
@@ -215,8 +217,8 @@ class HerosectionController extends Controller
 
     if ($request->hasFile('Author_background_image')) {
 
-      if (File::exists(public_path('Author_background_image') . $image2_name)) {
-        File::delete(public_path('Author_background_image') . $image2_name);
+      if (File::exists(public_path('Author_background_image/') . $image2_name)) {
+        File::delete(public_path('Author_background_image/') . $image2_name);
       }
 
 
@@ -268,7 +270,7 @@ class HerosectionController extends Controller
     ];
     herosection::first()->update($data);
 
-    return redirect()->back()->with('session', 'Hero section data  update successfully!');
+    return redirect()->route('herosection_admin')->with('success', 'Hero section data  upsate successfully!');
   }
 
   /**
@@ -300,7 +302,7 @@ class HerosectionController extends Controller
             File::delete(public_path('Author_background_image/') . $image_path2);
           }
         } else {
-          return redirect()->back()->with('error', 'Images are not found associated with this table_data!');
+          return redirect()->route('herosection_admin')->with('error', 'Images are not found associated with this table_data!');
         }
         $table_data = herosection::first()->delete();
 

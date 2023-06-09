@@ -28,22 +28,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('admin_image');
             $table->string('cover_image');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-            $table->string('');
-
-             $table->string('');
-             $table->string('');
-             $table->string('');
-             $table->string('');
-             $table->string('');
-             $table->string('');
-             $table->string('');
+            
 
             $table->timestamps();
         });

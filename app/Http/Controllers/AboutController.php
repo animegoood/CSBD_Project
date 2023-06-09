@@ -32,12 +32,22 @@ class AboutController extends Controller
 
   {
 
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
     return view('content.pages.about_section_admin');
   }
 
 
   public function create()
   {
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
     return view('content.pages.admin_about.about_section_admin');
   }
 
@@ -49,6 +59,11 @@ class AboutController extends Controller
    */
   public function store(StoreaboutRequest $request)
   {
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
     $request->validated();
 
 
@@ -144,6 +159,12 @@ class AboutController extends Controller
    */
   public function edit(about $about)
   {
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
     $about_section_update = about::first();
 
     return view('content.pages.admin_about.admin_about_edit', compact('about_section_update'));
@@ -175,9 +196,9 @@ class AboutController extends Controller
 
     if ($request->hasFile('downloadCV')) {
 
-      if (File::exists(public_path('downloadCV_image'), $image_name1)) {
+      if (File::exists(public_path('downloadCV_image/') . $image_name1)) {
 
-        File::delete(public_path('downloadCV_image', $image_name1));
+        File::delete(public_path('downloadCV_image/' . $image_name1));
       }
 
 
@@ -269,7 +290,7 @@ class AboutController extends Controller
   {
 
     // delete the applicant
-    if (!Auth::check()) {
+    if (Auth::check()) {
 
       if (about::first()->exists()) {
 
@@ -284,12 +305,9 @@ class AboutController extends Controller
 
 
           File::delete(public_path('downloadCV_image/') . $image_name);
-
-
         } else {
 
           return redirect()->back()->with('destroy-error', 'Images are not found associated with this table_data!');
-
         }
 
         $table_data = about::first()->delete();

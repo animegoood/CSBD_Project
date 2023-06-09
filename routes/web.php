@@ -75,11 +75,21 @@ Route::get('/admin_home', [HomePage::class,'index'])->name('admin_home');
 
 Route::get('/admin_profile',[AdminProfileController::class, 'index'])->name('admin_profile');
 
+Route::get('/admin_profile',[AdminProfileController::class,'show'])->name('admin_profile');
 
 Route::get('/admin_profile_admin',[AdminProfileController::class,'admin'])->name('admin_profile_admin');
 
 
-// Route::get('/admin_profile',[AdminProfileController::class,'index3']);
+Route::get('/admin_profile_create',[AdminProfileController::class,'create'])->name('admin_profile_create');
+
+Route::post('/admin_profile_store',[AdminProfileController::class,'store'])->name('admin_profile_store');
+
+Route::get('/admin_profile_edit',[AdminProfileController::class,'edit'])->name('admin_profile_edit');
+
+Route::patch('/admin_profile_update',[AdminProfileController::class,'update'])->name('admin_profile_update');
+
+
+
 // Route::post('/admin_profile',[AdminProfileController::class,'index3']);
 
 //hero section

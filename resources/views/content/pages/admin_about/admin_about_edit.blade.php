@@ -15,9 +15,9 @@
                 @csrf
                 @method('patch')
 
-                @if (session()->has('session'))
+                {{-- @if (session()->has('session'))
                     <span class="text-success">{{ session()->get('session') }}</span>
-                @endif
+                @endif --}}
 
                 @if ($errors->any())
                     @foreach ($errors->all() as $messages)

@@ -23,7 +23,7 @@
 
                     <div>
 
-                        <a href="{{ route('services_section_create') }}" class="btn btn-primary  "> Create Admin Profile</a>
+                        <a href="{{ route('admin_profile_create') }}" class="btn btn-primary  "> Create Admin Profile</a>
 
                     </div>
                     <div>

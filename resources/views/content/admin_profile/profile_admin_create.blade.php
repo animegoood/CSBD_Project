@@ -4,19 +4,19 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Home_admin')
+@section('title', 'Profile admin')
 
 @section('content')
 
     <div class="card " style="height: 100%">
-        <h3 class="text-center " style="color: #07a3bf; "> Hero section </h3>
+        <h3 class="text-center " style="color: #07a3bf; ">Profile admin</h3>
         <div class="card-body">
-            <form action="{{ route('herosection-store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin_profile_store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                @if (session()->has('session'))
+                {{-- @if (session()->has('session'))
                     <span class="text-success">{{ session()->get('session') }}</span>
-                @endif
+                @endif --}}
 
                 @if ($errors->any())
                     @foreach ($errors->all() as $messages)
@@ -41,7 +41,7 @@
 
 
                         <input class="form-control" placeholder="UX Designer" name="profession" type="text"
-                            id="profession" maxlength="25">
+                            id="profession" maxlength="20">
 
 
                     </div>
@@ -59,8 +59,8 @@
                         <label class="form-label" for="profession_joinend">Profession Joine Month Year</label>
 
 
-                        <input class="form-control" type="text" placeholder="April 2021" name="profession_joinend"
-                            id="profession_joinend" maxlength="25">
+                        <input class="form-control" type="text" placeholder="April 2021" maxlength="20" name="profession_joinend"
+                            id="profession_joinend">
 
 
                     </div>
@@ -69,7 +69,7 @@
                         <label class="form-label" for="role">Role</label>
 
 
-                        <input class="form-control" name="role" type="text" placeholder="Developer" id="role">
+                        <input class="form-control" name="role" type="text" placeholder="Developer" id="role" maxlength="20">
 
 
                     </div>
@@ -78,7 +78,7 @@
                     <div class="col-md-6">
                         <label class="form-label" for="country">Country</label>
                         <select name="country" id="country" class="select2 form-select" data-allow-clear="true">
-                            <option value="">Select</option>
+                            <option selected>Select</option>
                             <option value="Australia">Australia</option>
                             <option value="Bangladesh">Bangladesh</option>
                             <option value="Belarus">Belarus</option>
@@ -110,6 +110,8 @@
                     <div class="col-md-6 select2-primary">
                         <label class="form-label" for="language">Language</label>
                         <select id="language" name="language" class="select2 form-select">
+
+                          <option selected>Select</option>
                             <option value="English">English</option>
                             <option value="French">French</option>
                             <option value="German">German</option>

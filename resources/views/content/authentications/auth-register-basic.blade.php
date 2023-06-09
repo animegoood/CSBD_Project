@@ -45,10 +45,10 @@
                         <!-- /Logo -->
                         <h4 class="mb-1 pt-2">Adventure starts here 🚀</h4>
                         <p class="mb-4">Make your app management easy and fun!</p>
-
+{{-- 
                         @if (session()->has('success'))
                             {{ session()->get('success') }}
-                        @endif
+                        @endif --}}
 
                         @if ($errors->any())
                             @foreach ($errors->all() as $message)
