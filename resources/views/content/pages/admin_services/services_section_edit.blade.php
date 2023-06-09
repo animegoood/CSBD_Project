@@ -11,8 +11,9 @@
     <div class="card " style="height: 100%">
         <h3 class="text-center " style="color: #07a3bf; ">Services Section </h3>
         <div class="card-body">
-            <form action="{{ route('services_section_store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('services_section_update', $service_section_details->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('patch')
 
                 {{-- @if (session()->has('session'))
                     <span class="text-success">{{ session()->get('session') }}</span>
@@ -31,7 +32,7 @@
                         Service Icon (only font-awesome)
                     </label>
 
-                    <input class="form-control" type="text" id="  service_icon" name="service_icon" placeholder='camera-retro'>
+                    <input class="form-control" type="text" id="  service_icon" value="{{ $service_section_details->service_icon }}" name="service_icon" placeholder='<i class="fas fa-camera-retro'>
 
 
                 </div>
@@ -43,7 +44,7 @@
                         <label class="form-label" for="service_name">service_name</label>
 
 
-                        <input placeholder="Photography" class="form-control"
+                        <input value="{{ $service_section_details->service_name }}"  placeholder="Photography" class="form-control"
                             name="service_name" type="text" id="service_name">
 
 
@@ -53,9 +54,9 @@
                         <label class="form-label" for="service_description">service_description</label>
 
 
-                        <textarea rows="3" placeholder="Working with client and community, we deliver masterplans that create vibrant new places and
+                        <input value="{{ $service_section_details->service_description }}"  rows="3" placeholder="Working with client and community, we deliver masterplans that create vibrant new places and
                         spaces, attract people." class="form-control"
-                            name="service_description" type="text" id="service_description"></textarea>
+                            name="service_description" type="text" id="service_description">
 
 
                     </div>
@@ -64,7 +65,7 @@
                         <label class="form-label" for="testimonials_name">testimonials_name</label>
 
 
-                        <input placeholder="Donia Martin" class="form-control" name="testimonials_name" type="text"
+                        <input value="{{ $service_section_details->testimonials_name }}"  placeholder="Donia Martin" class="form-control" name="testimonials_name" type="text"
                             id="testimonials_name">
 
 
@@ -73,7 +74,7 @@
                         <label class="form-label" for="testimonials_job">testimonials_job</label>
 
 
-                        <input placeholder="Product Design" class="form-control" name="testimonials_job" type="text"
+                        <input value="{{ $service_section_details->testimonials_job }}"  placeholder="Product Design" class="form-control" name="testimonials_job" type="text"
                             id="testimonials_job">
 
 
@@ -83,8 +84,8 @@
 
 
 
-                        <textarea rows="3"  placeholder="Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus." class="form-control" name="testimonials_description" type="text"
-                            id="testimonials_description"></textarea>
+                        <input value="{{ $service_section_details->testimonials_description }}"  rows="3"  placeholder="Lorem ipsum dolor sit amet consec , tetur adipiscing elit. Etiam fringilla pretium lacus." class="form-control" name="testimonials_description" type="text"
+                            id="testimonials_description">
 
 
                     </div>
@@ -93,7 +94,7 @@
                         <label class="form-label" for="pricing_name">pricing_name</label>
 
 
-                        <input placeholder="Basic" class="form-control" name="pricing_name" type="text"
+                        <input value="{{ $service_section_details->pricing_name }}"  placeholder="Basic" class="form-control" name="pricing_name" type="text"
                             id="pricing_name">
 
 
@@ -104,7 +105,7 @@
                         <label class="form-label" for="pricing">pricing</label>
 
 
-                        <input placeholder="09" class="form-control" name="pricing" type="number"
+                        <input value="{{ $service_section_details->pricing }}"  placeholder="09" class="form-control" name="pricing" type="number"
                             id="pricing">
 
 
@@ -113,7 +114,7 @@
                         <label class="form-label" for="pricing_month">pricing_month</label>
 
 
-                        <input placeholder="$/month" class="form-control" name="pricing_month" type="text"
+                        <input value="{{ $service_section_details->pricing_month }}"  placeholder="$/month" class="form-control" name="pricing_month" type="text"
                             id="pricing_month">
 
 
@@ -127,7 +128,7 @@
                         <label class="form-label" for="pricing_services_1">pricing_services_1</label>
 
 
-                        <input placeholder="10 Pages." class="form-control" name="pricing_services_1" type="text"
+                        <input value="{{ $service_section_details->pricing_services_1 }}"  placeholder="10 Pages." class="form-control" name="pricing_services_1" type="text"
                             id="pricing_services_1">
 
 
@@ -136,7 +137,7 @@
                         <label class="form-label" for="pricing_services_2">pricing_services_2</label>
 
 
-                        <input placeholder="Free Installation." class="form-control" name="pricing_services_2" type="text"
+                        <input value="{{ $service_section_details->pricing_services_2 }}"  placeholder="Free Installation." class="form-control" name="pricing_services_2" type="text"
                             id="pricing_services_2">
 
 
@@ -145,7 +146,7 @@
                         <label class="form-label" for="pricing_services_3">pricing_services_3</label>
 
 
-                        <input placeholder="Fee Hosting." class="form-control" name="pricing_services_3" type="text"
+                        <input value="{{ $service_section_details->pricing_services_3 }}"  placeholder="Fee Hosting." class="form-control" name="pricing_services_3" type="text"
                             id="pricing_services_3">
 
 
@@ -156,7 +157,7 @@
                         <label class="form-label" for="pricing_services_4">pricing_services_4</label>
 
 
-                        <input placeholder="10 Addon Domains." class="form-control" name="pricing_services_4" type="text"
+                        <input value="{{ $service_section_details->pricing_services_4 }}"  placeholder="10 Addon Domains." class="form-control" name="pricing_services_4" type="text"
                             id="pricing_services_4">
 
 
@@ -170,7 +171,7 @@
                         <label class="form-label" for="pricing_services_5">pricing_services_5</label>
 
 
-                        <input placeholder="Email support" class="form-control" name="pricing_services_5" type="text"
+                        <input value="{{ $service_section_details->pricing_services_5 }}"  placeholder="Email support" class="form-control" name="pricing_services_5" type="text"
                             id="pricing_services_5">
 
 
@@ -183,7 +184,7 @@
                             Testimonials Image
                         </label>
                         <div class=" mt-2">
-                            <input class="form-control" type="file" id="testimonials_image" accept=".png,.jpg"
+                            <input  class="form-control" type="file" id="testimonials_image" accept=".png,.jpg"
                                 name="testimonials_image">
 
                         </div>

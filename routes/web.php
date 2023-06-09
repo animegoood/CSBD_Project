@@ -88,6 +88,8 @@ Route::get('/admin_profile_edit',[AdminProfileController::class,'edit'])->name('
 
 Route::patch('/admin_profile_update',[AdminProfileController::class,'update'])->name('admin_profile_update');
 
+Route::delete('/admin_profile_destroy',[AdminProfileController::class,'destroy'])->name('admin_profile_destroy');
+
 
 
 // Route::post('/admin_profile',[AdminProfileController::class,'index3']);
@@ -131,21 +133,23 @@ Route::delete('/about_section_destroy',[AboutController::class, 'destroy'])->nam
 Route::get('/services_section_admin', [ServicesController::class, 'admin'])->name('services_section_admin');
 
 
+Route::get('/services_section_list', [ServicesController::class, 'list'])->name('services_section_list');
+
 
 Route::get('/services_section_create', [ServicesController::class, 'create'])->name('services_section_create');
 
 Route::post('/services_section_store',[ServicesController::class, 'store'])->name('services_section_store');
 
 
-Route::get('/services_section_edit',[ServicesController::class, 'edit'])->name('services_section_edit');
+Route::get('/services_section_edit/{id}',[ServicesController::class, 'edit'])->name('services_section_edit');
 
 
 
-Route::patch('/services_section_update',[ServicesController::class, 'update'])->name('services_section_update');
+Route::patch('/services_section_update/{id}',[ServicesController::class, 'update'])->name('services_section_update');
 
 
 
-Route::delete('/services_section_destroy',[ServicesController::class, 'destroy'])->name('services_section_destroy');
+Route::delete('/services_section_destroy/{id}',[ServicesController::class, 'destroy'])->name('services_section_destroy');
 
 
 // blog section

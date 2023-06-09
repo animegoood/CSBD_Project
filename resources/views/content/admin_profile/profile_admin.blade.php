@@ -4,7 +4,7 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'services')
+@section('title', 'Admin Profile')
 
 @section('content')
 
@@ -28,12 +28,12 @@
                     </div>
                     <div>
 
-                        <a href="{{ route('services_section_edit') }}" class="btn btn-primary  "> Edit Admin Profile</a>
+                        <a href="{{ route('admin_profile_edit') }}" class="btn btn-primary  "> Edit Admin Profile</a>
 
                     </div>
                     <div>
 
-                        <form action="{{ route('services_section_destroy') }}" method="POST">
+                        <form action="{{ route('admin_profile_destroy') }}" method="POST">
                             @csrf
                             @method('DELETE')
 

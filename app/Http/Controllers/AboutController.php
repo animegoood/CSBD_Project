@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\about;
 use App\Http\Requests\StoreaboutRequest;
 use App\Http\Requests\UpdateaboutRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
-
 
 class AboutController extends Controller
 {
@@ -310,7 +310,7 @@ class AboutController extends Controller
           return redirect()->back()->with('destroy-error', 'Images are not found associated with this table_data!');
         }
 
-        $table_data = about::first()->delete();
+        about::first()->delete();
 
         return redirect()->route('about_section_admin')->with('destroy-success', 'Table data deleted successfully!');
       } else {

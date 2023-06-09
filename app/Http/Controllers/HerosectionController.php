@@ -165,7 +165,7 @@ class HerosectionController extends Controller
     $herosection_update = herosection::first();
     return view('content.pages.admin_home.admin_home_edit', compact('herosection_update'));
 
-    
+
   }
 
   /**
@@ -285,7 +285,7 @@ class HerosectionController extends Controller
     // delete the applicant
     if (Auth::check()) {
 
-      if (herosection::first()->exists()) {
+      if (herosection::first()->delete()->exists()) {
 
 
 
@@ -304,7 +304,8 @@ class HerosectionController extends Controller
         } else {
           return redirect()->route('herosection_admin')->with('error', 'Images are not found associated with this table_data!');
         }
-        $table_data = herosection::first()->delete();
+
+        herosection::first()->delete();
 
         return redirect()->route('herosection_admin')->with('success', 'Table data deleted successfully!');
       } else {

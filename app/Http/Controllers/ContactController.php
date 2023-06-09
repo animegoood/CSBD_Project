@@ -29,7 +29,7 @@ class ContactController extends Controller
    */
   public function create()
   {
-    // 
+    //
   }
 
   /**
@@ -61,7 +61,7 @@ class ContactController extends Controller
 
     contact::create($data);
 
-    return redirect()->back()->with('session','contact message sent successfully');
+    return redirect()->back()->with('success','contact message sent successfully');
 
   }
 

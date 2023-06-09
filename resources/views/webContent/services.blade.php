@@ -44,11 +44,12 @@
                     <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
                         <div class="service-item">
                             <div class="icon bg-base-color">
-                                <i class="{{ $service_detail->service_icon }}"></i>
+                                <i class="fas fa-{{ $service_detail->service_icon }}"></i>
+
                             </div>
                             <div class="content">
                                 <h5>{{ $service_detail->service_name }}</h5>
-                                <p>{{ $service_detail->service_description }}
+                                <p>{{htmlspecialchars($service_detail->service_description )}}
                                 </p>
                             </div>
                         </div>
@@ -79,7 +80,7 @@
                                 <h6>{{ $service_detail->testimonials_name }}</h6>
                                 <p class="job">{{ $service_detail->testimonials_job }}</p>
 
-                                <p>{{ $service_detail->testimonials_description }}</p>
+                                <p>{{ htmlspecialchars($service_detail->testimonials_description )}}</p>
                                 <div class="icon bg-base-color">
                                     <span class="icon_quotations"></span>
                                 </div>

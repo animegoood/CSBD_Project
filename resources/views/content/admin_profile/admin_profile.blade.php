@@ -47,7 +47,7 @@
                                 <ul
                                     class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-2">
                                     <li class="list-inline-item">
-                                        <i class='ti ti-color-swatch'></i> Joined {{ $admin_profile_details->profession }}
+                                        <i class='ti ti-color-swatch'></i> {{ $admin_profile_details->profession }}
                                     </li>
                                     <li class="list-inline-item">
                                         <i class='ti ti-map-pin'></i> {{ $admin_profile_details->city }}
@@ -89,9 +89,7 @@
                         <div class="col-md-6">
                             <small class="card-text text-uppercase">About</small>
                             <ul class="list-unstyled mb-4 mt-3">
-                                <li class="d-flex align-items-center mb-3"><i class="ti ti-user"></i><span
-                                        class="fw-bold mx-2">Full Name:</span> <span>
-                                        {{ $admin_profile_details->admin_name }}</span></li>
+                               
 
                                 <li class="d-flex align-items-center mb-3"><i class="ti ti-crown"></i><span
                                         class="fw-bold mx-2">Role:</span> <span> {{ $admin_profile_details->role }}</span>

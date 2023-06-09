@@ -21,26 +21,26 @@
 
 
 
-                    <div class="">
+                    <div >
 
                         <a href="{{ route('services_section_create') }}" class="btn btn-primary  "> create services
                             section</a>
 
                     </div>
-                    <div class="">
+                    <div >
 
-                        <a href="{{ route('services_section_edit') }}" class="btn btn-primary  "> edit services section</a>
+                        <a href="{{ route('services_section_list') }}" class="btn btn-primary  ">services section list</a>
 
                     </div>
-                    <div class="">
-
+                    <div >
+{{--
                         <form action="{{ route('services_section_destroy') }}" method="POST">
                             @csrf
                             @method('DELETE')
 
                             <button type="submit" class="btn btn-danger">Delete services section</button>
 
-                        </form>
+                        </form> --}}
 
                     </div>
                 </div>

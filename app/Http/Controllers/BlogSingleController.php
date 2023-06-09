@@ -7,6 +7,8 @@ use App\Http\Requests\Storeblog_singleRequest;
 use App\Http\Requests\Updateblog_singleRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class BlogSingleController extends Controller
 {
@@ -19,7 +21,7 @@ class BlogSingleController extends Controller
 
     {
 
-      $blogs = DB::table('blog_singles')->get();
+      $blogs = DB::table('blog_singles')->get()->all();
 
       return view('webContent.blog',compact('blogs'));
 
@@ -122,7 +124,7 @@ class BlogSingleController extends Controller
 
       blog_single::create($data);
 
-      return redirect()->back()->with('session' , 'blog data save successfully');
+      return redirect()->back()->with('success' , 'blog data save successfully');
 
     }
 

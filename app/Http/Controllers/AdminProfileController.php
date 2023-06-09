@@ -140,10 +140,10 @@ class AdminProfileController extends Controller
   {
 
 
-    if (!Auth::check()) {
+    // if (!Auth::check()) {
 
-      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    }
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
 
     $request->validated();
 
@@ -232,7 +232,7 @@ class AdminProfileController extends Controller
 
     ];
 
-    admin_profile::create($data);
+    admin_profile::first()->update($data);
 
 
     return redirect()->route('admin_profile_admin')->with('success','Admin Profile data update successfully');
@@ -247,6 +247,38 @@ class AdminProfileController extends Controller
    */
   public function destroy(admin_profile $admin_profile)
   {
-    //
+
+    // delete the applicant
+    // if (Auth::check()) {
+
+      if (admin_profile::first()->exists()) {
+
+
+
+        // remove file from storage
+        $table_data = admin_profile::first();
+
+        $image_path = $table_data->admin_image;
+        $image_path2 = $table_data->cover_image;
+
+        if (File::exists(public_path('admin_profile_image/') . $image_path)) {
+          File::delete(public_path('admin_profile_image/') . $image_path);
+
+          if (File::exists(public_path('cover_profile_image/') . $image_path2)) {
+            File::delete(public_path('cover_profile_image/') . $image_path2);
+          }
+        } else {
+          return redirect()->route('admin_profile_admin')->with('error', 'Images are not found associated with this table_data!');
+        }
+
+        admin_profile::first()->delete();
+
+        return redirect()->route('admin_profile_admin')->with('success', 'Table data deleted successfully!');
+      } else {
+        return redirect()->route('admin_profile_admin')->with('error', 'Table data does not exist! So can not delete!');
+      }
+    // } else {
+    //   return redirect()->route('login')->with('error', 'You are not authorized to delete this appliction!');
+    // }
   }
 }

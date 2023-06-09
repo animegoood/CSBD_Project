@@ -41,6 +41,15 @@ class ServicesController extends Controller
   {
     return view('content.pages.admin_services.services_section_admin');
   }
+  public function list()
+  {
+
+    $service_lists = DB::table('services')->get()->all();
+    return view('content.pages.services_section_list', compact('service_lists'));
+
+
+
+  }
 
   /**
    * Store a newly created resource in storage.
@@ -97,7 +106,7 @@ class ServicesController extends Controller
     services::create($data);
 
 
-    return redirect()->back()->with('session', 'Services data save successfully!');
+    return redirect()->route('services_section_admin')->with('success', 'Services data save successfully!');
   }
 
   /**
@@ -120,9 +129,13 @@ class ServicesController extends Controller
    * @param  \App\Models\services  $services
    * @return \Illuminate\Http\Response
    */
-  public function edit(services $services)
+  public function edit(services $services,$id)
   {
-    //
+    $service_section_details = services::findOr($id);
+
+    return view('content.pages.admin_services.services_section_edit', compact('service_section_details'));
+
+
   }
 
   /**
@@ -137,7 +150,10 @@ class ServicesController extends Controller
 
 
 
+// if (!Auth::check()) {
 
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
 
 
 
@@ -225,10 +241,10 @@ class ServicesController extends Controller
 
     ];
 
-    DB::table('services')->findOr($id)->update($data);
+    services::findOr($id)->update($data);
 
 
-    return redirect()->back()->with('session', 'Services data save successfully!');
+    return redirect()->route('services_section_admin')->with('success', 'Services data update successfully!');
   }
 
   /**
@@ -237,35 +253,35 @@ class ServicesController extends Controller
    * @param  \App\Models\services  $services
    * @return \Illuminate\Http\Response
    */
-  public function destroy(services $services)
+  public function destroy(services $services,$id)
   {
-    if (Auth::check()) {
-      if (DB::table('services')->all()->exists()) {
+    // if (Auth::check()) {
+      if (services::findOr($id)->exists()) {
 
 
         // remove file from storage
-        $table_data = DB::table('services')->all();
+        $table_data = services::findOr($id);
 
         $image_path = $table_data->testimonials_image;
         $image_path2 = $table_data->sponserimage_name;
 
-        if (File::exists(public_path('background_image/') . $image_path)) {
-          File::delete(public_path('background_image/') . $image_path);
+        if (File::exists(public_path('Testimonials_image/') . $image_path)) {
+          File::delete(public_path('Testimonials_image/') . $image_path);
 
-          if (File::exists(public_path('Author_background_image/') . $image_path2)) {
-            File::delete(public_path('Author_background_image/') . $image_path2);
+          if (File::exists(public_path('sponser_img/') . $image_path2)) {
+            File::delete(public_path('sponser_img/') . $image_path2);
           }
         } else {
-          return redirect()->back()->with('error', 'Images are not found associated with this table_data!');
+          return redirect()->route('services_section_admin')->with('error', 'Images are not found associated with this table_data!');
         }
-        DB::table('services')->all()->delete();
+        services::first()->delete();
 
-        return redirect()->back()->with('success', 'Table data deleted successfully!');
+        return redirect()->route('services_section_admin')->with('success', 'Table data deleted successfully!');
       } else {
-        return redirect()->back()->with('error', 'Table data does not exist! So can not delete!');
+        return redirect()->route('services_section_admin')->with('error', 'Table data does not exist! So can not delete!');
       }
-    } else {
-      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    }
+    // } else {
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
   }
 }

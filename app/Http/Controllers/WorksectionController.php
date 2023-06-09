@@ -9,8 +9,6 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
-
 use Illuminate\Support\Facades\File;
 
 
@@ -118,7 +116,7 @@ class WorksectionController extends Controller
 
     worksection::create($data);
 
-    return redirect()->back()->with('session', 'work section data save successfully ');
+    return redirect()->back()->with('success', 'work section data save successfully ');
   }
 
   /**
@@ -168,11 +166,11 @@ class WorksectionController extends Controller
   {
 
     // if (Auth::check()) {
-      if (DB::table('worksections')->all()->exists()) {
+      if (worksection::first()->exists()) {
 
 
         // remove file from storage
-        $table_data = DB::table('worksections')->all();
+        $table_data = worksection::first();
 
         $image_path = $table_data->photography;
         $image_path2 = $table_data->illustrator;
@@ -191,7 +189,7 @@ class WorksectionController extends Controller
         } else {
           return redirect()->back()->with('error', 'Images are not found associated with this table_data!');
         }
-        DB::table('worksections')->all()->delete();
+        worksection::first()->delete();
 
         return redirect()->back()->with('success', 'Table data deleted successfully!');
       } else {

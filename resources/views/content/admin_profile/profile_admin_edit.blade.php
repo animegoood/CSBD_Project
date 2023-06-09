@@ -9,7 +9,7 @@
 @section('content')
 
     <div class="card " style="height: 100%">
-        <h3 class="text-center " style="color: #07a3bf; ">Profile admin</h3>
+        <h3 class="text-center " style="color: #07a3bf; ">Profile admin edit</h3>
         <div class="card-body">
             <form action="{{ route('admin_profile_update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -31,7 +31,7 @@
                         <label class="form-label" for="admin_name">Admin Name</label>
 
 
-                        <input class="form-control" placeholder="John Doe" name="admin_name" type="text" id="admin_name"
+                        <input class="form-control" placeholder="John Doe" name="admin_name" type="text" id="admin_name" value="{{ $admin_profile_update->admin_name }}"
                             maxlength="20">
 
 
@@ -41,7 +41,7 @@
                         <label class="form-label" for="profession">Profession</label>
 
 
-                        <input class="form-control" placeholder="UX Designer" name="profession" type="text"
+                        <input class="form-control" placeholder="UX Designer" name="profession" type="text" value="{{ $admin_profile_update->admin_name }}"
                             id="profession" maxlength="20">
 
 
@@ -51,7 +51,7 @@
                         <label class="form-label" for="city">Your City</label>
 
 
-                        <input class="form-control" type="text" name="city" id="city" maxlength="20">
+                        <input class="form-control" type="text" name="city" id="city" value="{{ $admin_profile_update->city }}" maxlength="20">
 
 
                     </div>
@@ -60,7 +60,7 @@
                         <label class="form-label" for="profession_joinend">Profession Joine Month Year</label>
 
 
-                        <input class="form-control" type="text" placeholder="April 2021" maxlength="20" name="profession_joinend"
+                        <input class="form-control"value="{{ $admin_profile_update->admin_name }}" type="text" placeholder="April 2021" maxlength="20" name="profession_joinend"
                             id="profession_joinend">
 
 
@@ -70,7 +70,7 @@
                         <label class="form-label" for="role">Role</label>
 
 
-                        <input class="form-control" name="role" type="text" placeholder="Developer" id="role" maxlength="20">
+                        <input class="form-control" name="role" value="{{ $admin_profile_update->admin_name }}" type="text" placeholder="Developer" id="role" maxlength="20">
 
 
                     </div>
@@ -79,31 +79,31 @@
                     <div class="col-md-6">
                         <label class="form-label" for="country">Country</label>
                         <select name="country" id="country" class="select2 form-select" data-allow-clear="true">
-                            <option selected>Select</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Bangladesh">Bangladesh</option>
-                            <option value="Belarus">Belarus</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="Canada">Canada</option>
-                            <option value="China">China</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="India">India</option>
-                            <option value="Indonesia">Indonesia</option>
-                            <option value="Israel">Israel</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Japan">Japan</option>
-                            <option value="Korea">Korea, Republic of</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Russia">Russian Federation</option>
-                            <option value="South Africa">South Africa</option>
-                            <option value="Thailand">Thailand</option>
-                            <option value="Turkey">Turkey</option>
-                            <option value="Ukraine">Ukraine</option>
-                            <option value="United Arab Emirates">United Arab Emirates</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United States">United States</option>
+                            <option >Select</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Australia"  >Australia</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Bangladesh">Bangladesh</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Belarus">Belarus</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Brazil">Brazil</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Canada">Canada</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="China">China</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="France">France</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Germany">Germany</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="India">India</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Indonesia">Indonesia</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Israel">Israel</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Italy">Italy</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Japan">Japan</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Korea">Korea, Republic of</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Mexico">Mexico</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Philippines">Philippines</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Russia">Russian Federation</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="South Africa">South Africa</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Thailand">Thailand</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Turkey">Turkey</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="Ukraine">Ukraine</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="United Arab Emirates">United Arab Emirates</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="United Kingdom">United Kingdom</option>
+                            <option  {{$admin_profile_update->country ? 'selected' : ''}} value="United States">United States</option>
                         </select>
                     </div>
 
@@ -112,11 +112,11 @@
                         <label class="form-label" for="language">Language</label>
                         <select id="language" name="language" class="select2 form-select">
 
-                          <option selected>Select</option>
-                            <option value="English">English</option>
-                            <option value="French">French</option>
-                            <option value="German">German</option>
-                            <option value="Portuguese">Portuguese</option>
+                          <option >Select</option>
+                            <option {{$admin_profile_update->language ? 'selected' : ''}} value="English">English</option>
+                            <option {{$admin_profile_update->language ? 'selected' : ''}} value="French">French</option>
+                            <option {{$admin_profile_update->language ? 'selected' : ''}} value="German">German</option>
+                            <option {{$admin_profile_update->language ? 'selected' : ''}} value="Portuguese">Portuguese</option>
                         </select>
                     </div>
 
@@ -126,7 +126,7 @@
                         <label class="form-label" for="contact">Contact</label>
 
 
-                        <input class="form-control" name="contact" type="text" id="contact">
+                        <input class="form-control" name="contact" type="text" value="{{ $admin_profile_update->contact  }}" id="contact">
 
                     </div>
 
@@ -134,7 +134,7 @@
                         <label class="form-label" for="skype">Skype</label>
 
 
-                        <input class="form-control" name="skype" type="url" id="skype">
+                        <input class="form-control" value="{{ $admin_profile_update->skype  }}"  name="skype" type="url" id="skype">
 
                     </div>
 
@@ -142,7 +142,7 @@
                         <label class="form-label" for="email">Email</label>
 
 
-                        <input class="form-control" name="email" type="email" id="email">
+                        <input class="form-control" value="{{ $admin_profile_update->email  }}"  name="email" type="email" id="email">
 
                     </div>
 
