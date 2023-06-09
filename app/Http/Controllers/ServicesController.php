@@ -45,7 +45,7 @@ class ServicesController extends Controller
   {
 
     $service_lists = DB::table('services')->get()->all();
-    return view('content.pages.services_section_list', compact('service_lists'));
+    return view('content.pages.admin_services.services_section_list', compact('service_lists'));
 
 
 

@@ -161,12 +161,17 @@ Route::get('/blog_section_create',[BlogSingleController::class, 'create'])->name
 
 Route::post('/blog_section_store',[BlogSingleController::class, 'store'])->name('blog_section_store');
 
-Route::get('/blog_section_edit',[BlogSingleController::class, 'edit'])->name('blog_section_edit');
 
-Route::patch('/blog_section_update',[BlogSingleController::class, 'update'])->name('blog_section_update');
+Route::get('/blog_section_list',[BlogSingleController::class, 'list'])->name('blog_section_list');
+
+Route::get('/blog_section_edit/{id}',[BlogSingleController::class, 'edit'])->name('blog_section_edit');
+
+Route::patch('/blog_section_update/{id}',[BlogSingleController::class, 'update'])->name('blog_section_update');
 
 
-Route::delete('/blog_section_update',[BlogSingleController::class, 'update'])->name('blog_section_update');
+Route::delete('/blog_section_destroy/{id}',[BlogSingleController::class, 'destroy'])->name('blog_section_destroy');
+
+
 
 // Route::post('/blog_section_update',[BlogSingleController::class, 'update'])->name('blog_section_update');
 

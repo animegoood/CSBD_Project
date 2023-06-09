@@ -4,7 +4,7 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Home')
+@section('title', 'Blogs')
 
 @section('content')
 
@@ -12,7 +12,7 @@
     <div class="container">
         <div class="card">
 
-            <h1 class="text-center " style="color: #07a3bf; ">Web Home Page</h1>
+            <h1 class="text-center " style="color: #07a3bf; ">Web Blog Page</h1>
 
             <div class="card-body">
 
@@ -20,25 +20,25 @@
 
                     <div>
 
-                        <a href="{{ route('herosection_create') }}" class="btn btn-primary  "> create hero section</a>
+                        <a href="{{ route('blog_section_create') }}" class="btn btn-primary  "> create Blog </a>
 
                     </div>
                     <div>
 
-                        <a href="{{ route('herosection_edit') }}" class="btn btn-primary  "> edit hero section</a>
+                        <a href="{{ route('blog_section_list') }}" class="btn btn-primary  ">  Blogs list</a>
 
                     </div>
-                    <div>
+                    {{-- <div>
 
                         <form action="{{ route('herosection_destroy') }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger">Delete hero section</button>
+                            <button type="submit" class="btn btn-danger">Delete Blog section</button>
 
                         </form>
 
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
