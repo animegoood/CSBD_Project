@@ -34,7 +34,7 @@
                                     <div class="avatar-wrapper">
                                         <div class="avatar me-2">
                                             <img src="{{ '/Blog_thumbnail_image/' . $blogs_list->Blog_thumbnail }}"
-                                                alt="{{ $blogs_list->Blog_thumbnail }}" class="rounded-circle">
+                                                alt="BlogThumbnail" class="rounded-circle">
                                         </div>
                                     </div>
 

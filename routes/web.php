@@ -172,12 +172,6 @@ Route::patch('/blog_section_update/{id}',[BlogSingleController::class, 'update']
 Route::delete('/blog_section_destroy/{id}',[BlogSingleController::class, 'destroy'])->name('blog_section_destroy');
 
 
-
-// Route::post('/blog_section_update',[BlogSingleController::class, 'update'])->name('blog_section_update');
-
-
-
-
 // contact section
 
 Route::post('/contact_section_store',[ContactController::class, 'store'])->name('contact_section_store');
