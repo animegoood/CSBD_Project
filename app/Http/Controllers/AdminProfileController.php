@@ -20,6 +20,11 @@ class AdminProfileController extends Controller
    */
   public function index()
   {
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+    
     return view('content.admin_profile.admin_profile');
   }
 
@@ -31,12 +36,23 @@ class AdminProfileController extends Controller
 
   public function admin()
   {
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
     return view('content.admin_profile.profile_admin');
+
   }
 
   public function create()
   {
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
     return view('content.admin_profile.profile_admin_create');
+
   }
 
   /**
@@ -47,6 +63,12 @@ class AdminProfileController extends Controller
    */
   public function store(Storeadmin_profileRequest $request)
   {
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
     $request->validated();
 
 
@@ -111,6 +133,12 @@ class AdminProfileController extends Controller
    */
   public function show(admin_profile $admin_profile)
   {
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
      $admin_profile_details = DB::table('admin_profiles')->first();
 
 
@@ -125,6 +153,10 @@ class AdminProfileController extends Controller
    */
   public function edit(admin_profile $admin_profile)
   {
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
     $admin_profile_update = admin_profile::first();
     return view('content.admin_profile.profile_admin_edit', compact('admin_profile_update'));
   }
@@ -140,10 +172,10 @@ class AdminProfileController extends Controller
   {
 
 
-    // if (!Auth::check()) {
+    if (!Auth::check()) {
 
-    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     $request->validated();
 
@@ -249,7 +281,7 @@ class AdminProfileController extends Controller
   {
 
     // delete the applicant
-    // if (Auth::check()) {
+    if (Auth::check()) {
 
       if (admin_profile::first()->exists()) {
 
@@ -277,8 +309,8 @@ class AdminProfileController extends Controller
       } else {
         return redirect()->route('admin_profile_admin')->with('error', 'Table data does not exist! So can not delete!');
       }
-    // } else {
-    //   return redirect()->route('login')->with('error', 'You are not authorized to delete this appliction!');
-    // }
+    } else {
+      return redirect()->route('login')->with('error', 'You are not authorized to delete this appliction!');
+    }
   }
 }

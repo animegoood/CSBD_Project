@@ -40,5 +40,27 @@ class WebServiceProvider extends ServiceProvider
       $pageConfigs = ['myLayout' => 'blank'];
       return view('content.authentications.auth-verify-email-basic', ['pageConfigs' => $pageConfigs]);
     });
+
+    Fortify::resetPasswordView(function(){
+
+      $pageConfigs = ['myLayout' => 'blank'];
+      return view('content.authentications.auth-reset-password-basic', ['pageConfigs' => $pageConfigs]);
+
+    });
+
+    Fortify::requestPasswordResetLinkView(function(){
+
+      $pageConfigs = ['myLayout' => 'blank'];
+      return view('content.authentications.auth-forgot-password-basic', ['pageConfigs' => $pageConfigs]);
+
+    });
+
+    Fortify::twoFactorChallengeView(function (){
+
+      $pageConfigs = ['myLayout' => 'blank'];
+      return view('content.authentications.auth-two-steps-basic', ['pageConfigs' => $pageConfigs]);
+
+
+    });
   }
 }

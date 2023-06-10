@@ -31,7 +31,10 @@ class ServicesController extends Controller
 
   public function admin()
   {
+    if (!Auth::check()) {
 
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     return view('content.pages.service_section_admin');
   }
@@ -39,10 +42,21 @@ class ServicesController extends Controller
 
   public function create()
   {
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
     return view('content.pages.admin_services.services_section_admin');
   }
   public function list()
   {
+
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     $service_lists = DB::table('services')->get()->all();
     return view('content.pages.admin_services.services_section_list', compact('service_lists'));
@@ -59,6 +73,13 @@ class ServicesController extends Controller
    */
   public function store(StoreservicesRequest $request)
   {
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
+
     $request->validated();
 
     // for image testimonial
@@ -131,6 +152,12 @@ class ServicesController extends Controller
    */
   public function edit(services $services,$id)
   {
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
+
     $service_section_details = services::findOr($id);
 
     return view('content.pages.admin_services.services_section_edit', compact('service_section_details'));
@@ -150,10 +177,10 @@ class ServicesController extends Controller
 
 
 
-// if (!Auth::check()) {
+  if (!Auth::check()) {
 
-    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
 
 
@@ -255,7 +282,7 @@ class ServicesController extends Controller
    */
   public function destroy(services $services,$id)
   {
-    // if (Auth::check()) {
+    if (Auth::check()) {
       if (services::findOr($id)->exists()) {
 
 
@@ -280,8 +307,8 @@ class ServicesController extends Controller
       } else {
         return redirect()->route('services_section_admin')->with('error', 'Table data does not exist! So can not delete!');
       }
-    // } else {
-    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    } else {
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
   }
 }

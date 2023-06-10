@@ -65,7 +65,10 @@ Route::get('/works', [WorksectionController::class, 'show'])->name('works');
 //admin route
 
 
-// Route::group(['middleware' => ['auth','verify'], function () {
+Route::middleware(['role:admin|edit','auth','verified'])->group(function () {
+
+
+
 //admin home page
 
 Route::get('/admin_home', [HomePage::class,'index'])->name('admin_home');
@@ -189,7 +192,7 @@ Route::post('/work_section_store',[WorksectionController::class, 'store'])->name
 Route::delete('/work_section_destroy',[WorksectionController::class, 'destroy'])->name('work_section_destroy');
 
 
-// });
+});
 
 
 //authentication

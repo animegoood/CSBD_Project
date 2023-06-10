@@ -43,13 +43,7 @@
                         </div>
                         <!-- /Logo -->
 
-                        @if ($errors->any())
-                            @foreach ($errors->all() as $message)
-                                <span class="input-error">{{ $message }}</span>
-                            @endforeach
-                        @endif
                         <h4 class="mb-1 pt-2">Reset Password 🔒</h4>
-                        <p class="mb-4">for <span class="fw-bold">john.doe@email.com</span></p>
                         <form class="auth-reset-password-form mt-2" action="{{ route('password.update') }}" method="POST">
                             @csrf
                             <input type="hidden" name="token" value="{{ request()->token }}">

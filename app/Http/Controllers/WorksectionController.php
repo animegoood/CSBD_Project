@@ -32,11 +32,19 @@ class WorksectionController extends Controller
 
   public function admin()
   {
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
     return view('content.pages.work_section_admin');
 
   }
   public function create()
   {
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
     return view('content.pages.admin_work.work_section_create');
   }
 
@@ -48,7 +56,10 @@ class WorksectionController extends Controller
    */
   public function store(StoreworksectionRequest $request)
   {
+    if (!Auth::check()) {
 
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     $request->validated();
 
@@ -165,7 +176,7 @@ class WorksectionController extends Controller
   public function destroy(worksection $worksection)
   {
 
-    // if (Auth::check()) {
+    if (Auth::check()) {
       if (worksection::first()->exists()) {
 
 
@@ -195,9 +206,9 @@ class WorksectionController extends Controller
       } else {
         return redirect()->back()->with('error', 'Table data does not exist! So can not delete!');
       }
-    // } else {
-    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    } else {
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
   }
 
 }

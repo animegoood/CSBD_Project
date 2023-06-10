@@ -9,13 +9,18 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-
-
-use Spatie\Permission\Models\Permission;
+use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Permission;
+
+
+
 
 class HerosectionController extends Controller
 {
+
+  use HasRoles;
   /**
    * Display a listing of the resource.
    *
@@ -23,6 +28,7 @@ class HerosectionController extends Controller
    */
   public function index()
   {
+
     $pageConfigs = ['myLayout' => 'blank'];
 
     return view('webContent.home', ['pageConfigs' => $pageConfigs]);
@@ -35,9 +41,13 @@ class HerosectionController extends Controller
    */
   public function create()
   {
-    //   if (!Auth::check()) {
-    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+
+
+
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     return view('content.pages.admin_home.herosection');
   }
@@ -46,9 +56,10 @@ class HerosectionController extends Controller
 
   {
 
-    //   if (!Auth::check()) {
-    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     return view('content.pages.hero_section_admin');
   }
@@ -62,9 +73,10 @@ class HerosectionController extends Controller
   public function store(StoreherosectionRequest $request)
   {
 
-    //   if (!Auth::check()) {
-    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     $request->validated();
 
@@ -133,6 +145,19 @@ class HerosectionController extends Controller
   public function show(herosection $herosection)
   {
 
+    //create role & permission
+
+    // $user =User::where('role', 1)->first();
+    // $user->assignRole('admin');
+    // $user->givePermissionTo('edit');
+
+
+    // Give role to permission
+
+    // $role = Role::where('name', 'admin')->first();
+
+    // $role->givePermissionTo('edit');
+
 
     $herosection_details = herosection::first();
 
@@ -157,9 +182,10 @@ class HerosectionController extends Controller
    */
   public function edit(herosection $herosection)
   {
-    //  if (!Auth::check()) {
-    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
 
     $herosection_update = herosection::first();
@@ -178,9 +204,10 @@ class HerosectionController extends Controller
   public function update(UpdateherosectionRequest $request, herosection $herosection)
   {
 
-    //   if (!Auth::check()) {
-    //     return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    if (!Auth::check()) {
+
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
 
     $request->validated();
 

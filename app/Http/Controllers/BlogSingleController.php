@@ -40,6 +40,10 @@ class BlogSingleController extends Controller
      */
     public function admin()
     {
+      if (!Auth::check()) {
+
+        return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+      }
 
       return view('content.pages.blog_section_admin');
 
@@ -47,12 +51,19 @@ class BlogSingleController extends Controller
 
     public function create()
     {
+      if (!Auth::check()) {
 
+        return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+      }
 
         return view('content.pages.admin_blog.blog_section_admin');
     }
     public function list()
     {
+      if (!Auth::check()) {
+
+        return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+      }
 
       $blogs_lists = DB::table('blog_singles')->get()->all();
 
@@ -70,7 +81,10 @@ class BlogSingleController extends Controller
     public function store(Storeblog_singleRequest $request)
     {
 
+      if (!Auth::check()) {
 
+        return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+      }
 
        $request->validated();
 
@@ -160,6 +174,12 @@ class BlogSingleController extends Controller
      */
     public function edit(blog_single $blog_single,$id)
     {
+
+      if (!Auth::check()) {
+
+        return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+      }
+      
         $blog_details = blog_single::findOrFail($id);
 
         return view('content.pages.admin_blog.blog_section_edit',compact('blog_details'));
@@ -177,10 +197,10 @@ class BlogSingleController extends Controller
 
 
 
-// if (!Auth::check()) {
+      if (!Auth::check()) {
 
-    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+        return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+      }
 
 
 
@@ -304,7 +324,7 @@ class BlogSingleController extends Controller
     public function destroy(blog_single $blog_single, $id)
     {
 
-    // if (Auth::check()) {
+    if (Auth::check()) {
       if (blog_single::findOr($id)->exists()) {
 
 
@@ -333,8 +353,8 @@ class BlogSingleController extends Controller
       } else {
         return redirect()->route('blog_section_admin')->with('error', 'Table data does not exist! So can not delete!');
       }
-    // } else {
-    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    // }
+    } else {
+      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    }
     }
 }

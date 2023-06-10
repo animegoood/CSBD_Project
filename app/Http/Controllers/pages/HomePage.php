@@ -30,9 +30,9 @@ class HomePage extends Controller
     // check authintication
 
 
-    // if (!Auth::check()  ){
-    //   return redirect()->route('login');
-    // }
+    if (!Auth::check()  ){
+      return redirect()->route('login');
+    }
 
 
     return view('content.pages.pages-home');
