@@ -25,7 +25,7 @@
 
                 </div>
 
-                <div>
+                {{-- <div>
 
                     <form action="{{ route('work_section_destroy') }}" method="POST">
                         @csrf
@@ -35,7 +35,7 @@
 
                     </form>
 
-                </div>
+                </div> --}}
             </div>
           </div>
 

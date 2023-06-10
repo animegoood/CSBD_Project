@@ -16,56 +16,56 @@
             </div>
             <div class="row">
 
-              @foreach ($blog_details as $blog_detail )
-
-                <!--Blog-single-->
-                <div class="col-lg-8  wow customFadeInUp slow">
-                    <div class="blog-single">
-                        <div class="thumbnail">
-                            <img src="{{ asset('Blog_thumbnail_image/' . $blog_detail->Blog_thumbnail) }}" alt="">
-                        </div>
-                        <h4 class="title">{{$blog_detail->Blog_titles}}</h4>
-                        <p>
-                          {{$blog_detail->Blog_descrioption}}
-                        <p class="quote">{{$blog_detail->Blog_highlight_description}}</p>
-
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <img src="{{asset('Blog_image/' . $blog_detail->Blog_image )}}" alt="">
+                    <!--Blog-single-->
+                    <div class="col-lg-8  wow customFadeInUp slow">
+                        <div class="blog-single">
+                            <div class="thumbnail">
+                                <img src="{{ asset('Blog_thumbnail_image/' . $blog_details->Blog_thumbnail) }}"
+                                    alt="">
                             </div>
-                            <div class="col-lg-7">
-                                <p>
-                                  {{$blog_detail->Blog_image_description}}
-                                </p>
+                            <h4 class="title">{{ $blog_details->Blog_titles }}</h4>
+                            <p>
+                                {{ $blog_details->Blog_descrioption }}
+                            <p class="quote">{{ $blog_details->Blog_highlight_description }}</p>
+
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <img src="{{ asset('Blog_image/' . $blog_details->Blog_image) }}" alt="">
+                                </div>
+                                <div class="col-lg-7">
+                                    <p>
+                                        {{ $blog_details->Blog_image_description }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                      </p>
-                        <div class="meta">
-                            <p class="mb-0 ">
-                                <span><i class="far fa-clock"></i>{{$blog_detail->Blog_date}}</span>
-                                <span><i class="fas fa-tag"></i>{{$blog_detail->Blog_categories}}</span>
                             </p>
-                            <div class="social-links ml-auto">
-                                <ul class="list-inline">
-                                    <li> Share:</li>
-                                    <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                </ul>
+                            <div class="meta">
+                                <p class="mb-0 ">
+                                    <span><i class="far fa-clock"></i>{{ $blog_details->Blog_date }}</span>
+                                    <span><i class="fas fa-tag"></i>{{ $blog_details->Blog_categories }}</span>
+                                </p>
+                                <div class="social-links ml-auto">
+                                    <ul class="list-inline">
+                                        <li> Share:</li>
+                                        <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="footer-author">
-                            <img src="{{asset('Blog_author_image/'. $blog_detail->Blog_author_image)}}" alt="">
-                            <div class="author">
-                                <h5>{{$blog_detail->Blog_author_name}}</h5>
-                                <p>{{$blog_detail->Blog_author_description}}</p>
+                            <div class="footer-author">
+                                <img src="{{ asset('Blog_author_image/' . $blog_details->Blog_author_image) }}"
+                                    alt="">
+                                <div class="author">
+                                    <h5>{{ $blog_details->Blog_author_name }}</h5>
+                                    <p>{{ $blog_details->Blog_author_description }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-@endforeach
+             
                 <!--Sidebar-->
                 <div class="col-lg-4">
                     <!--Search-->

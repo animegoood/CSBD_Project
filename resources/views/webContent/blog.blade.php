@@ -29,7 +29,7 @@
                       <p>
                           {{$blog->Blog_highlight_description}}
                       </p>
-                      <a href="{{ route('blog_single', $blog->id) }}">Read More</a>
+                      <a class="btn-custom" href="{{ route('blog_single', $blog->id) }}">Read More</a>
 
                   </div>
               </div>
