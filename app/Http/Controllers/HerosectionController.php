@@ -147,7 +147,7 @@ class HerosectionController extends Controller
 
     //create role & permission
 
-    // $user =User::where('role', 1)->first();
+    $user =User::where('role', 1)->first();
     // $user->assignRole('admin');
     // $user->givePermissionTo('edit');
 
