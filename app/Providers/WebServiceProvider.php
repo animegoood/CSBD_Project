@@ -64,6 +64,6 @@ class WebServiceProvider extends ServiceProvider
 
 
     });
-    Paginator::useBootstrap();
+    Paginator::useBootstrapFive();
   }
 }
