@@ -6,7 +6,9 @@ use App\Models\contact;
 use App\Models\about;
 use App\Http\Requests\StorecontactRequest;
 use App\Http\Requests\UpdatecontactRequest;
+use App\Mail\contactMail;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -17,9 +19,9 @@ class ContactController extends Controller
    */
   public function index()
   {
-    $contact_details =about::first();
+    $contact_details = about::first();
 
-    return view('webContent.contact' , compact('contact_details'));
+    return view('webContent.contact', compact('contact_details'));
   }
 
   /**
@@ -59,10 +61,10 @@ class ContactController extends Controller
 
     ];
 
-    contact::create($data);
 
-    return redirect()->back()->with('success','contact message sent successfully');
+    Mail::to('imtiazahmed6265@gmail.com')->send(new contactMail($data));
 
+    return redirect()->back()->with('success', 'contact mail sent successfully');
   }
 
   /**
@@ -73,7 +75,6 @@ class ContactController extends Controller
    */
   public function show(contact $contact)
   {
-
   }
 
   /**

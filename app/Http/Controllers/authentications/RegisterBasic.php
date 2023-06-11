@@ -4,14 +4,30 @@ namespace App\Http\Controllers\authentications;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterBasic extends Controller
 {
+
+  // use RegistersUsers;
+
+
+  // protected $redirectTo = '/home';
+  // protected function redirectTo()
+  // {
+  //     if (auth()->user()->role == '1') {
+  //         return '/admin_home';
+  //     }
+  //     return '/';
+  // }
+
+
   public function index()
   {
     $pageConfigs = ['myLayout' => 'blank'];
     return view('content.authentications.auth-register-basic', ['pageConfigs' => $pageConfigs]);
   }
 
-  
+
 }

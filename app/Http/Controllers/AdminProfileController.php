@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\admin_profile;
 use App\Http\Requests\Storeadmin_profileRequest;
 use App\Http\Requests\Updateadmin_profileRequest;
-
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +18,29 @@ class AdminProfileController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+
+   //subscriber list
+
+
+  public function Slist()
+  {
+
+    $subscriber_lists = DB::table('users')->paginate(10);
+
+    return view('content.pages.subscriber.suscriber_list',compact('subscriber_lists'));
+
+
+
+
+  }
+
+
+
+
+
+   //profile
+
+
   public function index()
   {
     if (!Auth::check()) {

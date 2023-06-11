@@ -53,7 +53,9 @@
             <div class="row mb-30">
                 <!--form-->
                 <div class="col-lg-7 wow customFadeInUp slow">
-                    <form action="assets/php/mail.php" class="contact_form" method="POST" id="main_contact_form">
+                    <form action="{{ route('contact_mail') }}" class="contact_form" method="POST" id="main_contact_form">
+                      @csrf
+                      
                         <div class="alert alert-success contact_msg" style="display: none" role="alert">
                             Your message was sent successfully.
                         </div>

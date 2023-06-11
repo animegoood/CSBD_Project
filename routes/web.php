@@ -58,6 +58,9 @@ Route::get('/services', [ServicesController::class, 'show'])->name('services');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 
+Route::post('/contact/mail', [ContactController::class, 'store'])->name('contact_mail');
+
+
 Route::get('/works', [WorksectionController::class, 'index'])->name('works');
 
 Route::get('/works', [WorksectionController::class, 'show'])->name('works');

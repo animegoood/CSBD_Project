@@ -63,47 +63,52 @@
 
                     <div class="d-flex " style=" flex-diraction: row; justify-content: center; gap: 70px;flex-wrap: wrap;">
 
-                        <div>
 
-                            <label class="form-label">Enable/Disable</label>
-                            <br>
+
+
+                            
                             @if (auth()->user()->two_factor_secret)
                                 @method('DELETE')
+                                <div class="d-flex "
+                                    style=" flex-diraction: row; justify-content: center; gap: 70px;flex-wrap: wrap;">
+                                    <div>
+                                        <h3>QR Recovery Code</h3>
 
-                                <button type="submit" class="btn btn-danger">Disable</button>
-                            @else
-                                <button type="submit" class="btn btn-primary">Enable</button>
-                            @endif
-                        </div>
+                                        {!! auth()->user()->twoFactorQrCodeSvg() !!}
 
-                        <div>
-                            <h3>QR Recovery Code</h3>
+                                    </div>
+                                    <div>
+                                        <h3>Recovery Code</h3>
 
-                            {!! auth()->user()->twoFactorQrCodeSvg() !!}
-
-                        </div>
-                        <div>
-                            <h3>Recovery Code</h3>
-
-                            <ul>
-                                @foreach (auth()->user()->recoveryCodes() as $recovery_code)
-                                <li>{{ $recovery_code }}</li>
-
-                                @endforeach
+                                        <ul>
+                                            @foreach (auth()->user()->recoveryCodes() as $recovery_code)
+                                                <li>{{ $recovery_code }}</li>
+                                            @endforeach
 
 
-                            </ul>
+                                        </ul>
 
-                        </div>
+                                    </div>
+
+                                <div>
+
+                                    <button type="submit" class="btn btn-danger">Disable</button>
+                                </div>
+                              </div>
+
+                    @else
+                        <button type="submit" class="btn btn-primary">Enable</button>
+                        @endif
                     </div>
 
-            </form>
+
+                </form>
 
 
 
 
 
-    </div>
-    </div>
+            </div>
+        </div>
 
-@endsection
+    @endsection
