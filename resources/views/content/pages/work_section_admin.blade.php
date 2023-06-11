@@ -25,17 +25,13 @@
 
                 </div>
 
-                {{-- <div>
+                <div>
 
-                    <form action="{{ route('work_section_destroy') }}" method="POST">
-                        @csrf
-                        @method('DELETE')
+                  <a href="{{ route('work_section_list') }}" class="btn btn-primary  ">works section list</a>
 
-                        <button type="submit" class="btn btn-danger">Delete works section</button>
+              </div>
 
-                    </form>
 
-                </div> --}}
             </div>
           </div>
 

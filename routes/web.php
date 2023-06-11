@@ -185,12 +185,19 @@ Route::post('/contact_section_store',[ContactController::class, 'store'])->name(
 
 Route::get('/work_section_admin',[WorksectionController::class, 'admin'])->name('work_section_admin');
 
+
 Route::get('/work_section_create',[WorksectionController::class, 'create'])->name('work_section_create');
 
 
 Route::post('/work_section_store',[WorksectionController::class, 'store'])->name('work_section_store');
 
-Route::delete('/work_section_destroy',[WorksectionController::class, 'destroy'])->name('work_section_destroy');
+Route::get('/work_section_list',[WorksectionController::class, 'list'])->name('work_section_list');
+
+Route::get('/work_section_edit/{id}',[WorksectionController::class, 'edit'])->name('work_section_edit');
+
+Route::patch('/work_section_update/{id}',[WorksectionController::class, 'update'])->name('work_section_update');
+
+Route::delete('/work_section_destroy/{id}',[WorksectionController::class, 'destroy'])->name('work_section_destroy');
 
 
 });
