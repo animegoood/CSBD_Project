@@ -24,7 +24,7 @@ class AdminProfileController extends Controller
 
       return redirect()->route('login')->with('error', 'You\'re not authenticated!');
     }
-    
+
     return view('content.admin_profile.admin_profile');
   }
 

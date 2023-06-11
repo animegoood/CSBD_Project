@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\blog_single;
 use Illuminate\Support\ServiceProvider;
 use App\Providers\FortifyServiceProvider;
 use Laravel\Fortify\Fortify;
+use Illuminate\Pagination\Paginator;
 
 class WebServiceProvider extends ServiceProvider
 {
@@ -62,5 +64,6 @@ class WebServiceProvider extends ServiceProvider
 
 
     });
+    Paginator::useBootstrap();
   }
 }

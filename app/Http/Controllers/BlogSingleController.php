@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\CursorPaginator;
 
 class BlogSingleController extends Controller
 {
@@ -21,7 +24,7 @@ class BlogSingleController extends Controller
 
     {
 
-      $blogs = DB::table('blog_singles')->get()->all();
+      $blogs = DB::table('blog_singles')->paginate(15);
 
       return view('webContent.blog',compact('blogs'));
 
@@ -65,7 +68,7 @@ class BlogSingleController extends Controller
         return redirect()->route('login')->with('error', 'You\'re not authenticated!');
       }
 
-      $blogs_lists = DB::table('blog_singles')->get()->all();
+      $blogs_lists = DB::table('blog_singles')->paginate(15);
 
       return view('content.pages.admin_blog.blog_section_list',compact('blogs_lists'));
 
@@ -179,7 +182,7 @@ class BlogSingleController extends Controller
 
         return redirect()->route('login')->with('error', 'You\'re not authenticated!');
       }
-      
+
         $blog_details = blog_single::findOrFail($id);
 
         return view('content.pages.admin_blog.blog_section_edit',compact('blog_details'));

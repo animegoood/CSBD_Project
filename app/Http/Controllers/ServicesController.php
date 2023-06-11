@@ -58,7 +58,7 @@ class ServicesController extends Controller
       return redirect()->route('login')->with('error', 'You\'re not authenticated!');
     }
 
-    $service_lists = DB::table('services')->get()->all();
+    $service_lists = DB::table('services')->paginate(5);
     return view('content.pages.admin_services.services_section_list', compact('service_lists'));
 
 

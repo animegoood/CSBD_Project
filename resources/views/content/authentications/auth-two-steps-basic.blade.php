@@ -42,34 +42,84 @@ $customizerHidden = 'customizer-hide';
           </a>
         </div>
         <!-- /Logo -->
-        <h4 class="mb-1 pt-2">Two Step Verification 💬</h4>
-        <p class="text-start mb-4">
-          We sent a verification code to your mobile. Enter the code from the mobile in the field below.
-          <span class="fw-bold d-block mt-2">******1234</span>
-        </p>
-        <p class="mb-0 fw-semibold">Type your 6 digit security code</p>
-        <form id="twoStepsForm" action="{{url('/')}}" method="POST">
-          <div class="mb-3">
-            <div class="auth-input-wrapper d-flex align-items-center justify-content-sm-between numeral-mask-wrapper">
-              <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1" autofocus>
-              <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
-              <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
-              <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
-              <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
-              <input type="text" class="form-control auth-input h-px-50 text-center numeral-mask text-center h-px-50 mx-1 my-2" maxlength="1">
-            </div>
-            <!-- Create a hidden field which is combined by 3 fields above -->
-            <input type="hidden" name="otp" />
+        <h4 class="mb-1 pt-2">Two Step Verification For QR Code 💬</h4>
+        <br>
+
+        <form method="POST" action="{{ route('two-factor.login') }}">
+          @csrf
+
+          <div class="row mb-3">
+              <label for="code" class="col-md-4 col-form-label text-md-end">{{ __('QR Code') }}</label>
+
+              <div class="col-md-6">
+                  <input id="code" type="code" class="form-control @error('code') is-invalid @enderror" name="code" required autocomplete="current-code">
+
+                  @error('code')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+              </div>
           </div>
-          <button class="btn btn-primary d-grid w-100 mb-3">
-            Verify my account
-          </button>
-          <div class="text-center">Didn't get the code?
-            <a href="javascript:void(0);">
-              Resend
-            </a>
+
+          <div class="row mb-0">
+              <div class="col-md-8 offset-md-4">
+                  <button type="submit" class="btn btn-primary">
+                      {{ __('Submit') }}
+                  </button>
+
+              </div>
           </div>
-        </form>
+      </form>
+
+
+      <br>
+      <div>
+
+        <a href="{{ route('recovery_code_login') }}">Click for Recovery code login</a>
+      </div>
+
+
+      </div>
+
+
+
+    <!-- / Two Steps Verification -->
+
+    <br>
+
+
+      <div class="card-body">
+
+        <h4 class="mb-1 pt-2">Two Step Verification For Recovery Code 💬</h4>
+        <br>
+        <form method="POST" action="{{ route('two-factor.login') }}">
+          @csrf
+
+          <div class="row mb-3">
+              <label for="recovery_code" class="col-md-4 col-form-label text-md-end">{{ __('Recovery Code') }}</label>
+
+              <div class="col-md-6">
+                  <input id="recovery_code" type="recovery_code" class="form-control @error('recovery_code') is-invalid @enderror" name="recovery_code" required autocomplete="current-recovery_code">
+
+                  @error('recovery_code')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+              </div>
+          </div>
+
+          <div class="row mb-0">
+              <div class="col-md-8 offset-md-4">
+                  <button type="submit" class="btn btn-primary">
+                      {{ __('Submit') }}
+                  </button>
+
+              </div>
+          </div>
+      </form>
+
       </div>
     </div>
     <!-- / Two Steps Verification -->

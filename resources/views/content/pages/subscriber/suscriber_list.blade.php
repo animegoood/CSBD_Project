@@ -4,7 +4,7 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Blogs')
+@section('title', 'Home')
 
 @section('content')
 
@@ -16,25 +16,26 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Blogs Name</th>
-                            <th>Blogs Image</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Services Name</th>
+                            <th>Testimonial Name</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ($blogs_lists as $blogs_list)
+                        @foreach ($service_lists as $service_list)
                             <tr>
                                 <td>
-                                    {{$blogs_list->id }}
+                                    {{$service_list->id }}
                                 </td>
-                                <td>{{ $blogs_list->Blog_titles }}</td>
+                                <td>{{ $service_list->service_name }}</td>
+                                <td>{{ $service_list->testimonials_name }}</td>
+                                <td>{{ $service_list->pricing_name }}</td>
+
                                 <td>
                                     <div class="avatar-wrapper">
                                         <div class="avatar me-2">
-                                            <img src="{{ '/Blog_thumbnail_image/' . $blogs_list->Blog_thumbnail }}"
-                                                alt="BlogThumbnail" class="rounded-circle">
+                                            <img src="{{ '/Testimonials_image/' . $service_list->testimonials_image }}"
+                                                alt="{{ $service_list->testimonials_image }}" class="rounded-circle">
                                         </div>
                                     </div>
 
@@ -42,17 +43,17 @@
 
                                 <td>
 
-                                  <a class="btn btn-primary " href="{{ route('blog_section_edit', $blogs_list->id) }}">Edit blog </a>
+                                  <a class="btn btn-primary " href="{{ route('services_section_edit', $service_list->id) }}">Edit service section</a>
 
                                 </td>
 
                                 <td>
 
-                                  <form action="{{ route('blog_section_destroy', $blogs_list->id ) }}" method="POST">
+                                  <form action="{{ route('services_section_destroy', $service_list->id ) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Delete blog </button>
+                                    <button type="submit" class="btn btn-danger">Delete service section</button>
 
                                 </form>
 
@@ -63,11 +64,9 @@
                         @endforeach
 
 
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="card-body ">
-                  {{  $blogs_lists->links() }}</div>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

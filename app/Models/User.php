@@ -10,12 +10,12 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-
+use Laravel\Fortify\TwoFactorAuthenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 
 {
-  use HasApiTokens, HasFactory, Notifiable, HasRoles;
+  use HasApiTokens, HasFactory, Notifiable, HasRoles, TwoFactorAuthenticatable;
 
   /**
    * The attributes that are mass assignable.

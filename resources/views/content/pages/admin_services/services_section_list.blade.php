@@ -71,6 +71,9 @@
                     </tbody>
                 </table>
             </div>
+            <div class="card-body ">
+              {{  $service_lists->links() }}</div>
+    </div>
         </div>
     </div>
 
