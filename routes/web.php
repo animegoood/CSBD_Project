@@ -14,6 +14,7 @@ use App\Http\Controllers\pages\HomePage;
 use App\Http\Controllers\WorksectionController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\authentications\tworecoveryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -200,4 +201,5 @@ Route::delete('/work_section_destroy',[WorksectionController::class, 'destroy'])
 Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-basic');
 
 Route::get('/auth/register-basic', [RegisterBasic::class,'index'])->name('auth-register-basic');
+
 

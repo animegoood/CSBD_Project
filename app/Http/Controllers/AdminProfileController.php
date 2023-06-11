@@ -27,7 +27,6 @@ class AdminProfileController extends Controller
 
     return view('content.admin_profile.admin_profile');
   }
-
   /**
    * Show the form for creating a new resource.
    *

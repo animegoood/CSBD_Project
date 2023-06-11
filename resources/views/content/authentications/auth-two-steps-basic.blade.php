@@ -48,81 +48,62 @@ $customizerHidden = 'customizer-hide';
         <form method="POST" action="{{ route('two-factor.login') }}">
           @csrf
 
-          <div class="row mb-3">
-              <label for="code" class="col-md-4 col-form-label text-md-end">{{ __('QR Code') }}</label>
+          <div class="mb-3">
+              <label for="code" class="form-label">{{ __('Code') }}</label>
+              <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" autofocus>
 
-              <div class="col-md-6">
-                  <input id="code" type="code" class="form-control @error('code') is-invalid @enderror" name="code" required autocomplete="current-code">
-
-                  @error('code')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-              </div>
+              @error('code')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
           </div>
 
-          <div class="row mb-0">
-              <div class="col-md-8 offset-md-4">
-                  <button type="submit" class="btn btn-primary">
-                      {{ __('Submit') }}
-                  </button>
-
-              </div>
+          <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="recovery_code_checkbox" name="recovery_code_checkbox">
+              <label class="form-check-label" for="recovery_code_checkbox">
+                  {{ __('Use Recovery Code') }}
+              </label>
           </div>
+
+          <div id="recovery_code_input" class="mb-3" style="display: none;">
+              <label for="recovery_code" class="form-label">{{ __('Recovery Code') }}</label>
+              <input id="recovery_code" type="text" class="form-control @error('recovery_code') is-invalid @enderror" name="recovery_code" autofocus>
+
+              @error('recovery_code')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+              {{ __('Verify') }}
+          </button>
       </form>
-
-
-      <br>
-      <div>
-
-        <a href="{{ route('recovery_code_login') }}">Click for Recovery code login</a>
-      </div>
-
-
       </div>
 
 
 
     <!-- / Two Steps Verification -->
 
-    <br>
 
-
-      <div class="card-body">
-
-        <h4 class="mb-1 pt-2">Two Step Verification For Recovery Code 💬</h4>
-        <br>
-        <form method="POST" action="{{ route('two-factor.login') }}">
-          @csrf
-
-          <div class="row mb-3">
-              <label for="recovery_code" class="col-md-4 col-form-label text-md-end">{{ __('Recovery Code') }}</label>
-
-              <div class="col-md-6">
-                  <input id="recovery_code" type="recovery_code" class="form-control @error('recovery_code') is-invalid @enderror" name="recovery_code" required autocomplete="current-recovery_code">
-
-                  @error('recovery_code')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-              </div>
-          </div>
-
-          <div class="row mb-0">
-              <div class="col-md-8 offset-md-4">
-                  <button type="submit" class="btn btn-primary">
-                      {{ __('Submit') }}
-                  </button>
-
-              </div>
-          </div>
-      </form>
-
-      </div>
     </div>
-    <!-- / Two Steps Verification -->
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const recoveryCodeCheckbox = document.getElementById('recovery_code_checkbox');
+      const recoveryCodeInput = document.getElementById('recovery_code_input');
+
+      recoveryCodeCheckbox.addEventListener('change', function() {
+          if (recoveryCodeCheckbox.checked) {
+              recoveryCodeInput.style.display = 'block';
+          } else {
+              recoveryCodeInput.style.display = 'none';
+          }
+      });
+  });
+</script>
 @endsection
