@@ -12,17 +12,17 @@
         <h3 class="text-center " style="color: #07a3bf; "> Hero section </h3>
         <div class="card-body">
             <form action="{{ route('herosection-store') }}" method="POST" enctype="multipart/form-data">
-              @csrf
-{{-- // @if (session()->has('session'))
+                @csrf
+                {{-- // @if (session()->has('session'))
 
   // <span class="text-success">{{session()->get('session')}}</span>
 
   // @endif --}}
-              @if ($errors->any())
-              @foreach ($errors->all() as $messages)
-                  <span class="text-danger">{{ $messages}}</span>
-              @endforeach
-          @endif
+                {{-- @if ($errors->any())
+                    @foreach ($errors->all() as $messages)
+                        <span class="text-danger">{{ $messages }}</span>
+                    @endforeach
+                @endif --}}
 
                 <div class="row mb-5">
 
@@ -73,7 +73,7 @@
                         <label class="form-label" for="social_2">Social media 2</label>
 
 
-                        <input class="form-control" name ="social_2" type="url" id="social_2">
+                        <input class="form-control" name="social_2" type="url" id="social_2">
 
 
                     </div>
@@ -81,7 +81,7 @@
                         <label class="form-label" for="social_3">Social media 3</label>
 
 
-                        <input class="form-control"  name ="social_3" type="url" id="social_3">
+                        <input class="form-control" name="social_3" type="url" id="social_3">
 
                     </div>
 
@@ -97,35 +97,26 @@
 
                     </div>
                     <div class="col-6">
-                      <label class="form-label" for="file-upload1">
-                           Author Background Image
-                      </label>
-                      <div class=" mt-3">
-                          <input class="form-control" type="file" id="file-upload1" accept=".png ,.jpg"
-                              name="Author_background_image">
-
-                      </div>
-
-                  </div>
-
-                    {{-- <div class="col-md-6">
-                        <label class="form-label" for="file-upload2">
-                            Download CV
+                        <label class="form-label" for="file-upload1">
+                            Author Background Image
                         </label>
                         <div class=" mt-3">
-                            <input class="form-control" type="file" id="file-upload2" accept=".pdf" name="downloadCV">
+                            <input class="form-control" type="file" id="file-upload1" accept=".png ,.jpg"
+                                name="Author_background_image">
 
                         </div>
-                    </div> --}}
+
+                    </div>
+
 
 
 
                 </div>
 
                 <div style="float: right">
-                  <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                  <button type="reset" class="btn btn-label-secondary">Cancel</button>
-              </div>
+                    <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                    <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                </div>
 
             </form>
 

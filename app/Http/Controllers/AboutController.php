@@ -132,7 +132,7 @@ class AboutController extends Controller
 
     about::create($data);
 
-    return redirect()->back()->with('session', 'about section data save sucessfully');
+    return redirect()->route('about_section_admin')->with('success', 'about section data save sucessfully');
   }
 
   /**
@@ -277,7 +277,7 @@ class AboutController extends Controller
 
     about::first()->update($data);
 
-    return redirect()->back()->with('session', 'about section data update sucessfully');
+    return redirect()->route('about_section_admin')->with('success', 'about section data update sucessfully');
   }
 
   /**
@@ -307,15 +307,15 @@ class AboutController extends Controller
           File::delete(public_path('downloadCV_image/') . $image_name);
         } else {
 
-          return redirect()->back()->with('destroy-error', 'Images are not found associated with this table_data!');
+          return redirect()->back()->with('error', 'Images are not found associated with this table_data!');
         }
 
         about::first()->delete();
 
-        return redirect()->route('about_section_admin')->with('destroy-success', 'Table data deleted successfully!');
+        return redirect()->route('about_section_admin')->with('success', 'Table data deleted successfully!');
       } else {
 
-        return redirect()->route('about_section_admin')->with('destroy-error', 'appliction does not exist! So can not delete!');
+        return redirect()->route('about_section_admin')->with('error', 'appliction does not exist! So can not delete!');
       }
     } else {
 

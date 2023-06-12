@@ -55,28 +55,26 @@
                 <div class="col-lg-7 wow customFadeInUp slow">
                     <form action="{{ route('contact_mail') }}" class="contact_form" method="POST" id="main_contact_form">
                       @csrf
-                      
-                        <div class="alert alert-success contact_msg" style="display: none" role="alert">
-                            Your message was sent successfully.
-                        </div>
+
+                
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name"
-                                required="required">
+                            <input type="text" name="send_message_name" id="send_message_name" class="form-control" placeholder="Name"
+                                >
                         </div>
 
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email"
-                                required="required">
+                            <input type="email" name="send_message_email" id="email" class="form-control" placeholder="Email"
+                                >
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject"
-                                required="required">
+                            <input type="text" name="send_message_subject" id="subject" class="form-control" placeholder="Subject"
+                                >
                         </div>
 
                         <div class="form-group">
-                            <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Message"
-                                required="required"></textarea>
+                            <input name="send_message_message" id="message" cols="30" rows="5" class="form-control" placeholder="Message"
+                                >
                         </div>
 
                         <button type="submit" name="submit" class="btn-custom">Send Message</button>

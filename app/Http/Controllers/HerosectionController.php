@@ -312,7 +312,7 @@ class HerosectionController extends Controller
     // delete the applicant
     if (Auth::check()) {
 
-      if (herosection::first()->delete()->exists()) {
+      if (herosection::first()->exists()) {
 
 
 

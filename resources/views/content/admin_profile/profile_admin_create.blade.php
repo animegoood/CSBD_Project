@@ -18,11 +18,11 @@
                     <span class="text-success">{{ session()->get('session') }}</span>
                 @endif --}}
 
-                @if ($errors->any())
+                {{-- @if ($errors->any())
                     @foreach ($errors->all() as $messages)
                         <span class="text-danger">{{ $messages }}</span>
                     @endforeach
-                @endif
+                @endif --}}
 
                 <div class="row mb-5">
 

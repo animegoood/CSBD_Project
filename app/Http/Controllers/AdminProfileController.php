@@ -19,23 +19,7 @@ class AdminProfileController extends Controller
    * @return \Illuminate\Http\Response
    */
 
-   //subscriber list
-
-
-  public function Slist()
-  {
-
-    $subscriber_lists = DB::table('users')->paginate(10);
-
-    return view('content.pages.subscriber.suscriber_list',compact('subscriber_lists'));
-
-
-
-
-  }
-
-
-
+  
 
 
    //profile

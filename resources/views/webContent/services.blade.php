@@ -20,7 +20,7 @@
 
             <div class="row mb-20 mt-40">
                 <!--service-item-->
-                <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-2s slow">
+                {{-- <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-2s slow">
                     <div class="service-item">
                         <div class="icon bg-base-color">
                             <i class="fas fa-camera-retro"></i>
@@ -33,7 +33,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 {{-- fpreach part --}}
 
@@ -92,7 +92,7 @@
 
 
                         <!--testimonial-item-->
-                        <div class="testimonials-item">
+                        {{-- <div class="testimonials-item">
                             <div class="image">
                                 <img src="assets/img/testimonials/1.jpg" alt="">
                             </div>
@@ -107,7 +107,7 @@
                             <div class="icon bg-base-color">
                                 <span class="icon_quotations"></span>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         {{--
@@ -200,7 +200,7 @@
                 {{-- foreach part --}}
                 <div class="col-lg-4 wow customFadeInUp delay-0-2s slow">
                     <!--pricing-item-->
-                    <div class="pricing-item">
+                    {{-- <div class="pricing-item">
                         <div class="content">
                             <h5>Basic</h5>
                             <div class="price">
@@ -218,7 +218,7 @@
                             <a href="#" class="btn-custom"> Get Basic</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="col-lg-4 wow customFadeInUp delay-0-4s slow">
                     <!--pricing-item-->
                      <div class="pricing-item">
@@ -267,11 +267,11 @@
                 <h4 class="section-sub-title">Our Clients</h4>
             </div>
             <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                {{-- <div class="col-lg-2 col-md-4 col-sm-4 col-6">
                     <div class="clients-item">
                         <img src="assets/img/clients/1.png" alt="">
                     </div>
-                </div>
+                </div> --}}
 
                 {{-- foreach part --}}
                 @foreach ($service_details as $service_detail)
