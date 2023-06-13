@@ -89,7 +89,7 @@
                                 <img src= "{{ asset('graphicDesign_works/'.$work_detail->graphicDesign)}}" alt="">
                                 <div class="overly">
                                     <div class="info d-flex align-items-center">
-                                        <p>Name - Graphic design</p>
+                                        <p>{{$work_detail->graphicDesign_name}}- Graphic design</p>
                                         <div class="details d-flex align-items-center ml-auto">
                                             <a href="{{ asset('graphicDesign_works/'.$work_detail->graphicDesign)}}" class="view-work">
                                                 <i class="fas fa-images"></i>

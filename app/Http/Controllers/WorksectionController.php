@@ -174,7 +174,7 @@ class WorksectionController extends Controller
       return redirect()->route('login')->with('error', 'You\'re not authenticated!');
     }
 
-    $work_section_details = worksection::findOr($id);
+    $work_section_details = worksection::findOrFail($id);
 
     return view('content.pages.admin_work.work_section_edit', compact('work_section_details'));
 
@@ -201,7 +201,7 @@ class WorksectionController extends Controller
 
 
 
-    $get_data = DB::table('worksections')->findOr($id);
+    $get_data = worksection::findOrFail($id);
 
     $image_path = $get_data->photography;
     $image_path2 = $get_data->illustrator;

@@ -158,7 +158,7 @@ class ServicesController extends Controller
       return redirect()->route('login')->with('error', 'You\'re not authenticated!');
     }
 
-    $service_section_details = services::findOr($id);
+    $service_section_details = services::findOrFail($id);
 
     return view('content.pages.admin_services.services_section_edit', compact('service_section_details'));
 
@@ -189,7 +189,7 @@ class ServicesController extends Controller
 
 
 
-    $get_data = DB::table('services')->findOr($id);
+    $get_data = services::findOrFail($id);
     $image_path1 = $get_data->testimonials_image;
     $image_path2 = $get_data->sponser_images;
 
@@ -268,7 +268,7 @@ class ServicesController extends Controller
 
     ];
 
-    services::findOr($id)->update($data);
+    services::findOrFail($id)->update($data);
 
 
     return redirect()->route('services_section_admin')->with('success', 'Services data update successfully!');
@@ -283,11 +283,11 @@ class ServicesController extends Controller
   public function destroy(services $services,$id)
   {
     if (Auth::check()) {
-      if (services::findOr($id)->exists()) {
+      if (services::findOrFail($id)->exists()) {
 
 
         // remove file from storage
-        $table_data = services::findOr($id);
+        $table_data = services::findOrFail($id);
 
         $image_path = $table_data->testimonials_image;
         $image_path2 = $table_data->sponserimage_name;
