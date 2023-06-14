@@ -50,7 +50,7 @@
                       <div class="mt-2">
 
 
-                          <input type="text" value="{{ $blog_details->Blog_descrioption }}" id="Blog_descrioption" name="Blog_descrioption" class="form-control">
+                          <textarea type="text"  id="Blog_descrioption" name="Blog_descrioption" class="form-control">{{ $blog_details->Blog_descrioption }}</textarea>
                       </div>
 
 
@@ -63,7 +63,7 @@
                     <div class="mt-2">
 
 
-                        <input type="text" value="{{ $blog_details->Blog_highlight_description }}" id="Blog_highlight_description" name="Blog_highlight_description" class="form-control">
+                        <textarea type="text"  id="Blog_highlight_description" name="Blog_highlight_description" class="form-control">{{ $blog_details->Blog_highlight_description }}</textarea>
                     </div>
 
 
@@ -77,7 +77,7 @@
                   <div class="mt-2">
 
 
-                      <input type="text" value="{{ $blog_details->Blog_image_description }}" id="Blog_image_description" name="Blog_image_description" class="form-control">
+                      <textarea type="text"  id="Blog_image_description" name="Blog_image_description" class="form-control">{{ $blog_details->Blog_image_description }}</textarea>
                   </div>
 
 
@@ -140,8 +140,9 @@
           <label class="form-label" for="Blog_author_description">Blog_author_description</label>
           <div class="mt-2">
 
+            <textarea rows="3" class="form-control"
+            type="text"    id="Blog_author_description" name="Blog_author_description" >{{ $blog_details->Blog_author_description }}</textarea>
 
-              <input type="text" value="{{ $blog_details->Blog_author_description }}" id="Blog_author_description" name="Blog_author_description" class="form-control">
           </div>
 
 

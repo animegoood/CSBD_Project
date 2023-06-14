@@ -49,7 +49,7 @@
                       <div class="mt-2">
 
 
-                          <input type="text" id="Blog_descrioption" name="Blog_descrioption" class="form-control">
+                          <textarea rows="3" type="text" id="Blog_descrioption" name="Blog_descrioption" class="form-control"></textarea>
                       </div>
 
 
@@ -62,7 +62,7 @@
                     <div class="mt-2">
 
 
-                        <input type="text" id="Blog_highlight_description" name="Blog_highlight_description" class="form-control">
+                        <textarea rows="3" type="text" id="Blog_highlight_description" name="Blog_highlight_description" class="form-control"></textarea>
                     </div>
 
 
@@ -76,7 +76,7 @@
                   <div class="mt-2">
 
 
-                      <input type="text" id="Blog_image_description" name="Blog_image_description" class="form-control">
+                      <textarea rows="3" type="text" id="Blog_image_description" name="Blog_image_description" class="form-control"></textarea>
                   </div>
 
 
@@ -131,7 +131,7 @@
           <div class="mt-2">
 
 
-              <input type="text" id="Blog_author_description" name="Blog_author_description" class="form-control">
+              <textarea rows="3" type="text" id="Blog_author_description" name="Blog_author_description" class="form-control"></textarea>
           </div>
 
 

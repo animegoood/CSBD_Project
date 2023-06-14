@@ -45,7 +45,7 @@
                         <!-- /Logo -->
                         <h4 class="mb-1 pt-2">Adventure starts here 🚀</h4>
                         <p class="mb-4">Make your app management easy and fun!</p>
-{{-- 
+{{--
                         @if (session()->has('success'))
                             {{ session()->get('success') }}
                         @endif --}}
@@ -118,17 +118,13 @@
                         </div>
 
                         <div class="d-flex justify-content-center">
-                            <a href="javascript:;" class="btn btn-icon btn-label-facebook me-3">
-                                <i class="tf-icons fa-brands fa-facebook-f fs-5"></i>
-                            </a>
 
-                            <a href="javascript:;" class="btn btn-icon btn-label-google-plus me-3">
+
+                            <a href="{{ route('google_auth') }}" class="btn btn-icon btn-label-google-plus me-3">
                                 <i class="tf-icons fa-brands fa-google fs-5"></i>
                             </a>
 
-                            <a href="javascript:;" class="btn btn-icon btn-label-twitter">
-                                <i class="tf-icons fa-brands fa-twitter fs-5"></i>
-                            </a>
+
                         </div>
                     </div>
                 </div>

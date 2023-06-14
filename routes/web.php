@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\pages\HomePage;
 use App\Http\Controllers\WorksectionController;
+use App\Http\Controllers\GoogleAuthController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\authentications\tworecoveryController;
@@ -209,4 +210,8 @@ Route::get('/auth/login-basic', [LoginBasic::class,'index'])->name('auth-login-b
 
 Route::get('/auth/register-basic', [RegisterBasic::class,'index'])->name('auth-register-basic');
 
+//socalite google
 
+Route::get('auth/google', [GoogleAuthController::class,'redirect'])->name('google_auth');
+
+Route::get('auth/google/call-back', [GoogleAuthController::class,'callbackGoogle']);
