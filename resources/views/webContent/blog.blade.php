@@ -45,7 +45,7 @@
                   <!--pagination-->
                   <div class="pagination-nav text-center">
                     <ul class="pagination ">
-                      {{ $blogs->links() }}
+                      {{ $blogs->links('') }}
 
                   </ul>
 

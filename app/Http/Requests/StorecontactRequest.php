@@ -27,7 +27,7 @@ class StorecontactRequest extends FormRequest
 
       'send_message_name' => 'string|required',
       'send_message_email' => 'email|required',
-      'send_message_subject' => 'string|required',
+
 
       'send_message_message' => 'string|required',
 
@@ -49,9 +49,6 @@ class StorecontactRequest extends FormRequest
       'send_message_email.email' => 'send_message_email must be email',
       'send_message_email.required' => 'send_message_email is required',
 
-
-      'send_message_subject.string' => 'send_message_subject must be string',
-      'send_message_subject.required' => 'send_message_subject is required',
 
 
       'send_message_name.string' => 'send_message_name must be string',

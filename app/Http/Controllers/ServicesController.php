@@ -31,10 +31,10 @@ class ServicesController extends Controller
 
   public function admin()
   {
-    if (!Auth::check()) {
+    // if (!Auth::check()) {
 
-      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    }
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
 
     return view('content.pages.service_section_admin');
   }

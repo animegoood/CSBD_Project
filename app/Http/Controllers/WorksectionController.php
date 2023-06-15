@@ -32,19 +32,19 @@ class WorksectionController extends Controller
 
   public function admin()
   {
-    if (!Auth::check()) {
+    // if (!Auth::check()) {
 
-      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    }
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
     return view('content.pages.work_section_admin');
 
   }
   public function create()
   {
-    if (!Auth::check()) {
+    // if (!Auth::check()) {
 
-      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    }
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
     return view('content.pages.admin_work.work_section_create');
   }
 
@@ -52,10 +52,10 @@ class WorksectionController extends Controller
   {
 
 
-    if (!Auth::check()) {
+    // if (!Auth::check()) {
 
-      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    }
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
 
     $work_lists = DB::table('worksections')->paginate(5);
     return view('content.pages.admin_work.work_section_list', compact('work_lists'));
@@ -72,10 +72,10 @@ class WorksectionController extends Controller
    */
   public function store(StoreworksectionRequest $request)
   {
-    if (!Auth::check()) {
+    // if (!Auth::check()) {
 
-      return redirect()->route('login')->with('error', 'You\'re not authenticated!');
-    }
+    //   return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+    // }
 
     $request->validated();
 

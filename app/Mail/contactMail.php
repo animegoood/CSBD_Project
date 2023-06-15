@@ -8,61 +8,57 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Mail\subject;
 
 class contactMail extends Mailable
 {
-    use Queueable, SerializesModels;
+  use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+  /**
+   * Create a new message instance.
+   *
+   * @return void
+   */
 
-    public $send_message_name = '';
-    public $send_message_email = '';
-    public $send_message_subject = '';
-    public $send_message_message = '';
+  public $data = '';
 
-    public function __construct($data)
-    {
-       $this->send_message_name = $data->send_message_name;
-       $this->send_message_email = $data->send_message_email;
-       $this->send_message_subject = $data->send_message_subject;
-       $this->send_message_message = $data->send_message_message;
-    }
+  public function __construct($data)
+  {
+    // dd($data);
+    $this->data = $data;
+  }
 
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
-    public function envelope()
-    {
-        return new Envelope(
-            subject: $this->send_message_subject,
-        );
-    }
+  /**
+   * Get the message envelope.
+   *
+   * @return \Illuminate\Mail\Mailables\Envelope
+   */
+  public function envelope(): Envelope
+  {
+    return new Envelope(
+      subject: 'Contact Mail',
+  );
+  }
 
-    /**
-     * Get the message content definition.
-     *
-     * @return \Illuminate\Mail\Mailables\Content
-     */
-    public function content()
-    {
-        return new Content(
-            view: 'contact_mail.send_mail',
-        );
-    }
+  /**
+   * Get the message content definition.
+   *
+   * @return \Illuminate\Mail\Mailables\Content
+   */
+  public function content(): Content
+  {
+    return new Content(
+      view: 'content.contact_mail.send_mail',
+    );
+  }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array
-     */
-    public function attachments()
-    {
-        return [];
-    }
+  /**
+   * Get the attachments for the message.
+   *
+   * @return array
+   */
+  public function attachments()
+  {
+    return [];
+  }
 }

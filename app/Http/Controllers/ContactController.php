@@ -41,8 +41,11 @@ class ContactController extends Controller
 
 
       'send_message_name' => $request->send_message_name,
+
       'send_message_email'=> $request->send_message_email,
+
       'send_message_subject'=> $request->send_message_subject,
+      
 
       'send_message_message'=> $request->send_message_message,
 
