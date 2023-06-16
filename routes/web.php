@@ -45,6 +45,7 @@ Route::get('/about', [AboutController::class, 'show'])->name('about');
 
 Route::get('/blog', [BlogSingleController::class, 'index'])->name('blog');
 
+Route::get('/categori_list', [categoryControllr::class, 'categori_list'])->name('categori_list');
 
 Route::get('/blog_single/{id}', [BlogSingleController::class, 'index_single'])->name('blog_single');
 
@@ -110,6 +111,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
     Route::get('/blog_section_list', [BlogSingleController::class, 'list'])->name('blog_section_list');
+
 
     Route::get('/blog_section_edit/{id}', [BlogSingleController::class, 'edit'])->name('blog_section_edit');
 
