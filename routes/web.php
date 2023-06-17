@@ -13,6 +13,7 @@ use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\pages\HomePage;
 use App\Http\Controllers\WorksectionController;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\categoryControllr;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\authentications\tworecoveryController;

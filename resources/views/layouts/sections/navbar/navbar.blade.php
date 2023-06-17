@@ -301,7 +301,7 @@ $navbarDetached = ($navbarDetached ?? '');
                         John Doe
                         @endif
                       </span>
-                      <small class="text-muted">Admin</small>
+                      <small class="text-muted">{{ Auth::user()->role == 0 ? 'User' : 'Admin' }}</small>
                     </div>
                   </div>
                 </a>
