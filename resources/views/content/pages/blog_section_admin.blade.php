@@ -25,20 +25,10 @@
                     </div>
                     <div>
 
-                        <a href="{{ route('blog_section_list') }}" class="btn btn-primary  ">  Blogs list</a>
+                        <a href="{{ route('blog_section_list') }}" class="btn btn-primary  "> Blogs list</a>
 
                     </div>
-                    {{-- <div>
 
-                        <form action="{{ route('herosection_destroy') }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-
-                            <button type="submit" class="btn btn-danger">Delete Blog section</button>
-
-                        </form>
-
-                    </div> --}}
                 </div>
             </div>
 

@@ -16,56 +16,128 @@
             </div>
             <div class="row">
 
-                    <!--Blog-single-->
-                    <div class="col-lg-8  wow customFadeInUp slow">
-                        <div class="blog-single">
-                            <div class="thumbnail">
-                                <img src="{{ asset('Blog_thumbnail_image/' . $blog_details->Blog_thumbnail) }}"
-                                    alt="">
-                            </div>
-                            <h4 class="title">{{ $blog_details->Blog_titles }}</h4>
-                            <p>
-                                {{ $blog_details->Blog_descrioption }}
-                            <p class="quote">{{ $blog_details->Blog_highlight_description }}</p>
+                <!--Blog-single-->
+                <div class="col-lg-8  wow customFadeInUp slow">
+                    <div class="blog-single">
+                        <div class="thumbnail">
+                            <img src="{{ asset('Blog_thumbnail_image/' . $blog_details->Blog_thumbnail) }}" alt="">
+                        </div>
+                        <h4 class="title">{{ $blog_details->Blog_titles }}</h4>
+                        <p>
+                            {{ $blog_details->Blog_descrioption }}
+                        <p class="quote">{{ $blog_details->Blog_highlight_description }}</p>
 
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <img src="{{ asset('Blog_image/' . $blog_details->Blog_image) }}" alt="">
-                                </div>
-                                <div class="col-lg-7">
-                                    <p>
-                                        {{ $blog_details->Blog_image_description }}
-                                    </p>
-                                </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <img src="{{ asset('Blog_image/' . $blog_details->Blog_image) }}" alt="">
                             </div>
-                            </p>
-                            <div class="meta">
-                                <p class="mb-0 ">
-                                    <span><i class="far fa-clock"></i>{{ $blog_details->Blog_date }}</span>
-                                    <span><i class="fas fa-tag"></i>{{ $blog_details->Blog_categories }}</span>
+                            <div class="col-lg-7">
+                                <p>
+                                    {{ $blog_details->Blog_image_description }}
                                 </p>
-                                <div class="social-links ml-auto">
-                                    <ul class="list-inline">
-                                        <li> Share:</li>
-                                        <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="footer-author">
-                                <img src="{{ asset('Blog_author_image/' . $blog_details->Blog_author_image) }}"
-                                    alt="">
-                                <div class="author">
-                                    <h5>{{ $blog_details->Blog_author_name }}</h5>
-                                    <p>{{ $blog_details->Blog_author_description }}</p>
-                                </div>
                             </div>
                         </div>
+                        </p>
+                        <div class="meta">
+                            <p class="mb-0 ">
+                                <span><i class="far fa-clock"></i>{{ $blog_details->Blog_date }}</span>
+                                <span><i class="fas fa-tag"></i>{{ $blog_details->Blog_categories }}</span>
+                            </p>
+                            <div class="social-links ml-auto">
+                                <ul class="list-inline">
+                                    <li> Share:</li>
+                                    <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-author">
+                            <img src="{{ asset('Blog_author_image/' . $blog_details->Blog_author_image) }}" alt="">
+                            <div class="author">
+                                <h5>{{ $blog_details->Blog_author_name }}</h5>
+                                <p>{{ $blog_details->Blog_author_description }}</p>
+                            </div>
+                        </div>
+
+
+                        {{-- coments --}}
+
+
+                        <div class="wpo-blog-single-section section-padding">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="col  col-12">
+                                      <div class="contact-form-wrapper">
+                                          <div style="text-align: center; padding-bottom:30px">
+                                              <form action="https://monoar.xyz/add_comment" method="POST"><input type="hidden" name="_token" value="8E4Jb98qAfVFBBbDp4m5PMv6l15BPPrB4BWLqwmV">                                                            <div class="col-lg-12">
+                                                      <div class="form-group">
+                                                          <label for="contact-message">Your Comments</label>
+                                                          <textarea placeholder="commets here" name="comment"></textarea>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-lg-12">
+                                                      <input type="submit" class="rn-btn" value="Comment">
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+
+
+                                  <div class="col  col-12">
+                                      <div class="wpo-blog-content contact-form-wrapper">
+
+                                          <div class="entry-meta">
+                                              <ul>
+
+                                                  <li><i class="fi flaticon-comment-white-oval-bubble"></i>
+                                                      Comments 0</li>
+                                                  <li><i class="fi flaticon-comment-white-oval-bubble"></i>
+                                                      Reply 0 </li>
+                                              </ul>
+                                          </div>
+                                          <div class="comments-area">
+
+                                              <div class="comments-section">
+                                                  <ol class="comments">
+                                                      <li class="comment even thread-even depth-1" id="comment-1">
+                                                                                                                              <div style="display:none;" class="replyDiv">
+                                                              <form action="https://monoar.xyz/add_reply" method="POST"><input type="hidden" name="_token" value="8E4Jb98qAfVFBBbDp4m5PMv6l15BPPrB4BWLqwmV">                                                                            <input type="text" id="commentId" name="commentId" hidden="">
+                                                                  <textarea placeholder="write " name="reply"></textarea><br>
+
+
+
+                                                                  <input type="submit" value="Reply" class="btn ">
+
+                                                                  <input type="reset" onclick="reply_close(this)" value="X" class="btn btn-close">
+                                                              </form>
+                                                          </div>
+                                                      </li>
+                                                  </ol>
+                                              </div>
+
+
+
+
+
+
+                                          </div>
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+
+
+                      
                     </div>
-             
+                </div>
+
                 <!--Sidebar-->
                 <div class="col-lg-4">
                     <!--Search-->
@@ -89,11 +161,15 @@
                             <h5>Categories</h5>
                         </div>
                         <ul>
-                            <li class="cat-item d-flex align-items-center">
-                                <a href="#"> Design </a>
-                                <span class="badge badge-pill ml-auto">5</span>
-                            </li>
-                            <li class="cat-item d-flex align-items-center">
+
+                            @foreach ($categorys as $category)
+
+                                <li class="cat-item d-flex align-items-center">
+                                    <a href="#">{{ $category->Blog_categories }}</a>
+                                    <span class="badge badge-pill ml-auto">5</span>
+                                </li>
+                            @endforeach
+                            {{-- <li class="cat-item d-flex align-items-center">
                                 <a href="#">Development</a>
                                 <span class="badge  badge-pill ml-auto">15</span>
                             </li>
@@ -108,7 +184,7 @@
                             <li class="cat-item d-flex align-items-center">
                                 <a href="#">Lifestyle</a>
                                 <span class="badge badge-pill ml-auto">2</span>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
 

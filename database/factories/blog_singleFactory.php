@@ -29,7 +29,7 @@ class blog_singleFactory extends Factory
     'Blog_image_description'=> $this->faker->text,
 
     'Blog_date'=>$this->faker->date(),
-    'Blog_categories'=>'tech',
+    'Blog_categories'=>'Design',
     'Blog_author_image'=>$this->faker->imageUrl,
     'Blog_author_name'=>$this->faker->name,
     'Blog_author_description'=>$this->faker->text,
