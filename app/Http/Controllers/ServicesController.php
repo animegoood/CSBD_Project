@@ -301,7 +301,7 @@ class ServicesController extends Controller
         } else {
           return redirect()->route('services_section_admin')->with('error', 'Images are not found associated with this table_data!');
         }
-        services::first()->delete();
+        services::findOrFail($id)->delete();
 
         return redirect()->route('services_section_admin')->with('success', 'Table data deleted successfully!');
       } else {

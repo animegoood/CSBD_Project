@@ -109,16 +109,14 @@
 
                             <select id="Blog_categories" class="form-select" name="Blog_categories">
 
-                                <option value="Design" {{ $blog_details->Blog_categories ? 'selected' : '' }}>Design
-                                </option>
-                                <option value="Development" {{ $blog_details->Blog_categories ? 'selected' : '' }}>
-                                    Development</option>
-                                <option value="Tutorials" {{ $blog_details->Blog_categories ? 'selected' : '' }}>Tutorials
-                                </option>
-                                <option value="Branding" {{ $blog_details->Blog_categories ? 'selected' : '' }}>Branding
-                                </option>
-                                <option value="Lifestyle" {{ $blog_details->Blog_categories ? 'selected' : '' }}>Lifestyle
-                                </option>
+
+                                @foreach ($category_details as $category_detail)
+
+                                    <option value="{{ $category_detail->category_name }}"
+
+                                      {{ $blog_details->Blog_categories == $category_detail->category_name ? 'selected' : '' }}
+                                        >{{ $category_detail->category_name }}</option>
+                                @endforeach
 
 
                             </select>

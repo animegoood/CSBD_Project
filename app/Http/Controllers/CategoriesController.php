@@ -6,6 +6,7 @@ use App\Models\categories;
 use App\Http\Requests\StorecategoriesRequest;
 use App\Http\Requests\UpdatecategoriesRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class CategoriesController extends Controller
@@ -30,7 +31,9 @@ class CategoriesController extends Controller
     public function list()
     {
 
-      return view('content.pages.admin_category.admin_list_category');
+      $category_details = DB::table('categories')->paginate(5);
+      return view('content.pages.admin_category.admin_list_category',compact('category_details'));
+
 
 
     }
@@ -90,9 +93,12 @@ class CategoriesController extends Controller
      * @param  \App\Models\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function edit(categories $categories)
+    public function edit(categories $categories,$id)
     {
-        //
+      $category_data = categories::findOrFail($id);
+
+      return view('content.pages.admin_category.admin_edit_category',compact('category_data'));
+
     }
 
     /**
@@ -102,9 +108,24 @@ class CategoriesController extends Controller
      * @param  \App\Models\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatecategoriesRequest $request, categories $categories)
+    public function update(UpdatecategoriesRequest $request, categories $categories,$id)
     {
-        //
+      $request->validated();
+
+
+      $data=[
+
+        'category_name'=>$request->category_name
+
+
+
+      ];
+
+      categories::findOrFail($id)->update($data);
+
+      return redirect()->route('admin_category_list')->with('success' , 'Category data update successfully');
+
+
     }
 
     /**
@@ -113,8 +134,24 @@ class CategoriesController extends Controller
      * @param  \App\Models\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(categories $categories)
+    public function destroy(categories $categories,$id)
     {
-        //
+      if (Auth::check()) {
+        if (categories::findOrFail($id)->exists()) {
+
+
+          categories::findOrFail($id)->delete();
+
+
+
+          return redirect()->route('admin_category_list')->with('success', 'Table data deleted successfully!');
+
+
+        } else {
+          return redirect()->route('admin_category')->with('error', 'Table data does not exist! So can not delete!');
+        }
+      } else {
+        return redirect()->route('login')->with('error', 'You\'re not authenticated!');
+      }
     }
 }

@@ -23,27 +23,26 @@
                     </thead>
                     <tbody>
 
-                        @foreach ($work_lists as $work_list)
+                        @foreach ($category_details as $category_detail)
                             <tr>
                                 <td>
-                                    {{ $work_list->id }}
+                                    {{ $category_detail->id }}
                                 </td>
-                                <td>{{ $work_list->photography_name }}</td>
+                                <td>{{ $category_detail->category_name }}</td>
 
                                 <td>
 
-                                    <a class="btn btn-primary " href="{{ route('work_section_edit', $work_list->id) }}">Edit
-                                        work section</a>
+                                    <a class="btn btn-primary " href="{{ route('admin_category_edit', $category_detail->id) }}">Edit category section</a>
 
                                 </td>
 
                                 <td>
 
-                                    <form action="{{ route('work_section_destroy', $work_list->id) }}" method="POST">
+                                    <form action="{{ route('admin_category_destroy', $category_detail->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-danger">Delete work section</button>
+                                        <button type="submit" class="btn btn-danger">Delete category section</button>
 
                                     </form>
 
@@ -58,7 +57,7 @@
                 </table>
             </div>
             <div class="card-body ">
-                {{ $work_lists->links() }}</div>
+                {{ $category_details->links() }}</div>
         </div>
     </div>
     </div>

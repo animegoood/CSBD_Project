@@ -26,7 +26,7 @@
                           <li class="filter" data-filter=".{{ $category_detail->category_name }}">{{ $category_detail->category_name }}</li>
 
                           @endforeach
-{{-- 
+{{--
                             <li class="filter" data-filter=".Devlopment">Devlopment</li>
                             <li class="filter" data-filter=".Tutorials">Tutorials</li>
                             <li class="filter" data-filter=".Branding">Branding</li>
@@ -41,8 +41,8 @@
 
             <div class="works-items">
                 <div class="row">
-
-                    <div class="col-lg-4 col-md-6 mix Design ">
+                  {{-- @foreach ($category_details as $category_detail ) --}}
+                    <div class="col-lg-4 col-md-6 mix {{ $category_detail->category_name }} ">
                         <div class="works-item wow customFadeInUp slow">
 
 
@@ -51,45 +51,16 @@
                         </div>
                     </div>
 
-
-                    <div class="col-lg-4 col-md-6 mix Devlopment ">
+                    {{-- @endforeach --}}
+                    {{-- <div class="col-lg-4 col-md-6 mix Devlopment ">
                         <div class="works-item wow customFadeInUp slow">
 
 
 
 
                         </div>
-                    </div>
+                    </div> --}}
 
-
-                    <div class="col-lg-4 col-md-6 mix Tutorials ">
-                        <div class="works-item wow customFadeInUp slow">
-
-
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-6 mix Branding ">
-                        <div class="works-item wow customFadeInUp slow">
-
-
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-6 mix LifeStyle ">
-                        <div class="works-item wow customFadeInUp slow">
-
-
-
-
-                        </div>
-                    </div>
 
 
 

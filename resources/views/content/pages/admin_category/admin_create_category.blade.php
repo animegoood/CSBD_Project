@@ -24,11 +24,11 @@
                     @endforeach
                 @endif --}}
 
-                <div class="row mb-5">
+
+                <div class="d-flex flex-column gap-3 align-items-center">
 
 
-
-                    <div class="col-md-6">
+                    <div class="w-50">
                         <label class="form-label" for="category_name">Category Name</label>
 
 
@@ -38,13 +38,12 @@
                     </div>
 
 
-                </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                        <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                    </div>
 
-                <div style="float: right">
-                    <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                    <button type="reset" class="btn btn-label-secondary">Cancel</button>
                 </div>
-
             </form>
 
 

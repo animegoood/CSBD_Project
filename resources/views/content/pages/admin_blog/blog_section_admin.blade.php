@@ -109,12 +109,18 @@
 
                   <select id="Blog_categories" class="form-select" name="Blog_categories">
 
-                    <option value="Design">Design</option>
-                    <option value="Development">Development</option>
+
+                    @foreach ( $category_details as $category_detail )
+
+                    <option value="{{ $category_detail->category_name }}">{{ $category_detail->category_name }}</option>
+
+                    @endforeach
+
+                    {{-- <option value="Development">Development</option>
                     <option value="Tutorials">Tutorials</option>
                     <option value="Branding">Branding</option>
-                    <option value="Lifestyle">Lifestyle</option>
-                    
+                    <option value="Lifestyle">Lifestyle</option> --}}
+
 
                 </select>
               </div>

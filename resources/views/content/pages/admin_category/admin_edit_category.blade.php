@@ -4,51 +4,48 @@
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Category edit')
+@section('title', 'Category')
 
 @section('content')
 
     <div class="card " style="height: 100%">
-        <h3 class="text-center " style="color: hsl(189, 93%, 39%); ">Category Section</h3>
+        <h3 class="text-center " style="color: #07a3bf; "> Category section </h3>
         <div class="card-body">
-            <form action="{{ route('work_section_update', $work_section_details->id) }}" method="POST"
-                enctype="multipart/form-data">
+            <form action="{{ route('admin_category_update',$category_data->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
+                {{-- // @if (session()->has('session'))
 
-                {{--      @if (session()->has('session'))
-                    <span class="text-success">{{ session()->get('session') }}</span>
-                @endif
- --}}
+  // <span class="text-success">{{session()->get('session')}}</span>
+
+  // @endif --}}
                 {{-- @if ($errors->any())
                     @foreach ($errors->all() as $messages)
                         <span class="text-danger">{{ $messages }}</span>
                     @endforeach
                 @endif --}}
 
-                <div class="row mb-5">
+
+                <div class="d-flex flex-column gap-3 align-items-center">
 
 
-
-                    <div class="col-md-6">
-
-                        <label class="form-label" for="photography_name">photography_name</label>
-                        <div class="mt-2">
+                    <div class="w-50">
+                        <label class="form-label" for="category_name">Category Name</label>
 
 
-                            <input type="text" id="photography_name"
-                                value="{{ $work_section_details->photography_name }}" name="photography_name"
-                                class="form-control">
-                        </div>
-
+                        <input value="{{ $category_data->category_name }}" class="form-control" name="category_name" type="text" id="category_name">
 
 
                     </div>
 
 
-
+                    <div>
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                        <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                    </div>
 
                 </div>
+            </form>
 
 
 
@@ -56,28 +53,15 @@
 
 
 
-                <div style="float: right">
-                    <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                    <button type="reset" class="btn btn-label-secondary">Cancel</button>
-                </div>
+
+
+
+
+
+
+
         </div>
-        </form>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-@endsection
+    @endsection

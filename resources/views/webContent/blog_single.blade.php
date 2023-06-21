@@ -162,10 +162,10 @@
                         </div>
                         <ul>
 
-                            @foreach ($categorys as $category)
+                            @foreach ($category_details as $category_detail)
 
                                 <li class="cat-item d-flex align-items-center">
-                                    <a href="#">{{ $category->category_name }}</a>
+                                    <a href="#">{{ $category_detail->category_name }}</a>
                                     <span class="badge badge-pill ml-auto">5</span>
                                 </li>
                             @endforeach

@@ -113,13 +113,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('/category_store', [CategoriesController::class, 'store'])->name('category_store');
 
-   
 
-    Route::get('/admin_category_edit', [CategoriesController::class, 'edit'])->name('admin_category_edit');
 
-    Route::patch('/admin_category_update', [CategoriesController::class, 'update'])->name('admin_category_update');
+    Route::get('/admin_category_edit/{id}', [CategoriesController::class, 'edit'])->name('admin_category_edit');
 
-    Route::delete('/admin_category_destroy', [CategoriesController::class, 'destroy'])->name('admin_category_destroy');
+    Route::patch('/admin_category_update/{id}', [CategoriesController::class, 'update'])->name('admin_category_update');
+
+    Route::delete('/admin_category_destroy/{id}', [CategoriesController::class, 'destroy'])->name('admin_category_destroy');
 
 
     // blog section
