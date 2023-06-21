@@ -31,7 +31,7 @@ class HerosectionController extends Controller
 
     $pageConfigs = ['myLayout' => 'blank'];
 
-    return view('webContent.home', ['pageConfigs' => $pageConfigs]);
+    return view('webContent.webhome', ['pageConfigs' => $pageConfigs]);
   }
 
   /**
@@ -171,7 +171,7 @@ class HerosectionController extends Controller
     };
 
 
-    return view('WebContent.home', compact('herosection_details', 'bgimg_path', 'authorimg_path'));
+    return view('WebContent.webhome', compact('herosection_details', 'bgimg_path', 'authorimg_path'));
   }
 
   /**

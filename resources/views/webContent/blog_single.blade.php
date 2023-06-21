@@ -63,7 +63,7 @@
                         </div>
 
 
-                        {{-- coments --}}
+                        {{-- coments
 
 
                         <div class="wpo-blog-single-section section-padding">
@@ -132,9 +132,9 @@
                           </div>
 
                       </div>
+ --}}
 
 
-                      
                     </div>
                 </div>
 
@@ -165,7 +165,7 @@
                             @foreach ($categorys as $category)
 
                                 <li class="cat-item d-flex align-items-center">
-                                    <a href="#">{{ $category->Blog_categories }}</a>
+                                    <a href="#">{{ $category->category_name }}</a>
                                     <span class="badge badge-pill ml-auto">5</span>
                                 </li>
                             @endforeach

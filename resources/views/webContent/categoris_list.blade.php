@@ -20,11 +20,17 @@
                     <!--works-filters-->
                     <div class="works-filters">
                         <ul class="list-inline">
-                            <li class="filter" data-filter=".Design">Design</li>
+
+                          @foreach ($category_details as $category_detail )
+
+                          <li class="filter" data-filter=".{{ $category_detail->category_name }}">{{ $category_detail->category_name }}</li>
+
+                          @endforeach
+{{-- 
                             <li class="filter" data-filter=".Devlopment">Devlopment</li>
                             <li class="filter" data-filter=".Tutorials">Tutorials</li>
                             <li class="filter" data-filter=".Branding">Branding</li>
-                            <li class="filter" data-filter=".LifeStyle">LifeStyle</li>
+                            <li class="filter" data-filter=".LifeStyle">LifeStyle</li> --}}
                         </ul>
                     </div>
                 </div>

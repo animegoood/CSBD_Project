@@ -21,13 +21,13 @@
 
                 <div>
 
-                    <a href="{{ route('work_section_create') }}" class="btn btn-primary  ">create Categories</a>
+                    <a href="{{ route('admin_category_create') }}" class="btn btn-primary  ">create Categories</a>
 
                 </div>
 
                 <div>
 
-                  <a href="{{ route('work_section_list') }}" class="btn btn-primary  ">Categories list</a>
+                  <a href="{{ route('admin_category_list') }}" class="btn btn-primary  ">Categories list</a>
 
               </div>
 

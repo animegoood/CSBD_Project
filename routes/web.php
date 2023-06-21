@@ -13,7 +13,7 @@ use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\pages\HomePage;
 use App\Http\Controllers\WorksectionController;
 use App\Http\Controllers\GoogleAuthController;
-use App\Http\Controllers\categoryControllr;
+use App\Http\Controllers\CategoriesController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\authentications\tworecoveryController;
@@ -31,9 +31,9 @@ use App\Http\Controllers\authentications\tworecoveryController;
 
 // web Page Route
 
-Route::get('/', [HerosectionController::class, 'index'])->name('home');
+Route::get('/', [HerosectionController::class, 'index'])->name('webhome');
 
-Route::get('/', [HerosectionController::class, 'show'])->name('home');
+Route::get('/', [HerosectionController::class, 'show'])->name('webhome');
 
 
 
@@ -46,7 +46,8 @@ Route::get('/about', [AboutController::class, 'show'])->name('about');
 
 Route::get('/blog', [BlogSingleController::class, 'index'])->name('blog');
 
-Route::get('/categori_list', [categoryControllr::class, 'categori_list'])->name('categori_list');
+
+Route::get('/category', [CategoriesController::class, 'index'])->name('category');
 
 Route::get('/blog_single/{id}', [BlogSingleController::class, 'index_single'])->name('blog_single');
 
@@ -99,6 +100,26 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/admin_profile_update', [AdminProfileController::class, 'update'])->name('admin_profile_update');
 
     Route::delete('/admin_profile_destroy', [AdminProfileController::class, 'destroy'])->name('admin_profile_destroy');
+
+
+    //catogory
+
+    Route::get('/admin_category', [CategoriesController::class, 'admin'])->name('admin_category');
+
+
+    Route::get('/admin_category_list', [CategoriesController::class, 'list'])->name('admin_category_list');
+
+    Route::get('/admin_category_create', [CategoriesController::class, 'create'])->name('admin_category_create');
+
+    Route::post('/category_store', [CategoriesController::class, 'store'])->name('category_store');
+
+   
+
+    Route::get('/admin_category_edit', [CategoriesController::class, 'edit'])->name('admin_category_edit');
+
+    Route::patch('/admin_category_update', [CategoriesController::class, 'update'])->name('admin_category_update');
+
+    Route::delete('/admin_category_destroy', [CategoriesController::class, 'destroy'])->name('admin_category_destroy');
 
 
     // blog section

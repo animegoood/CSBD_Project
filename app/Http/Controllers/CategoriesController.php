@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\categories;
 use App\Http\Requests\StorecategoriesRequest;
 use App\Http\Requests\UpdatecategoriesRequest;
+use Illuminate\Support\Facades\DB;
+
 
 class CategoriesController extends Controller
 {
@@ -15,7 +17,22 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+
+      $category_details = DB::table('categories')->get();
+      return view('webContent.categoris_list',compact('category_details'));
+    }
+
+
+    public function admin()
+    {
+      return view('content.pages.category_section_admin');
+    }
+    public function list()
+    {
+
+      return view('content.pages.admin_category.admin_list_category');
+
+
     }
 
     /**
@@ -25,7 +42,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+      return view('content.pages.admin_category.admin_create_category');
     }
 
     /**
@@ -36,7 +53,24 @@ class CategoriesController extends Controller
      */
     public function store(StorecategoriesRequest $request)
     {
-        //
+        $request->validated();
+
+
+        $data=[
+
+          'category_name'=>$request->category_name
+
+
+
+        ];
+
+        categories::create($data);
+
+        return redirect()->route('admin_category')->with('success' , 'Category data save successfully');
+
+
+
+
     }
 
     /**
@@ -47,7 +81,7 @@ class CategoriesController extends Controller
      */
     public function show(categories $categories)
     {
-        //
+
     }
 
     /**

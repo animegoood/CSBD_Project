@@ -4,40 +4,49 @@
       "url": "/admin_home",
       "name": "Home",
       "icon": "menu-icon tf-icons ti ti-smart-home",
-      "slug": "pages-home"
+      "slug": "home"
     },
     {
-      "url": "/page-2",
+      "url": "/admin_profile_admin",
+      "name": "Admin Profile",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Page 2",
-      "slug": "pages-page-2"
+      "slug": "admin_profile_admin"
     },
     {
-      "url": "/pages/misc-error",
-      "name": "Error",
-      "icon": "menu-icon tf-icons ti ti-alert-triangle",
-      "slug": "pages-misc-error",
-      "target": "_blank"
-    },
-    {
-      "url": "/herosection_details",
+      "url": "/admin_category",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": "Hero Section",
-      "slug": "herosection_details"
+      "name": " Category Section",
+      "slug": "admin_category"
     },
     {
-      "url": "/auth/login-basic",
-      "name": "Login",
-      "icon": "menu-icon tf-icons ti ti-login",
-      "slug": "auth-login-basic",
-      "target": "_blank"
+      "url": "/blog_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": " Blog Section",
+      "slug": "blog_section_admin"
     },
     {
-      "url": "/auth/register-basic",
-      "name": "Register",
-      "icon": "menu-icon tf-icons ti ti-user",
-      "slug": "auth-register-basic",
-      "target": "_blank"
+      "url": "/herosection_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": " Hero Section",
+      "slug": "herosection_admin"
+    },
+    {
+      "url": "/about_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": " About Section",
+      "slug": "about_section_admin"
+    },
+    {
+      "url": "/services_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": " Services Section",
+      "slug": "services_section_admin"
+    },
+    {
+      "url": "/work_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": " Work Section",
+      "slug": "work_section_admin"
     }
   ]
 }

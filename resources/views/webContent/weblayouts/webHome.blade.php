@@ -61,7 +61,7 @@
                     <a class="{{ request()->is('blog')? 'active' : '' }}"  href="{{ route('blog') }}">Blog</a>
                 </li>
                 <li>
-                  <a class="{{ request()->is('categori_list')? 'active' : '' }}"  href="{{ route('categori_list') }}">Blog Categoris</a>
+                  <a class="{{ request()->is('category')? 'active' : '' }}"  href="{{ route('category') }}">Blog Categoris</a>
                 </li>
                 <li>
                     <a class="{{ request()->is('contact')? 'active' : '' }}"  href="{{ route('contact') }}">Contact</a>

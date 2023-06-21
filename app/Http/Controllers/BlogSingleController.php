@@ -165,7 +165,7 @@ class BlogSingleController extends Controller
     public function show(blog_single $blog_single,$id)
     {
         $blog_details = blog_single::findOrFail($id);
-        $categorys = DB::table('blog_singles')->select('Blog_categories')->get();
+        $categorys = DB::table('categories')->get();
 
 
       return view('webContent.blog_single',compact('blog_details','categorys'));

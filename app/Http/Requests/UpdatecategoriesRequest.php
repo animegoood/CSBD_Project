@@ -13,7 +13,7 @@ class UpdatecategoriesRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,19 @@ class UpdatecategoriesRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+
+        'category_name' => 'string',
+      ];
+    }
+
+    public function messages()
+    {
+      return [
+
+
+        'category_name.string' => 'category_name must be string',
+
+      ];
     }
 }

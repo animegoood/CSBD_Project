@@ -1,20 +1,28 @@
 {
   "menu": [
-
-
-
     {
-      "url": "/",
-      "name": "Web Home",
+      "url": "/admin_home",
+      "name": "Home",
       "icon": "menu-icon tf-icons ti ti-smart-home",
-      "slug": "pages-home"
+      "slug": "home"
     },
     {
       "url": "/admin_profile_admin",
       "name": "Admin Profile",
       "icon": "menu-icon tf-icons ti ti-file",
       "slug": "admin_profile_admin"
-
+    },
+    {
+      "url": "/admin_category",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": " Category Section",
+      "slug": "admin_category"
+    },
+    {
+      "url": "/blog_section_admin",
+      "icon": "menu-icon tf-icons ti ti-file",
+      "name": " Blog Section",
+      "slug": "blog_section_admin"
     },
     {
       "url": "/herosection_admin",
@@ -22,7 +30,6 @@
       "name": " Hero Section",
       "slug": "herosection_admin"
     },
-
     {
       "url": "/about_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
@@ -36,19 +43,10 @@
       "slug": "services_section_admin"
     },
     {
-      "url": "/blog_section_admin",
-      "icon": "menu-icon tf-icons ti ti-file",
-      "name": " Blog Section",
-      "slug": "blog_section_admin"
-    },{
       "url": "/work_section_admin",
       "icon": "menu-icon tf-icons ti ti-file",
       "name": " Work Section",
       "slug": "work_section_admin"
     }
-
   ]
 }
-
-
-
