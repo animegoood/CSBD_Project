@@ -3,6 +3,8 @@
 @section('title', 'Blog post')
 @section('websection')
 
+
+
     <!-- blog section-->
     <div class="section">
         <div class="container">
@@ -63,79 +65,58 @@
                         </div>
 
 
-                        {{-- coments
+                        {{-- comments --}}
 
 
-                        <div class="wpo-blog-single-section section-padding">
-                          <div class="container">
-                              <div class="row">
-                                  <div class="col  col-12">
-                                      <div class="contact-form-wrapper">
-                                          <div style="text-align: center; padding-bottom:30px">
-                                              <form action="https://monoar.xyz/add_comment" method="POST"><input type="hidden" name="_token" value="8E4Jb98qAfVFBBbDp4m5PMv6l15BPPrB4BWLqwmV">                                                            <div class="col-lg-12">
-                                                      <div class="form-group">
-                                                          <label for="contact-message">Your Comments</label>
-                                                          <textarea placeholder="commets here" name="comment"></textarea>
-                                                      </div>
-                                                  </div>
-                                                  <div class="col-lg-12">
-                                                      <input type="submit" class="rn-btn" value="Comment">
-                                                  </div>
-                                              </form>
-                                          </div>
-                                      </div>
-                                  </div>
+                        <section class="content-item mt-5" id="comments">
 
 
-                                  <div class="col  col-12">
-                                      <div class="wpo-blog-content contact-form-wrapper">
+                            <form action="{{ route('comment_store') }}" method="POST">
+                                <h3 class="text-center mb-3">New Comment</h3>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-lg-2 hidden-xs">
+                                            <img class="img-responsive"
+                                                src="https://bootdey.com/img/Content/avatar/avatar1.png" alt>
+                                        </div>
+                                        <div class="form-group col-xs-12 col-sm-9 col-lg-10">
+                                            <textarea class="form-control" id="message" placeholder="Your message" required></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <button type="submit" style="float:right;" class="btn-custom pull-right">Submit</button>
+                            </form>
+                            <h3>4 Comments</h3>
 
-                                          <div class="entry-meta">
-                                              <ul>
-
-                                                  <li><i class="fi flaticon-comment-white-oval-bubble"></i>
-                                                      Comments 0</li>
-                                                  <li><i class="fi flaticon-comment-white-oval-bubble"></i>
-                                                      Reply 0 </li>
-                                              </ul>
-                                          </div>
-                                          <div class="comments-area">
-
-                                              <div class="comments-section">
-                                                  <ol class="comments">
-                                                      <li class="comment even thread-even depth-1" id="comment-1">
-                                                                                                                              <div style="display:none;" class="replyDiv">
-                                                              <form action="https://monoar.xyz/add_reply" method="POST"><input type="hidden" name="_token" value="8E4Jb98qAfVFBBbDp4m5PMv6l15BPPrB4BWLqwmV">                                                                            <input type="text" id="commentId" name="commentId" hidden="">
-                                                                  <textarea placeholder="write " name="reply"></textarea><br>
-
-
-
-                                                                  <input type="submit" value="Reply" class="btn ">
-
-                                                                  <input type="reset" onclick="reply_close(this)" value="X" class="btn btn-close">
-                                                              </form>
-                                                          </div>
-                                                      </li>
-                                                  </ol>
-                                              </div>
+                            <div class="media">
+                                {{-- <a class="pull-left" href="#"><img class="media-object"
+                                                    src="https://bootdey.com/img/Content/avatar/avatar1.png" alt></a> --}}
+                                <div class="media-body">
+                                    <h4 class="media-heading">John Doe</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <ul class="list-unstyled list-inline media-detail pull-left">
+                                        <li><i class="fa fa-calendar"></i>27/02/2014</li>
+                                        <li><i class="fa fa-thumbs-up"></i>13</li>
+                                    </ul>
+                                    <ul class="list-unstyled list-inline media-detail pull-right">
+                                        <li class><a href>Like</a></li>
+                                        <li class><a href>Reply</a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
 
 
 
+                    </section>
 
 
-                                          </div>
-                                      </div>
 
-                                  </div>
-                              </div>
-                          </div>
-
-                      </div>
- --}}
-
-
-                    </div>
+                </div>
                 </div>
 
                 <!--Sidebar-->
@@ -163,9 +144,8 @@
                         <ul>
 
                             @foreach ($category_details as $category_detail)
-
                                 <li class="cat-item d-flex align-items-center">
-                                    <a href="#">{{ $category_detail->category_name }}</a>
+                                    <a href="{{ route('categoryBypost', $category_detail->id) }}">{{ $category_detail->category_name }}</a>
                                     <span class="badge badge-pill ml-auto">5</span>
                                 </li>
                             @endforeach
@@ -243,6 +223,7 @@
                 </div>
             </div>
         </div>
-    </div>
 
-@stop
+
+
+    @stop

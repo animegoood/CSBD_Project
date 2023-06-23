@@ -6,6 +6,7 @@ use App\Models\categories;
 use App\Http\Requests\StorecategoriesRequest;
 use App\Http\Requests\UpdatecategoriesRequest;
 use Illuminate\Support\Facades\DB;
+use App\Models\blog_single;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -32,7 +33,8 @@ class CategoriesController extends Controller
     {
 
       $category_details = DB::table('categories')->paginate(5);
-      return view('content.pages.admin_category.admin_list_category',compact('category_details'));
+      $postsBYcategory = blog_single::where('Blog_categories')->get();
+      return view('content.pages.admin_category.admin_list_category',compact('category_details','postsBYcategory'));
 
 
 
@@ -76,16 +78,7 @@ class CategoriesController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\categories  $categories
-     * @return \Illuminate\Http\Response
-     */
-    public function show(categories $categories)
-    {
 
-    }
 
     /**
      * Show the form for editing the specified resource.

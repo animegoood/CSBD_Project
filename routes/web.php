@@ -14,6 +14,7 @@ use App\Http\Controllers\pages\HomePage;
 use App\Http\Controllers\WorksectionController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CommentController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\authentications\tworecoveryController;
@@ -115,6 +116,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
+
     Route::get('/admin_category_edit/{id}', [CategoriesController::class, 'edit'])->name('admin_category_edit');
 
     Route::patch('/admin_category_update/{id}', [CategoriesController::class, 'update'])->name('admin_category_update');
@@ -141,6 +143,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
     Route::delete('/blog_section_destroy/{id}', [BlogSingleController::class, 'destroy'])->name('blog_section_destroy');
+
+    Route::get('/posts/{category}',  [BlogSingleController::class, 'showBYcategory'])->name('categoryBypost');
+
+    //comment section
+
+
+    Route::post('/comment_store',[CommentController::class, 'store'])->name('comment_store');
 
 
 

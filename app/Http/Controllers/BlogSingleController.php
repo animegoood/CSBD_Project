@@ -168,6 +168,34 @@ class BlogSingleController extends Controller
     return view('webContent.blog_single', compact('blog_details', 'category_details'));
   }
 
+      /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\blog_single  $categories
+     * @return \Illuminate\Http\Response
+     */
+    public function showBYcategory(blog_single $blog_single,$id)
+    {
+
+
+    $category = DB::table('categories')->find($id);
+
+    if (!$category) {
+        abort(404);
+    }
+
+    $posts = DB::table('blog_singles')
+        ->where('Blog_categories', '=', $category->category_name)
+        ->get();
+
+    return view('webContent.categoryBYpost', compact('category', 'posts'));
+
+
+
+
+
+    }
+
   /**
    * Show the form for editing the specified resource.
    *
