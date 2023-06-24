@@ -44,11 +44,12 @@
                         <a href="{{ route('about') }}" class="btn-custom ">More about me</a>
                     </div>
                 </div>
-                <div  class="col-lg-4" >
-
-                  <img class=" w-full" style="border-radius: 4rem;"  src="{{$authorimg_path}}" alt="">
-                {{-- <div class="rounded-bg" style="background-image: url('{{$authorimg_path}}');     background-size: contain;
-                background-repeat: no-repeat;    background-position: center;"> --}}
+                <div  class="col-lg-4 " style="height: 300px; width:400px" >
+{{--
+                  <img class=" w-full" style="border-radius: 4rem;"  src="{{$authorimg_path}}" alt=""> --}}
+                <div class="hero" style="background-image: url('{{$authorimg_path}}');
+                background-position: center bottom;
+                background-size: cover;border-radius: 4rem;">
 
 
                 </div>

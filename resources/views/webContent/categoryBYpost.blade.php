@@ -17,18 +17,18 @@
             </div>
             <div class="row">
 
-                @foreach ($postsBYcategory as $postBYcategory)
+                @foreach ($posts as $post)
                     <!--Blog-item-->
                     <div class="col-lg-4 col-md-6 wow customFadeInUp slow">
                         <div class="blog-item">
                             <div class="thumbnail">
-                                <img src="{{ asset('Blog_thumbnail_image/' . $postBYcategory->Blog_thumbnail) }}" alt="">
+                                <img src="{{ asset('Blog_thumbnail_image/' . $post->Blog_thumbnail) }}" alt="">
                             </div>
-                            <h5><a href="{{ route('blog_single', $postBYcategory->id) }}">{{ $postBYcategory->Blog_titles }}</a></h5>
+                            <h5><a href="{{ route('blog_single', $post->id) }}">{{ $post->Blog_titles }}</a></h5>
                             <p>
-                                {{ $postBYcategory->Blog_highlight_description }}
+                                {{ $post->Blog_highlight_description }}
                             </p>
-                            <a class="btn-custom" href="{{ route('blog_single', $postBYcategory->id) }}">Read More</a>
+                            <a class="btn-custom" href="{{ route('blog_single', $post->id) }}">Read More</a>
 
                         </div>
                     </div>

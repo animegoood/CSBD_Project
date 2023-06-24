@@ -27,7 +27,7 @@
                     <div class="col-lg-4 col-md-6 wow customFadeInUp delay-0-3s slow">
                         <div class="service-item">
                             <div class="icon bg-base-color">
-                                <i class="{{ $service_detail->service_icon }}"></i>
+                                <i class="{{$service_detail->service_icon }}"></i>
 
                             </div>
                             <div class="content">

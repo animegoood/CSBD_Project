@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'admin_home' => RouteServiceProvider::HOME,
+    'home' => RouteServiceProvider::HOME,
 
     /*
     |--------------------------------------------------------------------------
@@ -134,13 +134,13 @@ return [
     'features' => [
         Features::registration(),
         Features::resetPasswords(),
-        Features::emailVerification(),
+         Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
             'confirm' => false,
             'confirmPassword' => false,
-            // 'window' => 0,
+            //  'window' => 0,
         ]),
     ],
 

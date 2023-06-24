@@ -1,11 +1,6 @@
 {
   "menu": [
-    {
-      "url": "/admin_home",
-      "name": "Home",
-      "icon": "menu-icon tf-icons ti ti-smart-home",
-      "slug": "home"
-    },
+
     {
       "url": "/admin_profile_admin",
       "name": "Admin Profile",
@@ -27,7 +22,7 @@
     {
       "url": "/herosection_admin",
       "icon": "menu-icon tf-icons ti ti-file",
-      "name": " Hero Section",
+      "name": " Home Section",
       "slug": "herosection_admin"
     },
     {

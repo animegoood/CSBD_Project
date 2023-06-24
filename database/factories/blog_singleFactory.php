@@ -21,18 +21,18 @@ class blog_singleFactory extends Factory
     {
         return [
 
-    'Blog_thumbnail'=>$this->faker->imageUrl,
-    'Blog_titles'=> $this->faker->title,
-    'Blog_descrioption'=> $this->faker->text,
-    'Blog_highlight_description'=> $this->faker->text,
-    'Blog_image'=>$this->faker->imageUrl,
-    'Blog_image_description'=> $this->faker->text,
+    'Blog_thumbnail'=>$this->faker->image(),
+    'Blog_titles'=> $this->faker->title(),
+    'Blog_descrioption'=> $this->faker->text(),
+    'Blog_highlight_description'=> $this->faker->text(),
+    'Blog_image'=>$this->faker->image(),
+    'Blog_image_description'=> $this->faker->text(),
 
     'Blog_date'=>$this->faker->date(),
     'Blog_categories'=>'Design',
-    'Blog_author_image'=>$this->faker->imageUrl,
-    'Blog_author_name'=>$this->faker->name,
-    'Blog_author_description'=>$this->faker->text,
+    'Blog_author_image'=>$this->faker->imageUrl(800, 600,'https://st2.depositphotos.com/2001755/5408/i/450/depositphotos_54081723-stock-photo-beautiful-nature-landscape.jpg'),
+    'Blog_author_name'=>$this->faker->name(),
+    'Blog_author_description'=>$this->faker->text(),
 
         ];
     }

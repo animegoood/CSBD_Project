@@ -10,16 +10,15 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 class RegisterBasic extends Controller
 {
 
-  // use RegistersUsers;
 
 
-  // protected $redirectTo = '/home';
+  // protected $redirectTo = '/admin_home';
   // protected function redirectTo()
   // {
-  //     if (auth()->user()->role == '1') {
-  //         return '/admin_home';
-  //     }
-  //     return '/';
+  //   if (auth()->user()->role == '1') {
+  //     return '/admin_home';
+  //   }
+  //   return '/login';
   // }
 
 
@@ -28,6 +27,4 @@ class RegisterBasic extends Controller
     $pageConfigs = ['myLayout' => 'blank'];
     return view('content.authentications.auth-register-basic', ['pageConfigs' => $pageConfigs]);
   }
-
-
 }

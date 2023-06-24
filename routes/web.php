@@ -50,6 +50,8 @@ Route::get('/blog', [BlogSingleController::class, 'index'])->name('blog');
 
 Route::get('/category', [CategoriesController::class, 'index'])->name('category');
 
+Route::get('/posts/{category}',  [BlogSingleController::class, 'showBYcategory'])->name('categoryBypost');
+
 Route::get('/blog_single/{id}', [BlogSingleController::class, 'index_single'])->name('blog_single');
 
 Route::get('/blog_single/{id}', [BlogSingleController::class, 'show'])->name('blog_single');
@@ -144,7 +146,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::delete('/blog_section_destroy/{id}', [BlogSingleController::class, 'destroy'])->name('blog_section_destroy');
 
-    Route::get('/posts/{category}',  [BlogSingleController::class, 'showBYcategory'])->name('categoryBypost');
 
     //comment section
 

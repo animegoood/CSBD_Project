@@ -21,7 +21,11 @@ class CategoriesController extends Controller
     {
 
       $category_details = DB::table('categories')->get();
-      return view('webContent.categoris_list',compact('category_details'));
+
+      $postsBYcategory = blog_single::where('Blog_categories')->get();
+
+      
+      return view('webContent.categoris_list',compact('category_details','postsBYcategory'));
     }
 
 
@@ -33,8 +37,8 @@ class CategoriesController extends Controller
     {
 
       $category_details = DB::table('categories')->paginate(5);
-      $postsBYcategory = blog_single::where('Blog_categories')->get();
-      return view('content.pages.admin_category.admin_list_category',compact('category_details','postsBYcategory'));
+
+      return view('content.pages.admin_category.admin_list_category',compact('category_details'));
 
 
 
