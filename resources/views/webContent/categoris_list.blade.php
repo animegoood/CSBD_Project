@@ -47,9 +47,8 @@
                     <div class="col-lg-4 col-md-6 mix {{ $category_detail->category_name }} ">
                         <div class="works-item wow customFadeInUp slow">
 
-                          @if ($category_detail->category_name,=, $postsBYcategory->)
 
-                          @endif
+
 
                           @foreach ( $postsBYcategory as $postBYcategory )
 \
@@ -57,8 +56,8 @@
 
 
                             <div class="blog-item">
-                                <div class="thumbnail">
-                                    <img src="{{ asset('Blog_thumbnail_image/' . $postBYcategory->Blog_thumbnail) }}" alt="">
+                              <div class="thumbnail">
+                                <img src="{{ asset('Blog_thumbnail_image/' . $postBYcategory->Blog_thumbnail) }}" alt="">
                                 </div>
                                 <h5><a href="{{ route('blog_single', $postBYcategory->id) }}">{{ $postBYcategory->Blog_titles }}</a></h5>
                                 <p>
@@ -66,9 +65,10 @@
                                 </p>
                                 <a class="btn-custom" href="{{ route('blog_single', $postBYcategory->id) }}">Read More</a>
 
-                            </div>
+                              </div>
 
-                            @endforeach
+                              @endforeach
+
                         </div>
                     </div>
 

@@ -22,9 +22,9 @@ class CategoriesController extends Controller
 
       $category_details = DB::table('categories')->get();
 
-      $postsBYcategory = blog_single::where('Blog_categories')->get();
+      $postsBYcategory = blog_single::where('Blog_categories','=', $category_details->category_name)->get();
 
-      
+
       return view('webContent.categoris_list',compact('category_details','postsBYcategory'));
     }
 

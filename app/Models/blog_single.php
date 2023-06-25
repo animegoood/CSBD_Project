@@ -12,6 +12,8 @@ class blog_single extends Model
 
   protected $fillable = [
 
+
+    'user_id',
     'Blog_thumbnail',
     'Blog_titles',
     'Blog_descrioption',

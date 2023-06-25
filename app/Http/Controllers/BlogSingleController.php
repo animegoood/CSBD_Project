@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\CursorPaginator;
+use App\Models\User;
 use App\Models\categories;
 
 class BlogSingleController extends Controller
@@ -124,6 +125,8 @@ class BlogSingleController extends Controller
 
 
     $data = [
+
+      'user_id' => auth()->user()->id ,
 
       'Blog_thumbnail' => $Blog_thumbnail_name,
 
