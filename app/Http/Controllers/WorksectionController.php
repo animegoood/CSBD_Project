@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\worksection;
-use App\Http\Requests\StoreworksectionRequest;
-use App\Http\Requests\UpdateworksectionRequest;
+use App\Http\Requests\StoreWebPageRequest;
+use App\Http\Requests\UpdateWebPageRequest;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
@@ -67,10 +68,10 @@ class WorksectionController extends Controller
   /**
    * Store a newly created resource in storage.
    *
-   * @param  \App\Http\Requests\StoreworksectionRequest  $request
+   * @param  \App\Http\Requests\StoreWebPageRequest  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(StoreworksectionRequest $request)
+  public function store(StoreWebPageRequest $request)
   {
     // if (!Auth::check()) {
 
@@ -141,9 +142,9 @@ class WorksectionController extends Controller
 
     ];
 
-    worksection::create($data);
+    User::create($data);
 
-    return redirect()->route('work_section_admin')->with('success', 'work section data save successfully ');
+    return redirect()->route('admin')->with('success', 'work section data save successfully ');
   }
 
   /**

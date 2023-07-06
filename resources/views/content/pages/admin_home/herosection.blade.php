@@ -13,11 +13,13 @@
         <div class="card-body">
             <form action="{{ route('herosection-store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                
                 {{-- // @if (session()->has('session'))
+                    // <span class="text-success">{{ session()->get('session') }}</span>
 
-  // <span class="text-success">{{session()->get('session')}}</span>
+                    //
+                @endif --}}
 
-  // @endif --}}
                 {{-- @if ($errors->any())
                     @foreach ($errors->all() as $messages)
                         <span class="text-danger">{{ $messages }}</span>
