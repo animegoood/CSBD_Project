@@ -32,6 +32,14 @@ class blog_single extends Model
 
   protected $table ='blog_singles';
 
+  public function user(){
+    blog_single::belongsTo(User::class);
+  }
+
+  public function categories(){
+    blog_single::belongsTo(categories::class);
+  }
+
 
 
 

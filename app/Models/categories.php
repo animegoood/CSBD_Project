@@ -17,4 +17,8 @@ class categories extends Model
   ];
 
   protected $table = 'categories';
+
+  public function posts(){
+    categories::hasMany(blog_single::class);
+  }
 }

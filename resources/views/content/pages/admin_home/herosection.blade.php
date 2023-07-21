@@ -13,7 +13,7 @@
         <div class="card-body">
             <form action="{{ route('herosection-store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                
+
                 {{-- // @if (session()->has('session'))
                     // <span class="text-success">{{ session()->get('session') }}</span>
 
@@ -64,7 +64,7 @@
 
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="social_1">Social media 1</label>
+                        <label class="form-label" for="social_1">Social media Facebook</label>
 
 
                         <input class="form-control" name="social_1" type="url" id="social_1">
@@ -72,7 +72,7 @@
 
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="social_2">Social media 2</label>
+                        <label class="form-label" for="social_2">Social media Twitter</label>
 
 
                         <input class="form-control" name="social_2" type="url" id="social_2">
@@ -80,7 +80,7 @@
 
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="social_3">Social media 3</label>
+                        <label class="form-label" for="social_3">Social media Instagram</label>
 
 
                         <input class="form-control" name="social_3" type="url" id="social_3">

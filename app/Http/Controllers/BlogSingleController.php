@@ -188,10 +188,11 @@ class BlogSingleController extends Controller
     }
 
     $posts = DB::table('blog_singles')
-        ->where('Blog_categories', '=', $category->category_name)
+        ->where('Blog_categories', $category->category_name)
         ->get();
 
     return view('webContent.categoryBYpost', compact('category', 'posts'));
+    return view('webContent.categoris_list', compact('category', 'posts'));
 
 
 

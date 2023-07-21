@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ return new class extends Migration
     Schema::create('blog_singles', function (Blueprint $table) {
       $table->id();
 
-      $table->unsignedBigInteger('user_id');
+      $table->foreignId('user_id')->constrained()->onDelete('cascade');
 
       $table->string('Blog_thumbnail');
       $table->string('Blog_titles');
@@ -28,7 +29,7 @@ return new class extends Migration
 
 
       $table->string('Blog_date');
-      $table->string('Blog_categories');
+      $table->string('Blog_categories')->foreignId()->constrained()->onDelete('cascade');;
 
       $table->string('Blog_author_image');
       $table->string('Blog_author_name');
